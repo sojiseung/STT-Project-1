@@ -1,0 +1,137 @@
+
+
+.container{
+    width: 100%;
+}
+/* 회원가입 헤더 */
+.container .header{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+/* 회원가입 박스 */
+.container .center{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.container .center .center_menu{
+    width: 608px;
+    padding: 56px 80px;
+    border-radius: 4px;
+    border: 1px solid rgb(228, 229, 237);
+    
+}
+
+.container .center .center_menu .font_30{
+    font-size: 30px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+/* 회원가입 */
+.container .center .center_menu .sns_join{
+    padding-left: 30px;   
+    padding-right: 30px;
+}
+/* 버튼 wrapper */
+.container .center .center_menu .sns_join .button_wrapper{
+    width: 386px;
+    height: 50px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    background-color: black;
+    border: none;
+}
+
+/* 카카오 */
+.container .center .center_menu .sns_join .kakao{
+    width: 386px;
+    height: 50px;
+    background-color: rgb(255, 232, 0);
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all .1s linear;
+}
+
+.container .center .center_menu .sns_join .kakao:hover{
+opacity: 0.8;
+}
+
+.container .center .center_menu .sns_join .kakao .kakaoimg{
+    width: 25px;
+    height: 25px;
+    margin-right: 5px;
+}
+
+/* 네이버 */
+.container .center .center_menu .sns_join .naver{
+    width: 386px;
+    height: 50px;
+    background-color: rgb(0, 191, 24);
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: white;
+    transition: all .1s linear;
+}
+.container .center .center_menu .sns_join .naver:hover{
+    opacity: 0.8;
+}
+.container .center .center_menu .sns_join .naver .naverimg{
+    width: 32px;
+    height: 32px;
+    margin-right: 5px;
+}
+.line{
+    width: 386px;
+    height: 33px;
+    border-bottom: 1px solid rgb(203, 204, 211);
+}
+
+/* 이메일 회원가입 */
+.container .center .center_menu .email_join{
+    padding-left: 30px;   
+    padding-right: 30px;
+}
+
+.container .center .center_menu .email_join .font_30_center{
+    font-size: 30px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.container .center .center_menu .email_join .email{
+    width: 386px;
+    height: 50px;
+    color: rgb(70, 84, 163);
+    background-color: white;
+    border: 1px solid rgb(70, 84, 163);
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 15px;
+    transition: background-color linear 0.3s;
+}
+.container .center .center_menu .email_join .email:hover{
+    background-color: aliceblue;
+}

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="User">
+	<insert id="userjoin" parameterType="userdto">
+		insert into stt_user (userid,userpw,username,usergender,userphone)
+		values(#{userid},#{userpw},#{username},#{usergender},#{userphone})
+	</insert>
+	<select id="userlogin" parameterType="hashmap" resultType="_int">
+		select count(*) from stt_user where userid=#{userid} and binary(userpw)=#{userpw}
+	</select>
+	<select id="checkid" parameterType="string" resultType="_int">
+		select count(*) from stt_user where userid=#{userid}
+	</select>
+	<insert id="expertjoin" parameterType="expertdto">
+		insert into stt_expert (useridx,expertnickname,expertintro,expertworkplace,expertmajor,expertmajorpart,expertmajortechnic,freelancercheck,expertedu,expertcertificate,desiredsalary,expertresident)
+		values(#{useridx},#{expertnickname},#{expertintro},#{expertworkplace},#{expertmajor},#{expertmajorpart},#{expertmajortechnic},#{freelancercheck},#{expertedu},#{expertcertificate},#{desiredsalary},#{expertresident})
+	</insert>
+</mapper>

@@ -1,0 +1,283 @@
+#projectdetail.inner {
+  margin-top: 130px;
+  height: 1321.52px;
+  padding: 60px 16px 140px 16px;
+  display: flex;
+  justify-content: space-between;
+}
+.question {
+  color: #270949;
+  font-size: 18px;
+}
+.answer {
+  color: #555969;
+  word-break: break-all;
+  font-weight: 600;
+  font-size: 14px;
+}
+.grid {
+  display: flex;
+  font-weight: 600;
+  flex-direction: column;
+  grid-gap: 12px;
+  font-size: 16px;
+}
+.fileup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin: 48px 0 0 0;
+}
+.fileup section {
+  width: 94px;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.fileup div {
+  width: 94px;
+  height: 94px;
+  border-radius: 4px;
+  -webkit-background-position: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-color: #f2f3f7;
+  background-image: url(../img/pjcontent.png);
+  box-shadow: 0px 0px 0px 1px rgb(0 0 0 / 8%) inset;
+}
+.fileup p {
+  margin: 4px 0 0 0;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  font-size: 13px;
+  word-break: break-all;
+  overflow: hidden;
+  -webkit-line-clamp: 1;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  line-height: 1.15;
+}
+
+#pjdetail {
+  width: 670px;
+}
+#pjdetail #withouttitle {
+  display: flex;
+  flex-direction: column;
+  margin-top: 60px;
+  grid-gap: 60px;
+  line-height: 1.54;
+}
+#pjdetail #pjtitle {
+  display: flex;
+  flex-direction: column;
+  grid-gap: 12px;
+}
+#pjdetail #pjtitle #title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #270949;
+}
+#pjdetail #pjtitle #subtitle {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  color: #303441;
+}
+#pjoffer {
+  width: 440px;
+  position: relative;
+  height: auto;
+}
+#pjoffer .pjbox {
+  display: flex;
+  flex-direction: column;
+  grid-gap: 12px;
+  top: 140px;
+  position: sticky;
+}
+
+#pjoffer #rqinfo {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #3f7fa1;
+  padding: 24px 40px;
+  width: 440px;
+  height: 370px;
+  grid-gap: 26px;
+  -webkit-justify-content: center;
+  justify-content: center;
+  background-color: #ffffff;
+}
+#pjoffer #rqinfo #requester {
+  display: flex;
+  flex-direction: column;
+  grid-gap: 12px;
+  align-self: center;
+}
+#pjoffer #rqinfo #requester #imgwrap {
+  width: 80px;
+  height: 80px;
+  background-color: #e4e5ed;
+  position: relative;
+  outline: none;
+  box-shadow: 0 0 0 1px rgb(0 0 0 / 5%);
+  border-radius: 50%;
+}
+#pjoffer #rqinfo #requester #imgwrap img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.3s ease 0s;
+  border-radius: 50%;
+  opacity: 1;
+  object-fit: contain;
+}
+#pjoffer #rqinfo #requester #imgwrap #cong {
+  position: absolute;
+  border-radius: 50%;
+  background-color: #e4e5ed;
+  border: 1px solid white;
+  z-index: 3;
+  width: 12px;
+  height: 12px;
+  bottom: 5.715728752538098px;
+  right: 5.715728752538098px;
+}
+#pjoffer #rqinfo #money {
+  display: flex;
+  flex-direction: column;
+  grid-gap: 16px;
+}
+#pjoffer #rqinfo #money #tax {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  font-weight: 600;
+}
+#pjoffer #rqinfo #money #budget {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  font-weight: 600;
+}
+#pjoffer #rqinfo button {
+  display: block;
+  outline: none;
+  border-width: 1px;
+  border-style: solid;
+  box-sizing: border-box;
+  border-radius: 4px;
+  line-height: 1;
+  font-weight: 500;
+  -webkit-transition: background-color 0.3s, border-color 0.3s;
+  transition: background-color 0.3s, border-color 0.3s;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  white-space: nowrap;
+  max-width: 100%;
+  height: 52px;
+  font-size: 16px;
+  padding: 0 24px;
+  min-width: 80px;
+  background-color: #270949;
+  border-color: #270949;
+  color: #f2f3f7;
+}
+#pjoffer #rqinfo button:hover {
+  background-color: rgba(39, 9, 73, 0.92);
+  border-color: rgba(39, 9, 73, 0.92);
+  color: #3f7fa1;
+  font-weight: 800;
+}
+#pjoffer #rqinfo #bt {
+  width: 358px;
+  display: flex;
+  flex-direction: column;
+  grid-gap: 12px;
+}
+#pjoffer #rqinfo #bt #closingdate {
+  display: flex;
+  justify-content: center;
+  font-size: 14px;
+  color: #727585;
+}
+#pjoffer #rqinfo #bt #closingdate div {
+  margin: 0 4px;
+  font-weight: 600;
+  color: #270949;
+}
+#pjoffer #similarpj {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #3f7fa1;
+  padding: 24px 40px;
+  width: 440px;
+  grid-gap: 26px;
+  justify-content: center;
+  background-color: #ffffff;
+}
+#pjoffer #similarpj #sm1 {
+  font-size: 16px;
+  font-weight: 600;
+}
+#pjoffer #similarpj #sm3 {
+  outline: none;
+  border-width: 1px;
+  border-style: solid;
+  box-sizing: border-box;
+  border-radius: 4px;
+  line-height: 1;
+  font-weight: 600;
+  transition: background-color 0.3s, border-color 0.3s;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  user-select: none;
+  white-space: nowrap;
+  max-width: 100%;
+  height: 52px;
+  font-size: 15px;
+  padding: 0 24px;
+  min-width: 80px;
+  background-color: transparent;
+  border-color: #270949;
+  color: #270949;
+}
+#pjoffer #similarpj #sm3:hover {
+  background-color: rgba(63, 127, 161, 0.1);
+}
+.fs24 {
+  font-size: 24px;
+}

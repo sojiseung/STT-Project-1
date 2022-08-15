@@ -1,0 +1,214 @@
+.container{
+    width: 100%;
+}
+
+/* 버튼 */
+.btn{
+    width: 260px;
+    height: 43px;
+    background-color: white;
+    border-radius: 4px;
+    color: rgb(70, 84, 163);
+    border: 1px solid rgb(70, 84, 163);
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 25px;
+    transition: background-color linear 0.3s;
+}
+
+.btn:hover{background-color: aliceblue;}
+
+/* 헤더 */
+.container .header{
+    display: flex;
+    justify-content: center;
+    background-color: aliceblue;
+    margin-bottom: 40px;
+}
+
+.container .header .header_title{
+    width: 1024px;
+    height: 71px;
+    padding-top: 10px;
+}
+
+.container .header .header_title .img_wrapper{
+    width: 125px;
+    height: 56px;
+}
+
+.container .header .header_title .img_wrapper img{
+    width: 140px;
+    height: 50px;
+}
+
+/* 아이디/비번 타이틀 */
+.container .main{
+    width: 100%;   
+}
+
+.container .main .main_contents{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.container .find_title{
+    color: rgb(39, 9, 73);
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.container .main .main_contents .find_idpw{
+    display: flex;
+    justify-content: space-between;
+    width: 740px;
+    height: 370px;
+    padding-bottom: 50px;
+    border-bottom: 1px solid rgb(187, 187, 193);
+    margin-bottom: 60px;
+}
+/* 아이디 찾기 */
+.container .main .main_contents .find_idpw .find_id{
+    width: 320px;
+    height: 320px;
+    border: 1px solid rgb(228, 229, 237);
+    border-radius: 4px;
+    margin-right: 100px;
+}
+
+.container .main .main_contents .find_idpw .find_id .id_form{
+    /* display: flex;
+    justify-content: center; */
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.container .main .main_contents .find_idpw .find_id .id_panel{
+    height: 50px;
+    padding: 15px 15px;
+    border-radius: 4px;
+    font-size: 14px;
+    background-color: aliceblue;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.container .main .main_contents .find_idpw .find_id .id_form .username{
+    width: 259px;
+    height: 52px;
+    margin-bottom: 5px;
+}
+
+.container .main .main_contents .find_idpw .find_id .id_form .username .input_id{
+    width: 259px;
+    height: 50px;
+    padding: 0px 15px;
+    border: 1px solid rgb(228, 229, 237);
+    border-radius: 4px;
+    outline: none;
+    font-weight: bold;
+}
+
+.container .main .main_contents .find_idpw .find_id .id_form .username .input_id:focus{
+    border: 1px solid rgb(39, 9, 73);
+    border-radius: 4px;
+    box-shadow: 0px 0px 9px rgb(70, 84, 163);
+}
+
+.container .main .main_contents .find_idpw .find_id .id_form .username .input_id:hover{
+    border: 1px solid black;
+}
+
+.container .main .main_contents .find_idpw .find_id .id_form .id_text{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 11px;
+    font-weight: bold;
+    color: #888888;
+}
+
+/* 비밀번호 찾기 */
+.container .main .main_contents .find_idpw .find_pw{
+    width: 320px;
+    height: 320px;
+    border: 1px solid rgb(228, 229, 237);
+    border-radius: 4px;
+}
+
+.container .main .main_contents .find_idpw .find_pw .pw_form{
+    /* display: flex;
+    justify-content: center; */
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.container .main .main_contents .find_idpw .find_pw .pw_panel{
+    height: 50px;
+    padding: 15px 15px;
+    border-radius: 4px;
+    font-size: 14px;
+    background-color: aliceblue;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.container .main .main_contents .find_idpw .find_pw .pw_form .username{
+    width: 259px;
+    height: 52px;
+    margin-top: 46px;
+    margin-bottom: 46px;
+}
+
+.container .main .main_contents .find_idpw .find_pw .pw_form .username .input_pw{
+    width: 259px;
+    height: 50px;
+    padding: 0px 15px;
+    border: 1px solid rgb(228, 229, 237);
+    border-radius: 4px;
+    outline: none;
+    font-weight: bold;
+    
+}
+
+.container .main .main_contents .find_idpw .find_pw .pw_form .username .input_pw:focus{
+    border: 1px solid rgb(39, 9, 73);
+    border-radius: 4px;
+    box-shadow: 0px 0px 9px rgb(70, 84, 163);
+}
+
+.container .main .main_contents .find_idpw .find_pw .pw_form .username .input_pw:hover{
+    border: 1px solid black;
+}
+
+.container .main .main_contents .find_idpw .find_pw .pw_form .pw_text{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 11px;
+    font-weight: bold;
+    color: #888888;
+}
+
+.container .main .lojo{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.container .main .lojo .lojo_wrapper{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.container .main .lojo .lojo_wrapper .login{
+    margin-right: 50px;
+}
+
+.last_text{
+    text-align: center;
+    font-size: 11px;
+}

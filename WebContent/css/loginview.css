@@ -1,0 +1,255 @@
+/* 모달창 설정 */
+.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  display: none;
+
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal.show {
+  display: block;
+}
+
+.modal_body {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 1000px;
+  height: 650px;
+
+  /* padding: 10px; */
+
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  box-shadow: 0 2px 3px 0 rgba(34, 36, 38, 0.15);
+
+  transform: translateX(-50%) translateY(-50%);
+  display: flex;
+  justify-content: left;
+}
+
+/* 모달창 왼쪽 이미지 */
+.modal_body .left_img {
+  width: 57%;
+  background-color: rgb(70, 84, 163);
+  background-image: url(../img/login1.webp);
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+  background-size: cover;
+}
+
+/* 모달창 오른쪽 로그인창 */
+.modal_body .right_login {
+  width: 43%;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+/* 모달창 나가기 버튼 */
+.modal_body .right_login .modal_close {
+  position: relative;
+  left: 390px;
+  font-size: 40px;
+  border: none;
+  background-color: white;
+  cursor: pointer;
+}
+
+/* 로그인 */
+.modal_body .right_login .login form h2 {
+  margin-top: 0px;
+  margin-bottom: 24px;
+}
+.modal_body .right_login .login {
+  width: 100%;
+  margin-left: 15px;
+  padding: 30px;
+  padding-top: 0px;
+  height: 281px;
+}
+
+/* 로그인 input 설정 */
+.modal_body .right_login .login .input_login {
+  padding-bottom: 16px;
+  width: 344px;
+  height: 64px;
+}
+
+.modal_body .right_login .login .input_login .input_login2 {
+  width: 344px;
+  padding-left: 16px;
+  padding-right: 16px;
+  border-radius: 4px;
+  border: 1px solid rgb(228, 229, 237);
+}
+
+.modal_body .right_login .login .input_login .input_login2:hover {
+  border: 1px solid black;
+}
+.modal_body .right_login .login .input_login .input_login2 .input_id {
+  width: 306px;
+  height: 50px;
+  border: none;
+}
+
+.modal_body .right_login .login .input_login .input_login2 .input_id:focus {
+  outline: none;
+}
+
+.modal_body .right_login .login .input_login .input_login2 .input_pw {
+  width: 306px;
+  height: 50px;
+  border: none;
+}
+
+.modal_body .right_login .login .input_login .input_login2 .input_pw:focus {
+  outline: none;
+}
+
+/* 로그인 버튼 */
+.modal_body .right_login .login .submit_login #login:hover {
+  background-color: rgb(39, 9, 73);
+}
+.modal_body .right_login .login .submit_login #login {
+  width: 344px;
+  height: 50px;
+  background-color: rgb(70, 84, 163);
+  font-weight: bold;
+  border: none;
+  font-size: 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  color: white;
+  transition: background-color linear 0.3s;
+}
+
+/* 로그인 유지 */
+.modal_body .right_login .login .logincheck {
+  width: 344px;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  color: rgb(85, 89, 105);
+  margin-top: 12px;
+  margin-bottom: 35px;
+}
+
+.modal_body .right_login .login .logincheck span {
+  margin-bottom: 2px;
+  margin-right: 110px;
+  font-size: 14px;
+}
+
+/* 아이디•비밀번호 찾기 */
+.modal_body .right_login .login .logincheck .idpwlook:hover {
+  /* color: rgb(85, 89, 105); */
+  color: rgb(39, 9, 73);
+}
+
+.modal_body .right_login .login .logincheck .idpwlook {
+  margin-bottom: 2px;
+  text-decoration: none;
+  color: rgb(85, 89, 105);
+  font-size: 14px;
+}
+
+/* SNS 로그인 */
+.modal_body .right_login .login .snslogin {
+  text-align: center;
+}
+
+/* .modal_body .right_login .login .snslogin .snslog{
+    width: 344px;
+    height: 50px;
+    border: none;
+    border-radius: 5px;
+    background-color: black;
+} */
+/* 카카오 */
+.modal_body .right_login .login .snslogin .kakao_naver {
+  width: 344px;
+  height: 50px;
+  background-color: rgb(255, 232, 0);
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.modal_body .right_login .login .snslogin .kakao_naver .kakaoimg {
+  width: 22px;
+  height: 22px;
+  margin-right: 5px;
+}
+
+/* 네이버 */
+.modal_body .right_login .login .snslogin .naver_kakao {
+  width: 344px;
+  height: 50px;
+  background-color: rgb(0, 191, 24);
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-top: 15px;
+  color: white;
+}
+
+.modal_body .right_login .login .snslogin .naver_kakao .naverimg {
+  width: 22px;
+  height: 22px;
+  margin-right: 5px;
+}
+
+/* 회원가입 위에 줄 */
+.line {
+  width: 344px;
+  height: 15px;
+  border-bottom: 1px solid rgb(203, 204, 211);
+  margin-bottom: 10px;
+}
+
+/* 회원가입 */
+.modal_body .right_login .login .join {
+  text-align: left;
+}
+
+.modal_body .right_login .login .join .join1 {
+  margin-bottom: 15px;
+}
+.modal_body .right_login .login .join .join2 {
+  width: 344px;
+  height: 50px;
+}
+.modal_body .right_login .login .join .join2 .join_button {
+  width: 344px;
+  height: 50px;
+  color: rgb(39, 9, 73);
+  background-color: white;
+  border: 1px solid rgb(39, 9, 73);
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color linear 0.3s;
+}
+
+.modal_body .right_login .login .join .join2 .join_button:hover {
+  background-color: aliceblue;
+}

@@ -1,0 +1,312 @@
+/* HEADER */
+
+.wrapper {
+  position: relative;
+}
+header {
+  width: 100%;
+  height: 130px;
+  background-color: rgba(255, 255, 255, 0.85);
+  position: fixed;
+  top: 0;
+  z-index: 200;
+  border-bottom: 0.5px solid rgba(63, 127, 161, 0.2);
+}
+
+header .inner {
+  height: 120px;
+}
+
+header .inner #headup {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding-top: 15px;
+}
+header .inner #headup ul {
+  display: flex;
+  width: 400px;
+  align-items: baseline;
+  justify-content: space-around;
+}
+header .inner #headup ul li {
+  font-weight: bold;
+  color: #270949;
+}
+header .inner #headup ul li #reg {
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: all 0.5s;
+}
+header .inner #headup ul li #reg:hover {
+  background-color: rgba(39, 9, 73, 0.2);
+}
+header .inner #headup ul li #login {
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: all 0.5s;
+}
+header .inner #headup ul li #login:hover {
+  background-color: rgba(39, 9, 73, 0.2);
+}
+
+header .inner #headup ul li #join {
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  color: #fff;
+  background-color: #270949;
+  transition: all 0.5s;
+}
+header .inner #headup ul li #join:hover {
+  background-color: rgba(39, 9, 73, 0.2);
+  color: #3f7fa1;
+}
+
+header .inner > #headup > #logo > a > img {
+  width: 130px;
+  height: 50.44px;
+}
+
+header .inner #headup #search {
+  position: absolute;
+  right: 400px;
+}
+
+header .inner #headup #search input::placeholder {
+  color: #999;
+}
+
+header .inner #headup #search input {
+  width: 260px;
+  padding: 10px;
+  outline: none;
+  color: rgb(70, 84, 163);
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 40px;
+  border: 1px solid #999;
+  transition: all 0.3s;
+}
+
+header .inner #headup #search i {
+  position: absolute;
+  right: 10px;
+  top: 12px;
+  cursor: pointer;
+}
+
+header .inner #headup #search input:focus {
+  width: 320px;
+  border: 1px solid #3f7fa1;
+}
+
+#headdown {
+  display: flex;
+  align-items: baseline;
+  margin-top: 5px;
+  color: #270949;
+}
+#headdown #allcategory::before {
+  content: "";
+  position: absolute;
+  background-color: #3f7fa1;
+  height: 3px; /*밑줄 굵기*/
+
+  width: 0; /*초기에 보이지 않도록*/
+  bottom: -9px; /*a태그 아래에 위치시키기*/
+  transition: 0.7s; /*애니메이션 동작 실행 시간 정의*/
+
+  /*가상 요소를 가운데로 이동시키기*/
+  left: 6.7%;
+  transform: translateX(-50%);
+}
+#headdown #allcategory:hover:before {
+  width: 157px;
+}
+
+#headdown #sub_menu #sub_item1 a::before {
+  content: "";
+  position: absolute;
+  background-color: #3f7fa1;
+  height: 3px; /*밑줄 굵기*/
+
+  width: 0; /*초기에 보이지 않도록*/
+  bottom: -9px; /*a태그 아래에 위치시키기*/
+  transition: 0.7s; /*애니메이션 동작 실행 시간 정의*/
+
+  /*가상 요소를 가운데로 이동시키기*/
+  left: 17.5%;
+  transform: translateX(-50%);
+}
+#headdown #sub_menu #sub_item1 a:hover:before {
+  width: 60px;
+}
+#headdown #sub_menu #sub_item2 a::before {
+  content: "";
+  position: absolute;
+  background-color: #3f7fa1;
+  height: 3px; /*밑줄 굵기*/
+
+  width: 0; /*초기에 보이지 않도록*/
+  bottom: -9px; /*a태그 아래에 위치시키기*/
+  transition: 0.7s; /*애니메이션 동작 실행 시간 정의*/
+
+  /*가상 요소를 가운데로 이동시키기*/
+  left: 27.5%;
+  transform: translateX(-50%);
+}
+#headdown #sub_menu #sub_item2 a:hover:before {
+  width: 100px;
+}
+#headdown #sub_menu #sub_item3 a::before {
+  content: "";
+  position: absolute;
+  background-color: #3f7fa1;
+  height: 3px; /*밑줄 굵기*/
+
+  width: 0; /*초기에 보이지 않도록*/
+  bottom: -9px; /*a태그 아래에 위치시키기*/
+  transition: 0.7s; /*애니메이션 동작 실행 시간 정의*/
+
+  /*가상 요소를 가운데로 이동시키기*/
+  left: 38.2%;
+  transform: translateX(-50%);
+}
+#headdown #sub_menu #sub_item3 a:hover:before {
+  width: 65px;
+}
+
+#headdown #allcategory {
+  display: flex;
+  align-items: center;
+  padding-top: 18px;
+  font-weight: bold;
+}
+#headdown #allcategory div {
+  font-size: 15px;
+}
+#headdown #allcategory i {
+  padding: 10px;
+}
+#headdown #allcategory i.fa-bars {
+  font-size: 20px;
+}
+#headdown #allcategory + .displayNone1 {
+  width: 160px;
+  position: relative;
+  height: 340px;
+  z-index: 200;
+  background-color: rgb(249, 247, 247);
+  border-radius: 0 0 5px 5px;
+}
+#headdown #allcategory + .displayNone1 li {
+  padding: 8px 15px;
+  padding-right: 5px;
+  font-size: 14px;
+  font-weight: 700;
+}
+#headdown #allcategory + .displayNone1 li a {
+  display: flex;
+  padding-right: 5px;
+  justify-content: space-between;
+  align-items: baseline;
+}
+#headdown #allcategory + .displayNone1 li i {
+  display: none;
+}
+#headdown #allcategory + .displayNone1 li:hover i {
+  display: inline-block;
+}
+#headdown #allcategory + .displayNone1 li:hover:nth-child(n + 2) {
+  background-color: rgba(63, 127, 161, 0.1);
+}
+#headdown #allcategory + .displayNone1 > li:first-child {
+  font-size: 12px;
+  color: #999;
+  font-weight: 700;
+  padding: 4px 15px;
+}
+#headdown #allcategory + .displayNone1 {
+  display: none;
+}
+#headdown #allcategory:hover + .displayNone1 {
+  display: block;
+}
+#headdown #allcategory + .displayNone1:hover {
+  display: block;
+}
+
+#headdown #sub_menu {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 350px;
+  margin-right: 10px;
+  padding-top: 20px;
+  font-weight: 600;
+  font-size: 15px;
+}
+#headdown #sub_menu > #sub_item1 > div {
+  display: none;
+}
+#headdown #sub_menu > #sub_item1:hover > div {
+  display: block;
+  padding: 10px;
+  position: absolute;
+  font-size: 13px;
+  font-weight: 400;
+  background-color: #fff;
+  box-shadow: 1px 1px 5px #999;
+  bottom: 45px;
+  left: 130px;
+}
+#headdown #sub_menu > #sub_item2 > div {
+  display: none;
+}
+#headdown #sub_menu > #sub_item2:hover > div {
+  display: block;
+  padding: 10px;
+  position: absolute;
+  font-size: 13px;
+  font-weight: 400;
+  background-color: #fff;
+  box-shadow: 1px 1px 5px #999;
+  bottom: 45px;
+  left: 190px;
+}
+#headdown #sub_menu > #sub_item3 > div {
+  display: none;
+}
+#headdown #sub_menu > #sub_item3:hover > div {
+  display: block;
+  padding: 10px;
+  position: absolute;
+  font-size: 13px;
+  font-weight: 400;
+  background-color: #fff;
+  box-shadow: 1px 1px 5px #999;
+  bottom: 45px;
+  left: 380px;
+}
+
+#headdown #pj {
+  position: absolute;
+  right: 20px;
+  font-size: 13px;
+  bottom: -5px;
+  padding-bottom: 5px;
+}
+#headdown #pj a::before {
+  content: "";
+  position: absolute;
+  background-color: rgb(63, 127, 161);
+  height: 2px; /*밑줄 굵기*/
+
+  width: 0; /*초기에 보이지 않도록*/
+  bottom: 0; /*a태그 아래에 위치시키기*/
+  transition: 0.5s; /*애니메이션 동작 실행 시간 정의*/
+}
+#headdown #pj a:hover:before {
+  width: 320px;
+}
