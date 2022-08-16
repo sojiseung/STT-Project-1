@@ -45,6 +45,7 @@ prefix="c"%>
       console.log("hello");
       console.log("bye");
       console.log("jeahyun");
+      console.log("hyomyeong");
     </script>
   </head>
   <body>
