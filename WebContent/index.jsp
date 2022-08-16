@@ -50,7 +50,7 @@ prefix="c"%>
   </head>
   <body>
     <c:choose>
-      <c:when test="${loginUser != null}">
+      <c:when test="${loginUser != null}">	
         <%@ include file="/fix/loginheader.jsp" %>
       </c:when>
       <c:otherwise> <%@ include file="/fix/header.jsp" %> </c:otherwise>
@@ -61,7 +61,7 @@ prefix="c"%>
         <div id="search2">
           <h1>
             프리랜서 마켓 No.1 STT에서<br />
-            원하는 전문가를 찾아보세요!
+            원하는 전문가를 찾아보세요! !
           </h1>
           <form action="javascript:void(0)" method="post" name="searchForm">
             <div id="typingAnimation">
@@ -365,7 +365,7 @@ prefix="c"%>
                 <img src="${cp}/img/ranking-05.png" alt="" class="rank" />
                 <div class="company">
                   <p class="money">451,439,000원</p>
-                  <p class="company_name">꿀로고공장장 / Hyomyeong/ Hyomyeong</p>
+                  <p class="company_name">꿀로고공장장 / Hyomyeong/ Hyomyeong/ test /test///굿굿</p>
                 </div>
                 <img src="${cp}/img/honeylogo.png" alt="" class="c_logo" />
               </a>
