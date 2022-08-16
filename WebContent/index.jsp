@@ -62,6 +62,7 @@ prefix="c"%>
             프리랜서 마켓 No.1 STT에서<br />
             원하는 전문가를 찾아보세요!
           </h1>
+          <p>안녕하세요</p>
           <form action="javascript:void(0)" method="post" name="searchForm">
             <div id="typingAnimation">
               <span id="gocoder_typing"></span>
