@@ -17,4 +17,12 @@
 	<servlet-name>UserFrontController</servlet-name>
 	<url-pattern>*.us</url-pattern>
 </servlet-mapping>
+<servlet>
+	<servlet-name>AdminFrontController</servlet-name>
+	<servlet-class>com.sttproject.admin.AdminFrontController</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>AdminFrontController</servlet-name>
+	<url-pattern>*.ad</url-pattern>
+</servlet-mapping>
 </web-app>

@@ -2,7 +2,6 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:set var="cp" value="${pageContext.request.contextPath }"/>
-<%@ page errorPage = "/app/error/errorpage.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -46,12 +45,12 @@
                             <p>아이디 찾기</p>
                         </div>
                         <div class="id_form">
-                            <form action="/user/findidok.us">
+                            <form action="${cp}/admin/findidok.ad">
                                 <div class="username">
-                                    <input type="text" class="input_id" placeholder="본명">
+                                    <input type="text" class="input_id" name="username" placeholder="본명">
                                 </div>
                                 <div class="username">
-                                    <input type="tel" class="input_id" placeholder="휴대폰 번호">
+                                    <input type="tel" class="input_id" name="userphone" placeholder="휴대폰 번호">
                                 </div>
                                 <div class="id_text">
                                     <p>본인인증 받으신 정보를 입력해 주세요.<br> 휴대폰 번호로 아이디를 보내드립니다.</p>
@@ -67,9 +66,9 @@
                             <p>비밀번호 찾기</p>
                         </div>
                         <div class="pw_form">
-                            <form action="">
+                            <form action="${cp}/admin/findidok.ad">
                                 <div class="username">
-                                    <input type="email" class="input_pw" placeholder="이메일">
+                                    <input type="email" class="input_pw" name="userid" placeholder="이메일">
                                 </div>
                                 <div class="pw_text">
                                     <p>가입 시 등록하신 이메일 주소를 입력해 주세요. <br>비밀번호 재설정 링크를 보내드립니다.</p>

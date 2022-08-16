@@ -22,7 +22,7 @@
     />
     <link rel="stylesheet" href="${cp}/css/modifypw.css" />
     <link rel="stylesheet" href="${cp}/css/common.css" />
-    <script defer src="${cp}/js/modifypw.js"></script>
+  <%--   <script defer src="${cp}/js/modifypw.js"></script> --%>
 </head>
 <body>
     <div class="container">
@@ -32,10 +32,10 @@
       </div>
       <div class="center">
         <div class="center_menu">
-          <h3 class="check_wan">비밀번호 변경!</h1>
+          <h3 class="check_wan">인증번호 확인</h1>
           <form
             name="modifyPwForm"
-            action=""
+            action="${cp}/admin/smscheckok.ad"
             method="post"
             onsubmit="return sendit()"
           >
@@ -44,26 +44,17 @@
                 <input
                   type="password"
                   class="input_login"
-                  name="userpw"
+                  name="smscheck"
                   id="userpw"
-                  placeholder="새 비밀번호"
+                  placeholder="인증번호입력"
                 />
               </div>
-              <div class="input_wrapper" id="userpw2">
-                <input
-                  type="password"
-                  class="input_login"
-                  name="userpw_re"
-                  id="userpw_re"
-                  placeholder="비밀번호 확인"
-                  onblur="pwcheck()"
-                />
-              </div>
+             
             </div>
             <div class="join_button">
               <input
                 type="submit"
-                value="비밀번호 변경 완료!"
+                value="확인"
                 class="join_btn"
               />
             </div>
