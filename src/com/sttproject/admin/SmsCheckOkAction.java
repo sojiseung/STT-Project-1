@@ -12,21 +12,20 @@ public class SmsCheckOkAction implements Action {
 	public ActionTo execute(HttpServletRequest req, HttpServletResponse resp) throws Exception {
 		
 		String smscheck = req.getParameter("smscheck");
-		System.out.println(smscheck);
-		System.out.println(smscheck);
 		String result = (String) req.getSession().getAttribute("result");
-		System.out.println(result);
 		String userid = (String) req.getSession().getAttribute("userid");
-		System.out.println(userid);
 		
 		
-		
+		ActionTo transfer = new ActionTo();
+		transfer.setRedirect(false);
 		if(result.equals(smscheck)) {
-			System.out.println(userid + result);
+			transfer.setPath("/app/user/findview2.jsp");
+		} else {
+			transfer.setPath("/app/user/findinfo.jsp");
 		}
 		
 		
 		
-		return null;
+		return transfer;
 	}
 }

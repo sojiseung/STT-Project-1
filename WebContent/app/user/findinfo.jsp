@@ -66,7 +66,7 @@
                             <p>비밀번호 찾기</p>
                         </div>
                         <div class="pw_form">
-                            <form action="${cp}/admin/findidok.ad">
+                            <form action="${cp}/admin/findpwok.ad">
                                 <div class="username">
                                     <input type="email" class="input_pw" name="userid" placeholder="이메일">
                                 </div>
