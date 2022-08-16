@@ -8,7 +8,7 @@
 		values(#{userid},#{userpw},#{username},#{usergender},#{userphone})
 	</insert>
 	<select id="userlogin" parameterType="hashmap" resultType="_int">
-		select count(*) from stt_user where userid=#{userid} and binary(userpw)=#{userpw}
+		select count(*) from stt_user where userid=#{userid} and userpw=#{userpw}
 	</select>
 	<select id="checkid" parameterType="string" resultType="_int">
 		select count(*) from stt_user where userid=#{userid}
