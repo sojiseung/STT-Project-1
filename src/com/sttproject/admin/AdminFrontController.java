@@ -49,16 +49,19 @@ public class AdminFrontController extends HttpServlet {
 				e.printStackTrace();
 			}
 			break;
-			
-		case "/admin/findid.ad":
+
+		case "/admin/findpwok.ad" :
 			try {
-				transfer = new ActionTo();
-				transfer.setRedirect(false);
-				transfer.setPath("/app/user/findview.jsp");
-			} catch (Exception e) {
-				e.printStackTrace();
+				transfer = new MailSendOkAction().execute(req, resp);
 			}
-		
+			catch(Exception e) {
+				System.out.println("/admin/findpwok.ad" + e);
+			}
+			break;
+
+			
+			
+			
 		}
 		if (transfer != null) {
 			if (transfer.isRedirect()) {

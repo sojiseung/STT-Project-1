@@ -30,18 +30,21 @@
 		</div>
 		<div class="center">
 			<div class="center_menu">
-				<h3 class="check_wan">인증번호 확인</h3>
-				<form name="modifyIdForm" action="${cp}/admin/smscheckok.ad"
+				<h3 class="check_wan">회원님의 아이디 입니다.</h3>
+				<form name="modifyPwForm" action="${cp}/admin/mailcheckok.ad"
 					method="post" onsubmit="return sendit()">
 					<div class="pw">
 						<div class="input_wrapper" id="userpw1">
-							<input type="text" class="input_login" name="smscheck"
-								id="userpw" placeholder="인증번호입력" />
+							<p>${userid}</p>
+							<%
+								request.getSession().removeAttribute("userid");
+							%>
+							<p>${userid}abcd</p>
 						</div>
 
 					</div>
 					<div class="join_button">
-						<input type="submit" value="확인" class="join_btn" />
+						<input type="submit" value="로그인 하러 가기" class="join_btn" />
 					</div>
 				</form>
 			</div>

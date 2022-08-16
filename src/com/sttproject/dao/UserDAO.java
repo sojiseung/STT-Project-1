@@ -37,6 +37,9 @@ public class UserDAO {
 		
 		return (Integer)sqlsession.selectOne("User.checkid", userid) == 0;
 	}
+
+
+
 	
 	
 
