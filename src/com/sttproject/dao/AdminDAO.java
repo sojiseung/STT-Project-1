@@ -21,8 +21,11 @@ public class AdminDAO {
 		datas.put("userphone", userphone);
 		return (String)sqlsession.selectOne("Admin.findid",datas);
 	}
-	
-	
+
+	public Object findpw(String userid) {
+		return null;
+	}
+
 	
 
 }

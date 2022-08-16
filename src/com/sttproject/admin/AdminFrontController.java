@@ -48,8 +48,24 @@ public class AdminFrontController extends HttpServlet {
 				e.printStackTrace();
 			}
 			break;
+<<<<<<< HEAD
 			
 		
+=======
+
+		case "/admin/findpwok.ad" :
+			try {
+				transfer = new MailSendOkAction().execute(req, resp);
+			}
+			catch(Exception e) {
+				System.out.println("/admin/findpwok.ad" + e);
+			}
+			break;
+
+			
+			
+			
+>>>>>>> 482e9ae96a4f76455b15a1c0a3a69250f0fbe9af
 		}
 		if (transfer != null) {
 			if (transfer.isRedirect()) {
