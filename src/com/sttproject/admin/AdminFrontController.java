@@ -45,19 +45,10 @@ public class AdminFrontController extends HttpServlet {
 			try {
 				transfer =  new SmsCheckOkAction().execute(req, resp);
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			break;
 			
-		case "/admin/findid.ad":
-			try {
-				transfer = new ActionTo();
-				transfer.setRedirect(false);
-				transfer.setPath("/app/user/findview.jsp");
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
 		
 		}
 		if (transfer != null) {

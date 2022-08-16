@@ -23,7 +23,7 @@
 <%--   <script defer src="${cp}/js/modifypw.js"></script> --%>
 </head>
 <body>
-<c:set></c:set>
+<c:set var="userid" value="${userid}"/>
 	<div class="container">
 		<img src="${cp}/img/logo.png" alt="">
 		<div class="header">
@@ -31,13 +31,12 @@
 		</div>
 		<div class="center">
 			<div class="center_menu">
-				<h3 class="check_wan">이메일 확인</h3>
+				<h3 class="check_wan">인증번호 확인</h3>
 				<form name="modifyPwForm" action="${cp}/admin/smscheckok.ad"
 					method="post" onsubmit="return sendit()">
 					<div class="pw">
 						<div class="input_wrapper" id="userpw1">
-							<input type="text" class="input_login" name="smscheck"
-								id="userpw" placeholder="인증번호입력" />
+							<p>${userid}</p>
 						</div>
 
 					</div>
