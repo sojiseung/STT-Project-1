@@ -28,6 +28,7 @@
     <link rel="stylesheet" href="${cp}/css/header.css">
     <link rel="stylesheet" href="${cp}/css/loginview.css" />
     <!-- JS -->
+    <script defer src="${cp}/js/main.js"></script>
     <script type="text/javascript" src="http://developers.kakao.com/sdk/js/kakao.js"></script>
 	<script src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.2.js" charset="utf-8"></script>
 </head>
@@ -39,7 +40,7 @@
           <div class="right_login">
               <button class="modal_close">×</button>
               <div class="login">
-                  <form action="/user/userloginok.us">
+                  <form action="${cp}/user/userloginok.us">
                       <h2>로그인</h2>
                       <div class="input_login">
                           <div class="input_login2">
@@ -59,7 +60,7 @@
                           </p>
                           <label for="login_keep"><span>로그인 유지</span></label>
                           <p>
-                          <a href="${cp}/app/user/findid.jsp" class="idpwlook">아이디•비밀번호 찾기</a></p>
+                          <a href="${cp}/app/user/findinfo.jsp" class="idpwlook">아이디•비밀번호 찾기</a></p>
                       </div>
                   </form>
                     <div class="snslogin">
@@ -224,92 +225,4 @@
         </div>
       </header>
 </body>
-<script>
-const modal = document.querySelector(".modal");
-const btnOpenPopup = document.querySelector(".btn-open-popup");
-const body = document.querySelector("body");
-
-btnOpenPopup.addEventListener("click", function openpop() {
-  modal.style.display = "block";
-  modal.style.zIndex = "999";
-  modal.style.position = "fixed";
-});
-
-const modalclose = document.querySelector(".modal_close");
-
-modalclose.addEventListener("click", () => {
-  modal.style.display = "none";
-});
-
-// 모달 on
-body.style.overflow = "hidden";
-
-// 모달 off
-body.style.overflow = "auto";
-
-Kakao.init("8d4eab699192415f5b2eb69fb710606d");
-function kakaoLogin(){
-	Kakao.Auth.loginForm({
-		scope:"profile_nickname,account_email,gender,age_range,birthday",
-		success:function(authObj){
-			console.log(authObj);
-			Kakao.API.request({
-				url:"/v2/user/me",
-				success:function(res){
-					console.log(res);
-					let email = res.kakao_account.email;
-					location.href="/KakaLoginOK/"+email;
-				}
-			});
-		}
-	});
-}
-
-var naverLogin = new naver.LoginWithNaverId(
-        {
-            clientId: "eydQiCAA6MUq8olbhUee", //내 애플리케이션 정보에 cliendId를 입력해줍니다.
-            callbackUrl: "http://127.0.0.1:5500", // 내 애플리케이션 API설정의 Callback URL 을 입력해줍니다.
-            isPopup: false,
-            callbackHandle: true
-        }
-    );	
-
-naverLogin.init();
-
-window.addEventListener('load', function () {
-    naverLogin.getLoginStatus(function (status) {
-        if (status) {
-            var email = naverLogin.user.getEmail(); // 필수로 설정할것을 받아와 아래처럼 조건문을 줍니다.
-            
-            console.log(naverLogin.user); 
-            
-            if( email == undefined || email == null) {
-                alert("이메일은 필수정보입니다. 정보제공을 동의해주세요.");
-                naverLogin.reprompt();
-                return;
-            }
-        } else {
-            console.log("callback 처리에 실패하였습니다.");
-        }
-    });
-});
-
-
-var testPopUp;
-function openPopUp() {
-    testPopUp= window.open("https://nid.naver.com/nidlogin.logout", "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,width=1,height=1");
-}
-function closePopUp(){
-    testPopUp.close();
-}
-
-function naverLogout() {
-    openPopUp();
-    setTimeout(function() {
-        closePopUp();
-        }, 1000);
-    
-    
-}
-</script>
 </html>
