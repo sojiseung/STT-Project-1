@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>비밀번호 변경 STT</title>
+<title>아이디 확인 STT</title>
 <!-- 파비콘 -->
 <link rel="icon" href="${cp}/img/favicon.ico" />
 <!-- 글꼴 -->
@@ -23,10 +23,7 @@
 <%--   <script defer src="${cp}/js/modifypw.js"></script> --%>
 </head>
 <body>
-<<<<<<< HEAD
-<c:set var="userid" value="${userid}"/>
-=======
->>>>>>> 482e9ae96a4f76455b15a1c0a3a69250f0fbe9af
+	<c:set var="userid" value="${userid}" />
 	<div class="container">
 		<img src="${cp}/img/logo.png" alt="">
 		<div class="header">
@@ -34,44 +31,28 @@
 		</div>
 		<div class="center">
 			<div class="center_menu">
-<<<<<<< HEAD
-				<h3 class="check_wan">인증번호 확인</h3>
-				<form name="modifyPwForm" action="${cp}/admin/smscheckok.ad"
-=======
 				<h3 class="check_wan">회원님의 아이디 입니다.</h3>
-				<form name="modifyPwForm" action="${cp}/admin/mailcheckok.ad"
->>>>>>> 482e9ae96a4f76455b15a1c0a3a69250f0fbe9af
+				<form name="modifyPwForm" action="${cp}/app/user/findinfo.jsp"
 					method="post" onsubmit="return sendit()">
 					<div class="pw">
 						<div class="input_wrapper" id="userpw1">
-							<p>${userid}</p>
-<<<<<<< HEAD
-=======
+							<p style="text-align : center">${userid}</p> <!-- 이부분 가운데 정렬 및 폰트 사이즈 키워주면 좋을것 같아요~! -->
+							<c:remove var="userid"/>
 							<%
 								request.getSession().removeAttribute("userid");
 							%>
-							<p>${userid}abcd</p>
->>>>>>> 482e9ae96a4f76455b15a1c0a3a69250f0fbe9af
 						</div>
 
 					</div>
 					<div class="join_button">
-<<<<<<< HEAD
 						<input type="submit" value="확인" class="join_btn" />
 					</div>
-			</form>
-			</div>
-		</div>
-	</div>
-=======
-						<input type="submit" value="로그인 하러 가기" class="join_btn" />
-					</div>
+					<input type="submit" value="로그인 하러 가기" class="join_btn" />
 				</form>
 			</div>
 		</div>
 	</div>
 
->>>>>>> 482e9ae96a4f76455b15a1c0a3a69250f0fbe9af
 	<script>
       function All(selectAll) {
         const checkboxes = document.getElementsByName("chk");
