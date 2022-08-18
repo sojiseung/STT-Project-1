@@ -31,11 +31,11 @@
 		<div class="center">
 			<div class="center_menu">
 				<h3 class="check_wan">회원님의 아이디 입니다.</h3>
-				<form name="modifyPwForm" action="${cp}/admin/mailcheckok.ad"
+				<form name="modifyPwForm" action="${cp}/app/user/findinfo.jsp"
 					method="post" onsubmit="return sendit()">
 					<div class="pw">
 						<div class="input_wrapper" id="userpw1">
-							<p>${userid}</p>
+							<p >${userid}</p>
 							<%
 								request.getSession().removeAttribute("userid");
 							%>
