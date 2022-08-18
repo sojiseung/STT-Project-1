@@ -13,18 +13,18 @@ public class SmsCheckOkAction implements Action {
 		
 		String smscheck = req.getParameter("smscheck");
 		String result = (String) req.getSession().getAttribute("result");
-		String userid = (String) req.getSession().getAttribute("userid");
-		
 		
 		ActionTo transfer = new ActionTo();
 		transfer.setRedirect(false);
+		
+		transfer.setRedirect(false);
 		if(result.equals(smscheck)) {
 			transfer.setPath("/app/user/findview2.jsp");
+			
 		} else {
+			
 			transfer.setPath("/app/user/findinfo.jsp");
-		}
-		
-		
+		} 	
 		
 		return transfer;
 	}

@@ -22,9 +22,11 @@ public class AdminDAO {
 		return (String)sqlsession.selectOne("Admin.findid",datas);
 	}
 
-	public Object findpw(String userid) {
-		return null;
+	public boolean findpw(String userid) {
+		
+		return (Integer)sqlsession.selectOne("Admin.findpw",userid) == 1;
 	}
+
 
 	
 
