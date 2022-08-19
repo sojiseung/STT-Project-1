@@ -26,11 +26,11 @@
 	<url-pattern>*.ad</url-pattern>
 </servlet-mapping>
 <servlet>
-	<servlet-name>OrderFrontController</servlet-name>
-	<servlet-class>com.sttproject.service.OrderFrontController</servlet-class>
+	<servlet-name>ServiceFrontController</servlet-name>
+	<servlet-class>com.sttproject.service.ServiceFrontController</servlet-class>
 </servlet>
 <servlet-mapping>
-	<servlet-name>OrderFrontController</servlet-name>
-	<url-pattern>*.or</url-pattern>
+	<servlet-name>ServiceFrontController</servlet-name>
+	<url-pattern>*.sv</url-pattern>
 </servlet-mapping>
 </web-app>

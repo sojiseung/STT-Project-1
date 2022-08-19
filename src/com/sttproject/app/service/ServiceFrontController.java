@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.sttproject.action.ActionTo;
 
-public class OrderFrontController extends HttpServlet {
+public class ServiceFrontController extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 
@@ -34,9 +34,9 @@ public class OrderFrontController extends HttpServlet {
 
 		switch (command) {
 
-		case "/order/serviceorder.or":
+		case "/service/serviceregisterok.sv":
 			try {
-				transfer = new ServiceOrderOkAction().execute(req,resp);
+				transfer = new ServiceRegisterAction().execute(req,resp);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

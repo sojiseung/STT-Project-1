@@ -1,6 +1,6 @@
 package com.sttproject.dto;
 
-public class OrderDTO {
+public class ServiceDTO {
 	private int serviceidx;
 	private int expertidx;
 	private int useridx;
