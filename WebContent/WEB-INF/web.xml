@@ -25,4 +25,12 @@
 	<servlet-name>AdminFrontController</servlet-name>
 	<url-pattern>*.ad</url-pattern>
 </servlet-mapping>
+<servlet>
+	<servlet-name>OrderFrontController</servlet-name>
+	<servlet-class>com.sttproject.service.OrderFrontController</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>OrderFrontController</servlet-name>
+	<url-pattern>*.or</url-pattern>
+</servlet-mapping>
 </web-app>
