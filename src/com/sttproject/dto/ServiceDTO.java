@@ -6,10 +6,11 @@ public class ServiceDTO {
 	private int useridx;
 	private String servicetitle;
 	private int servicecategory;
+	private int servicetype;
 	private int serviceteamscale;
 	private String serviceresident;
 	private int serviceprice;
-	private int serivceperiod;
+	private	String serivceperiod;
 	private String serviceinfo;
 	
 
@@ -44,6 +45,12 @@ public class ServiceDTO {
 	public void setServicecategory(int servicecategory) {
 		this.servicecategory = servicecategory;
 	}
+	public int getServicetype() {
+		return servicetype;
+	}
+	public void setServicetype(int servicetype) {
+		this.servicetype = servicetype;
+	}
 	
 	public int getServiceteamscale() {
 		return serviceteamscale;
@@ -63,10 +70,10 @@ public class ServiceDTO {
 	public void setServiceprice(int serviceprice) {
 		this.serviceprice = serviceprice;
 	}
-	public int getSerivceperiod() {
+	public String getSerivceperiod() {
 		return serivceperiod;
 	}
-	public void setSerivceperiod(int serivceperiod) {
+	public void setSerivceperiod(String serivceperiod) {
 		this.serivceperiod = serivceperiod;
 	}
 	public String getServiceinfo() {

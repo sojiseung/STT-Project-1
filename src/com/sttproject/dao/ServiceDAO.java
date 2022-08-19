@@ -13,10 +13,10 @@ public class ServiceDAO {
 		sqlsession = SqlMapConfig.getFactory().openSession(true);
 	}
 
-	public boolean serviceorder(ServiceDTO order) {
-		return sqlsession.insert("Order.service", order) ==1 ;
+
+	public boolean serviceregister(ServiceDTO register) {
 		
-	
+		return sqlsession.insert("Service.register",register)==1;
 	}
 	
 	
