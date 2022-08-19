@@ -22,7 +22,7 @@
 <body>
     <div id="header"></div>
         <p id="service_up">내 서비스 등록</p>
-        <form action="">
+        <form action="/service/serviceregisterok.sv">
             <div class="wrap">
                 <p>서비스 기본 정보</p>
                 <div clsss="info">

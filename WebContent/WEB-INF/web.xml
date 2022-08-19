@@ -25,4 +25,12 @@
 	<servlet-name>AdminFrontController</servlet-name>
 	<url-pattern>*.ad</url-pattern>
 </servlet-mapping>
+<servlet>
+	<servlet-name>ServiceFrontController</servlet-name>
+	<servlet-class>com.sttproject.service.ServiceFrontController</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>ServiceFrontController</servlet-name>
+	<url-pattern>*.sv</url-pattern>
+</servlet-mapping>
 </web-app>
