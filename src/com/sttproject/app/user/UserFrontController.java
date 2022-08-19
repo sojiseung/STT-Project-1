@@ -63,6 +63,21 @@ public class UserFrontController extends HttpServlet{
 				System.out.println("/user/userloginok.us : "+e);
 			}
 			break;
+		case "/user/kakaologinok.us":
+			try {
+				transfer = new KakaoLoginOkAction().execute(req,resp);
+			} catch (Exception e) {
+				System.out.println("/user/kakaologinok.us : "+e);
+			}
+			break;
+		case "/user/naverloginok.us":
+			try {
+				transfer = new NaverLoginOkAction().execute(req,resp);
+			} catch (Exception e) {
+				System.out.println("/user/naverloginok.us : "+e);
+			}
+			break;
+			
 			
 		case "/user/checkidok.us":
 			try {
