@@ -43,7 +43,7 @@
 					<div class="join_button">
 						<input type="submit" value="확인" class="join_btn" />
 					</div>
-				</form>
+			</form>
 			</div>
 		</div>
 	</div>

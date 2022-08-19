@@ -43,25 +43,20 @@ public class AdminFrontController extends HttpServlet {
 			break;
 		case "/admin/smscheckok.ad":
 			try {
-				transfer =  new SmsCheckOkAction().execute(req, resp);
+				transfer = new SmsCheckOkAction().execute(req, resp);
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			break;
 
-		case "/admin/findpwok.ad" :
+		case "/admin/findpwok.ad":
 			try {
-				transfer = new MailSendOkAction().execute(req, resp);
-			}
-			catch(Exception e) {
+				new MailSendOkAction().execute(req, resp);
+			} catch (Exception e) {
 				System.out.println("/admin/findpwok.ad" + e);
 			}
 			break;
 
-			
-			
-			
 		}
 		if (transfer != null) {
 			if (transfer.isRedirect()) {

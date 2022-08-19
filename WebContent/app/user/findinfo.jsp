@@ -28,7 +28,7 @@
         <div class="header">
             <div class="header_title">
                 <div class="img_wrapper">
-                    <a href="">
+                    <a href="${cp}">
                         <img src="${cp}/img/setthetable.png" alt="">
                     </a>
                 </div>
