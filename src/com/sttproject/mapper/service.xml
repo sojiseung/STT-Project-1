@@ -4,6 +4,7 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="Service">
 	<insert id ="register" parameterType="servicedto">
-		insert into stt_service() 
+		insert into stt_service(servicetitle, servicecategory, servicetype, serviceteamscale, serviceresident, serviceprice, serviceperiod, serviceinfo)
+		values(${servicetitle}, ${servicecategory}, ${servicetype}, ${serviceteamscale}, ${serviceresident}, ${serviceprice}, ${serviceperiod}, ${serviceinfo} ) 
 	</insert>
 </mapper>
