@@ -27,8 +27,6 @@
     <link rel="stylesheet" href="${cp}/css/common.css" />
     <link rel="stylesheet" href="${cp}/css/header.css">
     <link rel="stylesheet" href="${cp}/css/loginview.css" />
-    <!-- JS -->
-    <script defer src="${cp}/js/"></script>
 </head>
 <body>
     <!-- LOGINMODAL -->
@@ -38,7 +36,7 @@
           <div class="right_login">
               <button class="modal_close">×</button>
               <div class="login">
-                  <form action="${cp}/user/userloginok.us">
+                  <form action="${cp}/user/userloginok.us" method="post">
                       <h2>로그인</h2>
                       <div class="input_login">
                           <div class="input_login2">
@@ -130,7 +128,7 @@
               </li>
               <li>
                 <div id="login">
-                  <a href="javascript:openpop()" class="btn-open-popup">로그인</a>
+                  <a href="javascript:btnOpenPopup" class="btn-open-popup">로그인</a>
                 </div>
               </li>
               <li>
@@ -242,36 +240,11 @@
   body.style.overflow = "hidden";
   // 모달 off
   body.style.overflow = "auto";
+
   
-  Kakao.init("8d4eab699192415f5b2eb69fb710606d");
-  function kakaoLogin(){
-    Kakao.Auth.loginForm({
-      scope:"profile_nickname,account_email,gender,age_range,birthday",
-      success:function(authObj){
-        console.log(authObj);
-        Kakao.API.request({
-          url:"/v2/user/me",
-          success:function(res){
-            console.log("안녕");
-            let email = res.kakao_account.email;
-        	  console.log(res);
-        	  console.log(email);
-        	  location.href="${cp}/user/kakaologinok.us?email="+email;
-          }
-        });
-      }
-    });
-  }
-  Kakao.API.request({
-	  url: '/v2/user/me',
-	  success: function(res) {
-	    console.log(res)
-	  },
-	  fail: function(error) {
-	    console.error(error)
-	  }
-	})
   
+  
+  var flag = true;
   var naverLogin = new naver.LoginWithNaverId(
           {
               clientId: "J7nHmQY4TMbVjEOatJKm", //내 애플리케이션 정보에 cliendId를 입력해줍니다.
@@ -280,13 +253,16 @@
               callbackHandle: true
           }
       );	
-  var flag = true;
+
+  
   naverLogin.init();
+  
   window.addEventListener('load', function () {
       naverLogin.getLoginStatus(function (status) {
           if (status) {
-              var email = naverLogin.user.getEmail(); // 필수로 설정할것을 받아와 아래처럼 조건문을 줍니다.
-              if( email == undefined || email == null) {
+              var naveremail = naverLogin.user.getEmail(); // 필수로 설정할것을 받아와 아래처럼 조건문을 줍니다.
+              
+              if( naveremail == undefined || naveremail == null) {
                   alert("이메일은 필수정보입니다. 정보제공을 동의해주세요.");
                   naverLogin.reprompt();
                   return;
@@ -294,23 +270,56 @@
           } else {
               console.log("callback 처리에 실패하였습니다.");
           }
+          
           if(flag){
-         		//location.href="${cp}/user/naverloginok.us?email="+email;
 			flag = false;
+         	//location.href="${cp}/user/naverloginok.us?email="+naveremail;
           }
       });
   });
-  var testPopUp;
+  /*  var testPopUp;
   function openPopUp() {
       testPopUp= window.open("https://nid.naver.com/nidlogin.logout", "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,width=1,height=1");
   }
   function closePopUp(){
       testPopUp.close();
   }
+
   function naverLogout() {
       openPopUp();
-      sessionStorage.removeItem("loginUser");
-      
-  }
+      setTimeout(function() {
+          closePopUp();
+          }, 1000);
+  }*/
+  
+  Kakao.init("8d4eab699192415f5b2eb69fb710606d");
+  function kakaoLogin(){
+    Kakao.Auth.loginForm({
+      scope:"profile_nickname,account_email,gender,age_range,birthday	",
+      success:function(authObj){
+        console.log(authObj);
+        Kakao.API.request({
+          url:"/v2/user/me",
+          success:function(res){
+          	  let email = res.kakao_account.email;
+        	  console.log(email);
+        	  location.href="${cp}/user/kakaologinok.us?email="+email;
+          }
+        });
+      }
+    });
+  };
+  
+ /* Kakao.API.request({
+	  url: '/v2/user/me',
+	  success: function(res) {
+	    console.log(res)
+	  },
+	  fail: function(error) {
+	    console.error(error)
+	  }
+	});
+*/
+  
   </script>
 </html>

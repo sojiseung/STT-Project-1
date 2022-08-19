@@ -71,19 +71,19 @@
   			Kakao.API.request({
   				url:"/v2/user/me",
   				success:function(res){
-  					console.log(res);
   					let email = res.kakao_account.email;
-  					location.href="/KakaLoginOK/"+email;
+  					console.log(res);
+  					location.href="${cp}/user/kakaologinok.us?email="+email;
   				}
   			});
   		}
   	});
   }
-
+	
   var naverLogin = new naver.LoginWithNaverId(
           {
               clientId: "eydQiCAA6MUq8olbhUee", //내 애플리케이션 정보에 cliendId를 입력해줍니다.
-              callbackUrl: "http://127.0.0.1:5500", // 내 애플리케이션 API설정의 Callback URL 을 입력해줍니다.
+              callbackUrl: "http://localhost:9090/sttproject/index.jsp", // 내 애플리케이션 API설정의 Callback URL 을 입력해줍니다.
               isPopup: false,
               callbackHandle: true
           }
@@ -123,8 +123,6 @@
       setTimeout(function() {
           closePopUp();
           }, 1000);
-      
-      
   }
 
   </script>
