@@ -31,6 +31,6 @@
 </servlet>
 <servlet-mapping>
 	<servlet-name>ServiceFrontController</servlet-name>
-	<url-pattern>*.sv</url-pattern>
+	<url-pattern>*.se</url-pattern>
 </servlet-mapping>
 </web-app>

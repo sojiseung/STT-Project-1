@@ -1,5 +1,7 @@
 package com.sttproject.app.service;
 
+import java.io.PrintWriter;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -29,8 +31,14 @@ public class ServiceRegisterAction implements Action {
 		
 		ActionTo transfer = new ActionTo();
 		transfer.setRedirect(true);
+		PrintWriter out = resp.getWriter();
 		if(sdao.serviceregister(register)){
-			transfer.setPath("");
+			transfer.setPath(req.getContextPath()+"/app/service/servicelist.jsp");
+		}else {
+			out.print("<script>");
+			out.print("alter('다시 시도해주세요!';");
+			out.print("<script>");
+			transfer.setPath(req.getContextPath()+"/app/service/service_register.jsp");
 		}
 		return transfer;
 	}
