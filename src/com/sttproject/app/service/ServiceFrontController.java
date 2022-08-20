@@ -34,14 +34,19 @@ public class ServiceFrontController extends HttpServlet {
 
 		switch (command) {
 
-		case "/service/serviceregisterok.sv":
+		case "/service/serviceregisterok.se":
 			try {
 				transfer = new ServiceRegisterAction().execute(req,resp);
 			} catch (Exception e) {
-				e.printStackTrace();
+				System.out.println("service/servielist.se");
 			}
 			break;
-
+		case "/service/servicelist.se" :
+			try {
+				transfer = new ServiceListAction().execute(req,resp);
+			}catch (Exception e) {
+				System.out.println("service/servicelist.se");
+			}
 
 		}
 		if (transfer != null) {

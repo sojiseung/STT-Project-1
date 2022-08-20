@@ -149,7 +149,7 @@
               </li>
             </ul>
           </div>
-          <form action="">
+          <form action="${cp }/service/servicelist.se">
             <div id="service_list">
               <div id="pj_search">
                 <div id="project_search">
