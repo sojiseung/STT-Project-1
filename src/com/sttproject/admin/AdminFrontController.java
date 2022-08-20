@@ -56,6 +56,14 @@ public class AdminFrontController extends HttpServlet {
 				System.out.println("/admin/findpwok.ad" + e);
 			}
 			break;
+			
+		case "/admin/modifypwok.ad" :
+			try {
+				new ModifyPwOkAction().execute(req, resp);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			break;
 
 		}
 		if (transfer != null) {
