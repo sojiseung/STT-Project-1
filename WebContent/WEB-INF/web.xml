@@ -27,7 +27,7 @@
 </servlet-mapping>
 <servlet>
 	<servlet-name>ServiceFrontController</servlet-name>
-	<servlet-class>com.sttproject.service.ServiceFrontController</servlet-class>
+	<servlet-class>com.sttproject.app.service.ServiceFrontController</servlet-class>
 </servlet>
 <servlet-mapping>
 	<servlet-name>ServiceFrontController</servlet-name>
