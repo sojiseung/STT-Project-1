@@ -11,10 +11,14 @@
 
   	<typeAlias type="com.sttproject.dto.ServiceDTO" alias="servicedto"/>  
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
   	<typeAlias type="com.sttproject.dto.FileDTO" alias="filedto"/>  
 >>>>>>> 8c1a407 (sh)
+=======
+  	<typeAlias type="com.sttproject.dto.FileDTO" alias="filedto"/>  
+>>>>>>> work
   </typeAliases>
   <environments default="development">
     <environment id="development">
