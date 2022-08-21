@@ -5,7 +5,6 @@ public class ServiceDTO {
 	private int expertidx;
 	private int useridx;
 	private String servicetitle;
-
 	private int serviceprice;
 	private int serviceperiod;
 	private String serviceinfo;
@@ -13,12 +12,7 @@ public class ServiceDTO {
 	private int servicetype;
 	private int serviceteamscale;
 	private String serviceresident;
-	private int serviceprice;
 	private	String serivceperiod;
-	private String serviceinfo;
-	
-
-
 	public int getServiceidx() {
 		return serviceidx;
 	}
@@ -43,8 +37,24 @@ public class ServiceDTO {
 	public void setServicetitle(String servicetitle) {
 		this.servicetitle = servicetitle;
 	}
-
-	
+	public int getServiceprice() {
+		return serviceprice;
+	}
+	public void setServiceprice(int serviceprice) {
+		this.serviceprice = serviceprice;
+	}
+	public int getServiceperiod() {
+		return serviceperiod;
+	}
+	public void setServiceperiod(int serviceperiod) {
+		this.serviceperiod = serviceperiod;
+	}
+	public String getServiceinfo() {
+		return serviceinfo;
+	}
+	public void setServiceinfo(String serviceinfo) {
+		this.serviceinfo = serviceinfo;
+	}
 	public int getServicecategory() {
 		return servicecategory;
 	}
@@ -57,7 +67,6 @@ public class ServiceDTO {
 	public void setServicetype(int servicetype) {
 		this.servicetype = servicetype;
 	}
-	
 	public int getServiceteamscale() {
 		return serviceteamscale;
 	}
@@ -70,36 +79,16 @@ public class ServiceDTO {
 	public void setServiceresident(String serviceresident) {
 		this.serviceresident = serviceresident;
 	}
-
-	public int getServiceprice() {
-		return serviceprice;
-	}
-	public void setServiceprice(int serviceprice) {
-		this.serviceprice = serviceprice;
-	}
-
-	public int getServiceperiod() {
-		return serviceperiod;
-	}
-	public void setServiceperiod(int serviceperiod) {
-		this.serviceperiod = serviceperiod;
-
 	public String getSerivceperiod() {
 		return serivceperiod;
 	}
 	public void setSerivceperiod(String serivceperiod) {
 		this.serivceperiod = serivceperiod;
-
-	}
-	public String getServiceinfo() {
-		return serviceinfo;
-	}
-	public void setServiceinfo(String serviceinfo) {
-		this.serviceinfo = serviceinfo;
 	}
 	
 
-}
+
+
 
 }
 

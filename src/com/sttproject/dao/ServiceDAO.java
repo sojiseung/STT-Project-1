@@ -14,9 +14,6 @@ public class ServiceDAO {
 	public ServiceDAO() {
 		sqlsession=SqlMapConfig.getFactory().openSession(true);
 	}
-}
-		sqlsession = SqlMapConfig.getFactory().openSession(true);
-	}
 
 
 	public boolean serviceregister(ServiceDTO register) {

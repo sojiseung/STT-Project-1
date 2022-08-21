@@ -185,6 +185,7 @@
                   <span>고가순</span>
                 </div>
               </div>
+              
               <div id="request_list_group1" class="request_list_group">
                 <a href="">
                   <div class="img_wrapper">
@@ -217,7 +218,7 @@
                       지원 부탁드립니다.※ ※프젝트 제안시 이력카드 필히! 첨부해
                       주시길 바랍니다.※ ※이력카드/소개서 및 제안 내용에 외부
                       연락처 기입 시 정책 위반으로 불이익을 당할 수 있으니 유의
-                      바랍니다.※
+                      바랍니다.※ 
                     </div>
                     <div class="request_detail4">
                       <div class="salary">
