@@ -32,5 +32,12 @@
 <servlet-mapping>
 	<servlet-name>OrderFrontController</servlet-name>
 	<url-pattern>*.or</url-pattern>
+
+	<servlet-name>ServiceFrontController</servlet-name>
+	<servlet-class>com.sttproject.service.ServiceFrontController</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>ServiceFrontController</servlet-name>
+	<url-pattern>*.se</url-pattern>
 </servlet-mapping>
 </web-app>

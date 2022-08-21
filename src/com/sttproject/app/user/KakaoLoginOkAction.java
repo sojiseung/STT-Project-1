@@ -1,31 +1,35 @@
-package com.sttproject.admin;
-
+package com.sttproject.app.user;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.sttproject.action.Action;
 import com.sttproject.action.ActionTo;
+import com.sttproject.dao.UserDAO;
 
-public class SmsCheckOkAction implements Action {
+public class KakaoLoginOkAction implements Action{
 	@Override
 	public ActionTo execute(HttpServletRequest req, HttpServletResponse resp) throws Exception {
+
+		String email = req.getParameter("email");
 		
-		String smscheck = req.getParameter("smscheck");
-		String result = (String) req.getSession().getAttribute("result");
 		
 		ActionTo transfer = new ActionTo();
 		transfer.setRedirect(false);
 		
-		transfer.setRedirect(false);
-		if(result.equals(smscheck)) {
-			transfer.setPath("/app/user/findview2.jsp");
-			
+		
+		if(email != null) {
+			req.getSession().setAttribute("loginUser", email);
+			System.out.println(email);
+			transfer.setPath("/");
 		} else {
+			transfer.setPath("/");
 			
-			transfer.setPath("/app/user/findinfo.jsp");
-		} 	
+		}
+				
+				
 		
 		return transfer;
 	}
+
 }

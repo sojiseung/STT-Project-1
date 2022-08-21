@@ -22,9 +22,18 @@ public class AdminDAO {
 		return (String)sqlsession.selectOne("Admin.findid",datas);
 	}
 
-	public Object findpw(String userid) {
-		return null;
+	public boolean findpw(String userid) {
+		
+		return (Integer)sqlsession.selectOne("Admin.findpw",userid) == 1;
 	}
+
+	public boolean modifypw(String userid, String userpw) {
+		HashMap<String, String> datas = new HashMap<String, String>();
+		datas.put("userid", userid);
+		datas.put("userpw", userpw);
+		return sqlsession.update("Admin.modifypw",datas) == 1;
+	}
+
 
 	
 

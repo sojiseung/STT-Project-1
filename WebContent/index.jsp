@@ -50,7 +50,7 @@ prefix="c"%>
   </head>
   <body>
     <c:choose>
-      <c:when test="${loginUser != null}">
+      <c:when test="${loginUser != null}">	
         <%@ include file="/fix/loginheader.jsp" %>
       </c:when>
       <c:otherwise> <%@ include file="/fix/header.jsp" %> </c:otherwise>
@@ -231,7 +231,7 @@ prefix="c"%>
                   <p class="money">1,415,034,727원</p>
                   <p class="company_name">GPAKOREA</p>
                 </div>
-                <img src="./img/gpakorea.png" alt="" class="c_logo" />
+                <img src="${cp}/img/gpakorea.png" alt="" class="c_logo" />
               </a>
             </div>
             <div class="third_ranking ranks">

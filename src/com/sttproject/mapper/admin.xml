@@ -6,5 +6,11 @@
 	<select id="findid" parameterType="hashmap" resultType="string">
 		select userid from stt_user where username = #{username} and userphone = #{userphone}
 	</select>
+	<select id="findpw" parameterType="string" resultType="_int">
+		select count(*) from stt_user where userid = #{userid}
+	</select>
+	<update id="modifypw" parameterType="hashmap">
+		update stt_user set userpw = #{userpw} where userid = #{userid}
+	</update>
 	
 </mapper>

@@ -1,4 +1,4 @@
-package com.sttproject.admin;
+package com.sttproject.app.service;
 
 import java.io.IOException;
 
@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.sttproject.action.ActionTo;
 
-public class AdminFrontController extends HttpServlet {
+public class ServiceFrontController extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 
@@ -34,36 +34,19 @@ public class AdminFrontController extends HttpServlet {
 
 		switch (command) {
 
-		case "/admin/findidok.ad":
+		case "/service/serviceregisterok.se":
 			try {
-				transfer = new SmsSendOkAction().execute(req, resp);
+				transfer = new ServiceRegisterAction().execute(req,resp);
 			} catch (Exception e) {
-				e.printStackTrace();
+				System.out.println("service/servielist.se");
 			}
 			break;
-		case "/admin/smscheckok.ad":
+		case "/service/servicelist.se" :
 			try {
-				transfer = new SmsCheckOkAction().execute(req, resp);
-			} catch (Exception e) {
-				e.printStackTrace();
+				transfer = new ServiceListAction().execute(req,resp);
+			}catch (Exception e) {
+				System.out.println("service/servicelist.se");
 			}
-			break;
-
-		case "/admin/findpwok.ad":
-			try {
-				new MailSendOkAction().execute(req, resp);
-			} catch (Exception e) {
-				System.out.println("/admin/findpwok.ad" + e);
-			}
-			break;
-			
-		case "/admin/modifypwok.ad" :
-			try {
-				new ModifyPwOkAction().execute(req, resp);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-			break;
 
 		}
 		if (transfer != null) {
