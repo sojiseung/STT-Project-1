@@ -36,6 +36,8 @@
 					method="post" onsubmit="return sendit()">
 					<div class="pw">
 						<div class="input_wrapper" id="userpw1">
+
+							<p >${userid}</p>
 							<p style="text-align : center">${userid}</p> <!-- 이부분 가운데 정렬 및 폰트 사이즈 키워주면 좋을것 같아요~! -->
 							<c:remove var="userid"/>
 							<%
