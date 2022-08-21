@@ -1,9 +1,5 @@
 package com.sttproject.dto;
 
-import org.apache.ibatis.session.SqlSession;
-
-import com.sttproject.mybatis.SqlMapConfig;
-
 public class ExpertDTO {
 	int expertidx;
 	int useridx;

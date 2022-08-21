@@ -3,6 +3,18 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="Service">
+	<select id="servicecnt" resultType="_int">
+		select count(*) from stt_service
+	</select>
+	<select id="getservicelist" resultType="servicedto" parameterType="hashmap">
+		select * from stt_service order by serviceidx desc limit #{statrRow}, #{pageSize}
+	</select>
+	<select id="getdetail" resultType="servicedto" parameterType="_int">
+		select * from stt_service where serviceidx=${serviceidx}
+	</select>
+	<select id="getlastidx" resultType="_int" parameterType="string">
+		select max(expertidx) from stt_service where userid=#{userid}
+	</select>
 	<insert id ="register" parameterType="servicedto">
 		insert into stt_service(servicetitle, servicecategory, servicetype, serviceteamscale, serviceresident, serviceprice, serviceperiod, serviceinfo)
 		values(${servicetitle}, ${servicecategory}, ${servicetype}, ${serviceteamscale}, ${serviceresident}, ${serviceprice}, ${serviceperiod}, ${serviceinfo} ) 

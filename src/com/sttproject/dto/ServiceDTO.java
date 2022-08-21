@@ -13,6 +13,8 @@ public class ServiceDTO {
 	private int serviceteamscale;
 	private String serviceresident;
 	private	String serivceperiod;
+	
+	
 	public int getServiceidx() {
 		return serviceidx;
 	}

@@ -6,19 +6,11 @@
   <typeAliases>
   	<typeAlias type="com.sttproject.dto.UserDTO" alias="userdto"/>  
   	<typeAlias type="com.sttproject.dto.ExpertDTO" alias="expertdto"/>  
-
   	<typeAlias type="com.sttproject.dto.OrderDTO" alias="orderdto"/>  
-
   	<typeAlias type="com.sttproject.dto.ServiceDTO" alias="servicedto"/>  
-<<<<<<< HEAD
-<<<<<<< HEAD
+  	<typeAlias type="com.sttproject.dto.FileDTO" alias="filedto"/>  
+  	
 
-=======
-  	<typeAlias type="com.sttproject.dto.FileDTO" alias="filedto"/>  
->>>>>>> 8c1a407 (sh)
-=======
-  	<typeAlias type="com.sttproject.dto.FileDTO" alias="filedto"/>  
->>>>>>> work
   </typeAliases>
   <environments default="development">
     <environment id="development">

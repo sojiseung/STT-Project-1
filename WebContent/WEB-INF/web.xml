@@ -26,14 +26,6 @@
 	<url-pattern>*.ad</url-pattern>
 </servlet-mapping>
 <servlet>
-	<servlet-name>OrderFrontController</servlet-name>
-	<servlet-class>com.sttproject.app.service.OrderFrontController</servlet-class>
-</servlet>
-<servlet-mapping>
-	<servlet-name>OrderFrontController</servlet-name>
-	<url-pattern>*.or</url-pattern>
-</servlet-mapping>
-<servlet>
 	<servlet-name>ServiceFrontController</servlet-name>
 	<servlet-class>com.sttproject.app.service.ServiceFrontController</servlet-class>
 </servlet>
@@ -41,4 +33,12 @@
 	<servlet-name>ServiceFrontController</servlet-name>
 	<url-pattern>*.se</url-pattern>
 </servlet-mapping>
-</web-app>
+
+
+
+
+
+
+
+
+

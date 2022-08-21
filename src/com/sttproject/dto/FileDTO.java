@@ -1,15 +1,16 @@
 package com.sttproject.dto;
 
 public class FileDTO {
-	private int serviceidx;
+	private int expertidx;
 	private String filename;
 	private String systemname;
 	
-	public int getServiceidx() {
-		return serviceidx;
+
+	public int getExpertidx() {
+		return expertidx;
 	}
-	public void setServiceidx(int serviceidx) {
-		this.serviceidx = serviceidx;
+	public void setExpertidx(int expertidx) {
+		this.expertidx = expertidx;
 	}
 	public String getFilename() {
 		return filename;

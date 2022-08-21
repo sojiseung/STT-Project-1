@@ -26,27 +26,4 @@
 //		int expertidx = expert.getExpertidx();
 //		System.out.println(expertidx);
 //		
-//		
-//		//서비스 등록하기
-//		order.setUseridx(buyeridx); // 구매유저 세션불러와 저장.
-//		order.setServiceidx(Integer.parseInt(req.getParameter("serviceidx")));
-//		order.setExpertidx(expertidx); //전문가idx 해당 서비스에 등록.
-//		order.setServicetitle(req.getParameter("servicetitle"));
-//		order.setServicecategory(Integer.parseInt(req.getParameter("servicecategory")));
-//		order.setServiceteamscale(Integer.parseInt(req.getParameter("serviceteamscale")));
-//		order.setServiceresident(req.getParameter("setServiceresident"));
-//		order.setServiceprice(Integer.parseInt(req.getParameter("serviceprice")));
-//		order.setSerivceperiod(Integer.parseInt(req.getParameter("serviceperiod")));
-//		order.setServiceinfo(req.getParameter("serviceinfo"));
-//		
-//		
-//		
-//		ActionTo transfer = new ActionTo();
-//		transfer.setRedirect(true);
-//		if(odao.serviceorder(order)){
-//			
-//		}
-//		return null;
-//	}
-//
 //}
