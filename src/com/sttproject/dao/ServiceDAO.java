@@ -10,20 +10,14 @@ import com.sttproject.mybatis.SqlMapConfig;
 
 public class ServiceDAO {
 	SqlSession sqlsession;
-	
+
 	public ServiceDAO() {
-		sqlsession=SqlMapConfig.getFactory().openSession(true);
-	}
-}
 		sqlsession = SqlMapConfig.getFactory().openSession(true);
 	}
 
-
 	public boolean serviceregister(ServiceDTO register) {
-		
-		return sqlsession.insert("Service.register",register)==1;
-	}
-	
-	
-}
 
+		return sqlsession.insert("Service.register", register) == 1;
+	}
+
+}

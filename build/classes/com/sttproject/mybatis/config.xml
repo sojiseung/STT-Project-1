@@ -6,8 +6,11 @@
   <typeAliases>
   	<typeAlias type="com.sttproject.dto.UserDTO" alias="userdto"/>  
   	<typeAlias type="com.sttproject.dto.ExpertDTO" alias="expertdto"/>  
+
   	<typeAlias type="com.sttproject.dto.OrderDTO" alias="orderdto"/>  
+
   	<typeAlias type="com.sttproject.dto.ServiceDTO" alias="servicedto"/>  
+
   </typeAliases>
   <environments default="development">
     <environment id="development">
