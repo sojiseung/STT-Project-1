@@ -38,16 +38,21 @@ public class ServiceFrontController extends HttpServlet {
 			try {
 				transfer = new ServiceRegisterAction().execute(req,resp);
 			} catch (Exception e) {
-				System.out.println("service/servielist.se");
+				System.out.println("/service/servielist.se");
 			}
 			break;
 		case "/service/servicelist.se" :
 			try {
 				transfer = new ServiceListAction().execute(req,resp);
 			}catch (Exception e) {
-				System.out.println("service/servicelist.se");
+				System.out.println("/service/servicelist.se");
 			}
-
+		case "/service/choosefileok.se" :
+			try {
+			transfer = new ServiceFileOkAction().execute(req,resp);
+			}catch (Exception e) {
+				System.out.println("/service/choosefileok.se");
+			}
 		}
 		if (transfer != null) {
 			if (transfer.isRedirect()) {

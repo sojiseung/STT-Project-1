@@ -10,7 +10,11 @@
   	<typeAlias type="com.sttproject.dto.OrderDTO" alias="orderdto"/>  
 
   	<typeAlias type="com.sttproject.dto.ServiceDTO" alias="servicedto"/>  
+<<<<<<< HEAD
 
+=======
+  	<typeAlias type="com.sttproject.dto.FileDTO" alias="filedto"/>  
+>>>>>>> 8c1a407 (sh)
   </typeAliases>
   <environments default="development">
     <environment id="development">
@@ -28,5 +32,6 @@
   	<mapper resource="com/sttproject/mapper/admin.xml"/>
   	<mapper resource="com/sttproject/mapper/order.xml"/>
   	<mapper resource="com/sttproject/mapper/service.xml"/>
+  	<mapper resource="com/sttproject/mapper/file.xml"/>
   </mappers>
 </configuration>
