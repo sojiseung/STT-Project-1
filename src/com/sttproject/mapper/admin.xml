@@ -9,5 +9,8 @@
 	<select id="findpw" parameterType="string" resultType="_int">
 		select count(*) from stt_user where userid = #{userid}
 	</select>
+	<update id="modifypw" parameterType="hashmap">
+		update stt_user set userpw = #{userpw} where userid = #{userid}
+	</update>
 	
 </mapper>

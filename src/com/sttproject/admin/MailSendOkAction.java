@@ -53,7 +53,7 @@ public class MailSendOkAction implements Action {
 				InternetAddress to = new InternetAddress(userid); // 수신자 메일
 				msg.setRecipient(Message.RecipientType.TO, to);
 				msg.setSubject("[Set The Table] 비밀번호를 변경하시기 바랍니다.", "UTF-8"); // 메일제목, 인코딩
-				msg.setText("비밀번호 변경  \n http://localhost:9090/app/user/modifypw.jsp", "UTF-8"); // 메일내용, 인코딩
+				msg.setText("비밀번호 변경  \n http://localhost:9090/app/user/modifypw.jsp?userid="+userid, "UTF-8"); // 메일내용, 인코딩
 
 				Transport.send(msg);
 			} catch (AddressException ae) {

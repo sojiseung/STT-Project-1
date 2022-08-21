@@ -1,4 +1,4 @@
-package com.sttproject.admin;
+package com.sttproject.app.service;
 
 import java.io.IOException;
 
@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.sttproject.action.ActionTo;
 
-public class AdminFrontController extends HttpServlet {
+public class OrderFrontController extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 
@@ -34,38 +34,16 @@ public class AdminFrontController extends HttpServlet {
 
 		switch (command) {
 
-		case "/admin/findidok.ad":
+		case "/order/serviceorder.or":
 			try {
-				transfer = new SmsSendOkAction().execute(req, resp);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-			break;
-		case "/admin/smscheckok.ad":
-			try {
-				transfer = new SmsCheckOkAction().execute(req, resp);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-			break;
-
-		case "/admin/findpwok.ad":
-			try {
-				new MailSendOkAction().execute(req, resp);
-			} catch (Exception e) {
-				System.out.println("/admin/findpwok.ad" + e);
-			}
-			break;
-			
-		case "/admin/modifypwok.ad" :
-			try {
-				new ModifyPwOkAction().execute(req, resp);
+				transfer = new ServiceOrderOkAction().execute(req, resp);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 			break;
 
 		}
+
 		if (transfer != null) {
 			if (transfer.isRedirect()) {
 				resp.sendRedirect(transfer.getPath());
@@ -73,6 +51,5 @@ public class AdminFrontController extends HttpServlet {
 				req.getRequestDispatcher(transfer.getPath()).forward(req, resp);
 			}
 		}
-
 	}
 }

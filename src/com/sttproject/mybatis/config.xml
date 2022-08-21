@@ -6,8 +6,12 @@
   <typeAliases>
   	<typeAlias type="com.sttproject.dto.UserDTO" alias="userdto"/>  
   	<typeAlias type="com.sttproject.dto.ExpertDTO" alias="expertdto"/>  
+
+  	<typeAlias type="com.sttproject.dto.OrderDTO" alias="orderdto"/>  
+
   	<typeAlias type="com.sttproject.dto.ServiceDTO" alias="servicedto"/>  
   	<typeAlias type="com.sttproject.dto.FileDTO" alias="filedto"/>  
+
   </typeAliases>
   <environments default="development">
     <environment id="development">
@@ -23,6 +27,7 @@
   <mappers>
   	<mapper resource="com/sttproject/mapper/user.xml"/>
   	<mapper resource="com/sttproject/mapper/admin.xml"/>
+  	<mapper resource="com/sttproject/mapper/order.xml"/>
   	<mapper resource="com/sttproject/mapper/service.xml"/>
   	<mapper resource="com/sttproject/mapper/file.xml"/>
   </mappers>
