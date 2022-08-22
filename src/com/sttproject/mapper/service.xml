@@ -6,6 +6,10 @@
 	<select id="servicecnt" resultType="_int">
 		select count(*) from stt_service
 	</select>
+	<insert id ="register" parameterType="servicedto">
+		insert into stt_service(expertidx, useridx, servicetitle, servicecategory, servicetype, serviceteamscale, serviceresident, serviceprice, serviceperiod, serviceinfo)
+		values(${expertidx}, ${useridx}, ${servicetitle}, ${servicecategory}, ${servicetype}, ${serviceteamscale}, ${serviceresident}, ${serviceprice}, ${serviceperiod}, ${serviceinfo} ) 
+	</insert>
 	<select id="getservicelist" resultType="servicedto" parameterType="hashmap">
 		select * from stt_service order by serviceidx desc limit #{statrRow}, #{pageSize}
 	</select>
@@ -15,8 +19,8 @@
 	<select id="getlastidx" resultType="_int" parameterType="string">
 		select max(serviceidx) from stt_service where expertidx=#{expertidx}
 	</select>
-	<insert id ="register" parameterType="servicedto">
-		insert into stt_service(servicetitle, servicecategory, servicetype, serviceteamscale, serviceresident, serviceprice, serviceperiod, serviceinfo)
-		values(${servicetitle}, ${servicecategory}, ${servicetype}, ${serviceteamscale}, ${serviceresident}, ${serviceprice}, ${serviceperiod}, ${serviceinfo} ) 
+	<insert id="orderservice" parameterType="orderdto">
+		insert into stt_order(useridx, serviceidx, servicetitle, servicecnt, serviceperiod, serviceprice, usercash)
+		values (${useridx}, ${serviceidx}, ${servicetitle}, ${servicecnt}, ${serviceperiod}, ${serviceprice}, ${usercash})
 	</insert>
 </mapper>

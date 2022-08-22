@@ -34,10 +34,10 @@ public class ServiceListAction implements Action{ //boradlist
 		endPage = endPage>totalPage ? totalPage : endPage;
 		
 		int startRow = (page - 1)*pageSize;
-		
+//게시글리스트 가져오기 										//어디서부터 몇개를 가져올지 		
 		List<ServiceDTO> list = sdao.getservicelist(startRow,pageSize);
 
-		//데이터를 들고 servicelist로 이동 
+		//데이터를 담아 servicelist.jsp 로 이동해줘야함 -> setattribute 
 		req.setAttribute("list", list);
 		req.setAttribute("totalPage", totalPage);
 		req.setAttribute("totalCnt", totalCnt);

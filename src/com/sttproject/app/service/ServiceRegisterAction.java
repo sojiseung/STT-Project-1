@@ -2,7 +2,6 @@ package com.sttproject.app.service;
 
 import java.io.PrintWriter;
 
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -70,7 +69,7 @@ public class ServiceRegisterAction implements Action { //boardwrite
 				file.setSystemname(systemname);
 
 				fcheck = fdao.insertFile(file);
-				//req.getSession().setAttribute("expertidx", expertidx);
+				req.getSession().setAttribute("serviceidx", serviceidx);
 			}
 			if (fcheck) { //서비스등록 + 파일추가 추가성공
 				transfer.setPath(req.getContextPath() + "/service/servicedetail.sv?expertidx=" + expertidx);

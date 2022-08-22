@@ -7,6 +7,7 @@ public class UserDTO {
 	private String username;
 	private String usergender;
 	private String userphone;
+	private int usercash;
 	
 	
 	
@@ -46,6 +47,13 @@ public class UserDTO {
 	public void setUserphone(String userphone) {
 		this.userphone = userphone;
 	}
+	public int getUsercash() {
+		return usercash;
+	}
+	public void setUsercash(int usercash) {
+		this.usercash = usercash;
+	}
+	
 	
  
 }
