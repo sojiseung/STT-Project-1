@@ -15,7 +15,7 @@ public class ServiceDAO {
 	}
 
 	
-	public int getserviceCnt() {
+	public int getserviceCnt() {//total page 계산
 		return sqlsession.selectOne("Service.servicecnt");
 	}
 
@@ -36,8 +36,8 @@ public class ServiceDAO {
 	}
 
 
-	public int getLastidx(int useridx) {
-		return sqlsession.selectOne("Service.getlastnum",useridx);
+	public int getLastidx(int expertidx) {
+		return sqlsession.selectOne("Service.getlastnum",expertidx);
 	}
 
 }

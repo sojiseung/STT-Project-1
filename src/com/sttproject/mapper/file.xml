@@ -5,6 +5,9 @@
 <mapper namespace="File">
 	<insert id="insertfile" parameterType="filedto">
 		insert into stt_file(serviceidx,filename,systemname)
-		values(${serviceidx},${filenamte}, ${systemname})
+		values(${serviceidx},${filename}, ${systemname})
 	</insert>
+	<select id="getfile" parameterType="_int" resultType="filedto">
+		select from stt_file where serviceidx = ${serviceidx}
+	</select>
 </mapper>

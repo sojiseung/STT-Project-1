@@ -10,7 +10,7 @@ import com.sttproject.action.ActionTo;
 import com.sttproject.dao.ServiceDAO;
 import com.sttproject.dto.ServiceDTO;
 
-public class ServiceListAction implements Action{
+public class ServiceListAction implements Action{ //boradlist 
 	//등록된 서비스를 모두 볼 수 있는 리스트 뷰 service title, price , file img, paging 작업 
 	@Override
 	public ActionTo execute(HttpServletRequest req, HttpServletResponse resp) throws Exception {
@@ -47,7 +47,7 @@ public class ServiceListAction implements Action{
 		
 		ActionTo transfer = new ActionTo();
 		transfer.setRedirect(false);
-		transfer.setPath("/app/board/boardlist.jsp");
+		transfer.setPath("/app/service/servicelist.jsp");
 		return transfer;
 	}
 }

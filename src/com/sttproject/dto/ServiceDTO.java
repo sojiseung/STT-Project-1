@@ -13,8 +13,15 @@ public class ServiceDTO {
 	private int serviceteamscale;
 	private String serviceresident;
 	private	String serivceperiod;
+	private int likecnt;
 	
 	
+	public int getLikecnt() {
+		return likecnt;
+	}
+	public void setLikecnt(int likecnt) {
+		this.likecnt = likecnt;
+	}
 	public int getServiceidx() {
 		return serviceidx;
 	}
