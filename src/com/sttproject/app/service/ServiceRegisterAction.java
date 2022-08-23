@@ -1,4 +1,4 @@
-package com.sttproject.app.service;
+	package com.sttproject.app.service;
 
 import java.io.PrintWriter;
 
@@ -33,7 +33,7 @@ public class ServiceRegisterAction implements Action { //boardwrite
 		register.setServiceresident(req.getParameter("serviceresident"));
 		register.setServiceprice(Integer.parseInt(req.getParameter("serviceprice")));
 		register.setSerivceperiod(req.getParameter("serviceperiod"));
-		register.setServiceinfo(req.getParameter("serviceeinfo"));
+		register.setServiceinfo(req.getParameter("serviceinfo"));
 
 		String saveFolder = req.getServletContext().getRealPath("file");
 		System.out.println(saveFolder);
