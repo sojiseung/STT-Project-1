@@ -7,9 +7,18 @@ public class UserDTO {
 	private String username;
 	private String usergender;
 	private String userphone;
+	private int usercash;
+	private String expertjoin;
 	
 	
 	
+	
+	public String getExpertjoin() {
+		return expertjoin;
+	}
+	public void setExpertjoin(String expertjoin) {
+		this.expertjoin = expertjoin;
+	}
 	public int getUseridx() {
 		return useridx;
 	}
@@ -46,6 +55,13 @@ public class UserDTO {
 	public void setUserphone(String userphone) {
 		this.userphone = userphone;
 	}
+	public int getUsercash() {
+		return usercash;
+	}
+	public void setUsercash(int usercash) {
+		this.usercash = usercash;
+	}
+	
 	
  
 }

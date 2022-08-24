@@ -5,14 +5,29 @@ public class ServiceDTO {
 	private int expertidx;
 	private int useridx;
 	private String servicetitle;
-	private int serviceprice;
-	private String serviceperiod;
-	private String serviceinfo;
+
 	private int servicecategory;
+	private int serviceprice;
+
+
+	private String serviceinfo;
 	private int servicetype;
 	private String serviceresident;
-	private int serviceteamscale;
 
+
+	private	String serivceperiod;
+	private String servicereadyto;
+	
+	public String getServicereadyto() {
+		return servicereadyto;
+	}
+	public void setServicereadyto(String servicereadyto) {
+		this.servicereadyto = servicereadyto;
+	}
+	private int likecnt;
+	
+
+	
 	public int getServiceidx() {
 		return serviceidx;
 	}
@@ -45,6 +60,19 @@ public class ServiceDTO {
 		this.servicetitle = servicetitle;
 	}
 
+	public int getServiceprice() {
+		return serviceprice;
+	}
+	public void setServiceprice(int serviceprice) {
+		this.serviceprice = serviceprice;
+	}
+	public String getServiceinfo() {
+		return serviceinfo;
+	}
+	public void setServiceinfo(String serviceinfo) {
+		this.serviceinfo = serviceinfo;
+	}
+
 	public int getServicecategory() {
 		return servicecategory;
 	}
@@ -60,6 +88,7 @@ public class ServiceDTO {
 	public void setServicetype(int servicetype) {
 		this.servicetype = servicetype;
 	}
+
 
 	public int getServiceteamscale() {
 		return serviceteamscale;
@@ -77,28 +106,21 @@ public class ServiceDTO {
 		this.serviceresident = serviceresident;
 	}
 
-	public int getServiceprice() {
-		return serviceprice;
-	}
-
-	public void setServiceprice(int serviceprice) {
-		this.serviceprice = serviceprice;
-	}
-
 	public String getServiceperiod() {
 		return serviceperiod;
 	}
-
 	public void setServiceperiod(String serviceperiod) {
 		this.serviceperiod = serviceperiod;
 	}
-	public String getServiceinfo() {
-		return serviceinfo;
+
+	public int getLikecnt() {
+		return likecnt;
+	}
+	public void setLikecnt(int likecnt) {
+		this.likecnt = likecnt;
+
 	}
 
-	public void setServiceinfo(String serviceinfo) {
-		this.serviceinfo = serviceinfo;
-	}
 	
 
 
