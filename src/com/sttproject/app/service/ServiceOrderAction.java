@@ -43,7 +43,7 @@ public class ServiceOrderAction implements Action {
 				order.setServiceidx(serviceidx);
 				order.setServicecnt(Integer.parseInt(req.getParameter("servicecnt")));
 				order.setServicetitle(orderservice.getServicetitle());
-				order.setServiceperiod(orderservice.getSerivceperiod());
+				order.setServiceperiod(orderservice.getServiceperiod());
 				order.setServiceprice(orderservice.getServiceprice());
 	
 				totalcash = serviceprice - usercash;

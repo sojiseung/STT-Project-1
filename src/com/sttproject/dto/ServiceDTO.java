@@ -14,8 +14,8 @@ public class ServiceDTO {
 	private int servicetype;
 	private String serviceresident;
 
-
-	private	String serivceperiod;
+	private int serviceteamscale;
+	private	String serviceperiod;
 	private String servicereadyto;
 	
 	public String getServicereadyto() {
