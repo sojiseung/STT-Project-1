@@ -9,8 +9,9 @@ import com.sttproject.mybatis.SqlMapConfig;
 
 public class ServiceDAO {
 	SqlSession sqlsession;
-	
+
 	public ServiceDAO() {
+
 		sqlsession=SqlMapConfig.getFactory().openSession(true);
 	}
 
@@ -25,10 +26,12 @@ public class ServiceDAO {
 		datas.put("pageSize",pageSize);
 		return sqlsession.selectList("Service.getservicelist",datas);
 	}
+
 	public boolean serviceregister(ServiceDTO register) {
-		
-		return sqlsession.insert("Service.register",register)==1;
+
+		return sqlsession.insert("Service.register", register) == 1;
 	}
+
 	
 	
 	public ServiceDTO getdetail(int serviceidx) {
@@ -42,3 +45,5 @@ public class ServiceDAO {
 
 }
 
+
+}

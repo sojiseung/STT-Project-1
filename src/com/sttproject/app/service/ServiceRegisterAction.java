@@ -38,12 +38,14 @@ public class ServiceRegisterAction implements Action { //boardwrite
 		register.setServiceresident(req.getParameter("serviceresident"));
 		register.setServiceprice(Integer.parseInt(req.getParameter("serviceprice")));
 
+
 		register.setSerivceperiod(req.getParameter("serviceperiod"));
 		register.setServiceinfo(req.getParameter("serviceinfo"));
 		register.setServicereadyto(req.getParameter("servicereadyto"));
 			
 
 		System.out.println("서비스등록 ");
+
 		
 		
 //파일 등록 =================================> 

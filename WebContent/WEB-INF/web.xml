@@ -29,6 +29,8 @@
 		<url-pattern>*.ad</url-pattern>
 	</servlet-mapping>
 	<servlet>
+
+
 		<servlet-name>ServiceFrontController</servlet-name>
 		<servlet-class>com.sttproject.app.service.ServiceFrontController</servlet-class>
 	</servlet>
@@ -37,3 +39,4 @@
 		<url-pattern>*.sv</url-pattern>
 	</servlet-mapping>
 </web-app>
+
