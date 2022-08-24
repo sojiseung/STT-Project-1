@@ -5,12 +5,14 @@ public class ServiceDTO {
 	private int expertidx;
 	private int useridx;
 	private String servicetitle;
-	private int serviceprice;
-	private String serviceinfo;
 	private int servicecategory;
+	private int serviceprice;
+
+	private String serviceinfo;
 	private int servicetype;
 	private int serviceteamscale;
 	private String serviceresident;
+
 	private	String serivceperiod;
 	private String servicereadyto;
 	
@@ -22,6 +24,7 @@ public class ServiceDTO {
 	}
 	private int likecnt;
 	
+
 	
 	public int getServiceidx() {
 		return serviceidx;
@@ -83,18 +86,20 @@ public class ServiceDTO {
 	public void setServiceresident(String serviceresident) {
 		this.serviceresident = serviceresident;
 	}
-	public String getSerivceperiod() {
-		return serivceperiod;
+	public String getServiceperiod() {
+		return serviceperiod;
 	}
-	public void setSerivceperiod(String serivceperiod) {
-		this.serivceperiod = serivceperiod;
+	public void setServiceperiod(String serviceperiod) {
+		this.serviceperiod = serviceperiod;
 	}
+
 	public int getLikecnt() {
 		return likecnt;
 	}
 	public void setLikecnt(int likecnt) {
 		this.likecnt = likecnt;
 	}
+
 	
 
 

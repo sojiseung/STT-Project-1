@@ -37,6 +37,7 @@ public class ServiceRegisterAction implements Action { //boardwrite
 		register.setServiceteamscale(Integer.parseInt(req.getParameter("serviceteamscale")));
 		register.setServiceresident(req.getParameter("serviceresident"));
 		register.setServiceprice(Integer.parseInt(req.getParameter("serviceprice")));
+
 		register.setSerivceperiod(req.getParameter("serviceperiod"));
 		register.setServiceinfo(req.getParameter("serviceinfo"));
 		register.setServicereadyto(req.getParameter("servicereadyto"));
