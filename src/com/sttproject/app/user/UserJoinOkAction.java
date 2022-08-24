@@ -25,7 +25,11 @@ public class UserJoinOkAction implements Action{
 		ActionTo transfer = new ActionTo();
 		transfer.setRedirect(true);
 		
+		
 		if(udao.userjoin(user)) {
+
+			//회원가입 후 캐쉬충천.
+			user.setUsercash(user.getUsercash()+10000);
 			transfer.setPath(req.getContextPath()+"/user/userlogin.us?userid="+userid);
 			
 			

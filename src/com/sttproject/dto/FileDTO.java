@@ -1,10 +1,12 @@
 package com.sttproject.dto;
 
 public class FileDTO {
-	private int serviceidx;
+	private int	serviceidx;
 	private String filename;
 	private String systemname;
 	
+
+
 	public int getServiceidx() {
 		return serviceidx;
 	}

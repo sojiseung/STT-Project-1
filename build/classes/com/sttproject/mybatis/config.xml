@@ -8,6 +8,8 @@
   	<typeAlias type="com.sttproject.dto.ExpertDTO" alias="expertdto"/>  
   	<typeAlias type="com.sttproject.dto.ServiceDTO" alias="servicedto"/>  
   	<typeAlias type="com.sttproject.dto.FileDTO" alias="filedto"/>  
+  	<typeAlias type="com.sttproject.dto.OrderDTO" alias="orderdto"/>  
+  	
 
   </typeAliases>
   <environments default="development">

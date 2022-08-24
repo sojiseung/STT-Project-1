@@ -1,44 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
-  <display-name>stt</display-name>
-  <welcome-file-list>
-    <welcome-file>index.html</welcome-file>
-    <welcome-file>index.htm</welcome-file>
-    <welcome-file>index.jsp</welcome-file>
-    <welcome-file>default.html</welcome-file>
-    <welcome-file>default.htm</welcome-file>
-    <welcome-file>default.jsp</welcome-file>
-  </welcome-file-list>
-<servlet>
-	<servlet-name>UserFrontController</servlet-name>
-	<servlet-class>com.sttproject.app.user.UserFrontController</servlet-class>
-</servlet>
-<servlet-mapping>
-	<servlet-name>UserFrontController</servlet-name>
-	<url-pattern>*.us</url-pattern>
-</servlet-mapping>
-<servlet>
-	<servlet-name>AdminFrontController</servlet-name>
-	<servlet-class>com.sttproject.admin.AdminFrontController</servlet-class>
-</servlet>
-<servlet-mapping>
-	<servlet-name>AdminFrontController</servlet-name>
-	<url-pattern>*.ad</url-pattern>
-</servlet-mapping>
-<servlet>
-	<servlet-name>OrderFrontController</servlet-name>
-	<servlet-class>com.sttproject.app.service.OrderFrontController</servlet-class>
-</servlet>
-<servlet-mapping>
-	<servlet-name>OrderFrontController</servlet-name>
-	<url-pattern>*.or</url-pattern>
-</servlet-mapping>
-<servlet>
-	<servlet-name>ServiceFrontController</servlet-name>
-	<servlet-class>com.sttproject.app.service.ServiceFrontController</servlet-class>
-</servlet>
-<servlet-mapping>
-	<servlet-name>ServiceFrontController</servlet-name>
-	<url-pattern>*.se</url-pattern>
-</servlet-mapping>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+	id="WebApp_ID" version="4.0">
+	<display-name>stt</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+	<servlet>
+		<servlet-name>UserFrontController</servlet-name>
+		<servlet-class>com.sttproject.app.user.UserFrontController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UserFrontController</servlet-name>
+		<url-pattern>*.us</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>AdminFrontController</servlet-name>
+		<servlet-class>com.sttproject.admin.AdminFrontController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AdminFrontController</servlet-name>
+		<url-pattern>*.ad</url-pattern>
+	</servlet-mapping>
+	<servlet>
+
+
+		<servlet-name>ServiceFrontController</servlet-name>
+		<servlet-class>com.sttproject.app.service.ServiceFrontController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServiceFrontController</servlet-name>
+		<url-pattern>*.sv</url-pattern>
+	</servlet-mapping>
 </web-app>
+
