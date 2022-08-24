@@ -10,17 +10,20 @@ public class ExpertDTO {
 	String expertmajorpart;
 	String expertmajortechnic;
 	String freelancercheck;
-	String expertedu;
-	String expertcertificate;
-	int desiredsalary;
 	String expertresident;
 	
 	public int getExpertidx() {
 		return expertidx;
 	}
+	
 	public int getUseridx() {
 		return useridx;
 	}
+
+	public void setUseridx(int useridx) {
+		this.useridx = useridx;
+	}
+
 	public String getExpertnickname() {
 		return expertnickname;
 	}
@@ -42,23 +45,11 @@ public class ExpertDTO {
 	public String getFreelancercheck() {
 		return freelancercheck;
 	}
-	public String getExpertedu() {
-		return expertedu;
-	}
-	public String getExpertcertificate() {
-		return expertcertificate;
-	}
-	public int getDesiredsalary() {
-		return desiredsalary;
-	}
 	public String getExpertresident() {
 		return expertresident;
 	}
 	public void setExpertidx(int expertidx) {
 		this.expertidx = expertidx;
-	}
-	public void setUseridx(int useridx) {
-		this.useridx = useridx;
 	}
 	public void setExpertnickname(String expertnickname) {
 		this.expertnickname = expertnickname;
@@ -80,15 +71,6 @@ public class ExpertDTO {
 	}
 	public void setFreelancercheck(String freelancercheck) {
 		this.freelancercheck = freelancercheck;
-	}
-	public void setExpertedu(String expertedu) {
-		this.expertedu = expertedu;
-	}
-	public void setExpertcertificate(String expertcertificate) {
-		this.expertcertificate = expertcertificate;
-	}
-	public void setDesiredsalary(int desiredsalary) {
-		this.desiredsalary = desiredsalary;
 	}
 	public void setExpertresident(String expertresident) {
 		this.expertresident = expertresident;

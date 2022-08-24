@@ -93,7 +93,14 @@ public class UserFrontController extends HttpServlet{
 			transfer.setPath("/");
 			transfer.setRedirect(false);
 			break;
-			
+		
+		case "/user/expertjoin.us":
+			try {
+			transfer = new ExpertProfileOkAction().execute(req, resp);
+			}catch(Exception e) {
+				System.out.println("user/expertjoin.us 오류" + e );
+			}
+			break;	
 			
 		/*
 		 * case "/user/expertprofile.us": transfer = new ActionTo();

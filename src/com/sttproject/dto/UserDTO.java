@@ -8,9 +8,17 @@ public class UserDTO {
 	private String usergender;
 	private String userphone;
 	private int usercash;
+	private String expertjoin;
 	
 	
 	
+	
+	public String getExpertjoin() {
+		return expertjoin;
+	}
+	public void setExpertjoin(String expertjoin) {
+		this.expertjoin = expertjoin;
+	}
 	public int getUseridx() {
 		return useridx;
 	}

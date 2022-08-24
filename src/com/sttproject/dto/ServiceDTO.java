@@ -12,6 +12,14 @@ public class ServiceDTO {
 	private int serviceteamscale;
 	private String serviceresident;
 	private	String serivceperiod;
+	private String servicereadyto;
+	
+	public String getServicereadyto() {
+		return servicereadyto;
+	}
+	public void setServicereadyto(String servicereadyto) {
+		this.servicereadyto = servicereadyto;
+	}
 	private int likecnt;
 	
 	

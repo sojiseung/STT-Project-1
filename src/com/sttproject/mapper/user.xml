@@ -7,14 +7,17 @@
 		insert into stt_user (userid,userpw,username,usergender,userphone)
 		values(#{userid},#{userpw},#{username},#{usergender},#{userphone})
 	</insert>
-	<select id="userlogin" parameterType="hashmap" resultType="_int">
-		select count(*) from stt_user where userid=#{userid} and userpw=#{userpw}
+	<select id="userlogin" parameterType="hashmap" resultType="userdto">
+		select * from stt_user where userid=#{userid} and userpw=#{userpw}
 	</select>
 	<select id="checkid" parameterType="string" resultType="_int">
 		select count(*) from stt_user where userid=#{userid}
 	</select>
 	<insert id="expertjoin" parameterType="expertdto">
-		insert into stt_expert (useridx,expertnickname,expertintro,expertworkplace,expertmajor,expertmajorpart,expertmajortechnic,freelancercheck,expertedu,expertcertificate,desiredsalary,expertresident)
-		values(#{useridx},#{expertnickname},#{expertintro},#{expertworkplace},#{expertmajor},#{expertmajorpart},#{expertmajortechnic},#{freelancercheck},#{expertedu},#{expertcertificate},#{desiredsalary},#{expertresident})
+insert into stt_expert (useridx,expertnickname,expertintro,expertworkplace,expertmajor,expertmajorpart,expertmajortechnic,freelancercheck,expertresident)
+		values(#{useridx},#{expertnickname},#{expertintro},#{expertworkplace},#{expertmajor},#{expertmajorpart},#{expertmajortechnic},#{freelancercheck},#{expertresident})
 	</insert>
+	<update id="expertupdate">
+		update stt_user set expertjoin = 'O' where useridx = #{useridx}
+	</update>
 </mapper>
