@@ -1,52 +1,66 @@
-//package com.sttproject.app.service;
-//
-//import javax.servlet.http.HttpServletRequest;
-//import javax.servlet.http.HttpServletResponse;
-//
-//import com.sttproject.action.Action;
-//import com.sttproject.action.ActionTo;
-//import com.sttproject.dao.ServiceDAO;
-//import com.sttproject.dto.ExpertDTO;
-//import com.sttproject.dto.ServiceDTO;
-//import com.sttproject.dto.UserDTO;
-//
-//public class ServiceOrderAction implements Action {
-//
-//	@Override
-//	public ActionTo execute(HttpServletRequest req, HttpServletResponse resp) throws Exception {
-//		ServiceDTO order = new ServiceDTO();
-//		ServiceDAO odao = new ServiceDAO();
-//		UserDTO user = (UserDTO)req.getSession().getAttribute("loginUser");
-//		ExpertDTO expert = new ExpertDTO();
-//		
-//		
-//		//구매 유저 세션 받아오기 
-//		int buyeridx = user.getUseridx();
-//		System.out.println(buyeridx);
-//		int expertidx = expert.getExpertidx();
-//		System.out.println(expertidx);
-//		
-//		
-//		//서비스 등록하기
-//		order.setUseridx(buyeridx); // 구매유저 세션불러와 저장.
-//		order.setServiceidx(Integer.parseInt(req.getParameter("serviceidx")));
-//		order.setExpertidx(expertidx); //전문가idx 해당 서비스에 등록.
-//		order.setServicetitle(req.getParameter("servicetitle"));
-//		order.setServicecategory(Integer.parseInt(req.getParameter("servicecategory")));
-//		order.setServiceteamscale(Integer.parseInt(req.getParameter("serviceteamscale")));
-//		order.setServiceresident(req.getParameter("setServiceresident"));
-//		order.setServiceprice(Integer.parseInt(req.getParameter("serviceprice")));
-//		order.setSerivceperiod(Integer.parseInt(req.getParameter("serviceperiod")));
-//		order.setServiceinfo(req.getParameter("serviceinfo"));
-//		
-//		
-//		
-//		ActionTo transfer = new ActionTo();
-//		transfer.setRedirect(true);
-//		if(odao.serviceorder(order)){
-//			
-//		}
-//		return null;
-//	}
-//
-//}
+package com.sttproject.app.service;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.sttproject.action.Action;
+import com.sttproject.action.ActionTo;
+import com.sttproject.dao.OrderDAO;
+import com.sttproject.dto.OrderDTO;
+import com.sttproject.dto.ServiceDTO;
+import com.sttproject.dto.UserDTO;
+
+public class ServiceOrderAction implements Action {
+
+	@Override
+	public ActionTo execute(HttpServletRequest req, HttpServletResponse resp) throws Exception {
+
+		UserDTO loginUser = (UserDTO) req.getSession().getAttribute("loginUser");
+		ServiceDTO orderservice = (ServiceDTO) req.getSession().getAttribute("service");
+		int serviceidx = orderservice.getServiceidx();
+
+	// loginuser orderuser 같은지 확인
+		int useridx = loginUser.getUseridx();
+	System.out.println(useridx);
+		int buyeridx = orderservice.getUseridx();
+	System.out.println(buyeridx);
+
+	// 총 결제금액 계산
+		int usercash = loginUser.getUsercash();
+	System.out.println(usercash);
+		int serviceprice = orderservice.getServiceprice();
+	System.out.println(serviceprice);
+		int totalcash;
+
+		ActionTo transfer = new ActionTo();
+		transfer.setRedirect(true);
+		if (useridx == buyeridx) {// 사용자가 일치하면
+			// 구매정보 셋팅
+				OrderDTO order = new OrderDTO();
+				OrderDAO odao = new OrderDAO();
+	
+				order.setUseridx(useridx);
+				order.setServiceidx(serviceidx);
+				order.setServicecnt(Integer.parseInt(req.getParameter("servicecnt")));
+				order.setServicetitle(orderservice.getServicetitle());
+				order.setServiceperiod(orderservice.getSerivceperiod());
+				order.setServiceprice(orderservice.getServiceprice());
+	
+				totalcash = serviceprice - usercash;
+			System.out.println(totalcash);
+				order.setUsercash(usercash);
+				
+					if (odao.orderservice(order)) { // 등록
+						// 결제하기 어케하지 .
+						transfer.setPath(req.getContextPath() + "결제완료경로");
+					} else {
+						transfer.setPath(req.getContextPath() + "/app/servie/servicedetail.jsp");
+					}
+			}else {
+				transfer.setPath(req.getContextPath() + "/app/servie/servicedetail.jsp");
+			}
+		return transfer;
+
+	}
+
+}

@@ -7,11 +7,23 @@ public class ServiceDTO {
 	private String servicetitle;
 	private int servicecategory;
 	private int serviceprice;
-	private String serviceperiod;
+
 	private String serviceinfo;
 	private int servicetype;
 	private int serviceteamscale;
 	private String serviceresident;
+
+	private	String serivceperiod;
+	private String servicereadyto;
+	
+	public String getServicereadyto() {
+		return servicereadyto;
+	}
+	public void setServicereadyto(String servicereadyto) {
+		this.servicereadyto = servicereadyto;
+	}
+	private int likecnt;
+	
 
 	
 	public int getServiceidx() {
@@ -81,8 +93,14 @@ public class ServiceDTO {
 		this.serviceperiod = serviceperiod;
 	}
 
-	
+	public int getLikecnt() {
+		return likecnt;
+	}
+	public void setLikecnt(int likecnt) {
+		this.likecnt = likecnt;
+	}
 
+	
 
 
 

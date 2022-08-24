@@ -28,16 +28,13 @@ public class ExpertProfileOkAction implements Action{
 		expert.setExpertmajorpart(req.getParameter("expertmajorpart"));
 		expert.setExpertmajortechnic(req.getParameter("expertmajortechnic"));
 		expert.setFreelancercheck(req.getParameter("freelancercheck"));
-		expert.setExpertedu(req.getParameter("expertedu"));
-		expert.setExpertcertificate(req.getParameter("expertcertificate"));
-		expert.setDesiredsalary(Integer.parseInt(req.getParameter("desiredsalary")));
 		expert.setExpertresident(req.getParameter("expertresident"));
 		
 		UserDAO udao = new UserDAO();
 		ActionTo transfer = new ActionTo();
 		transfer.setRedirect(true);
 		if(udao.expertjoin(expert)) {
-			transfer.setPath(req.getContextPath()+"/app/main.jsp");
+			transfer.setPath(req.getContextPath()+"/app/service/service_register.jsp");
 			
 		} else {
 			transfer.setPath(req.getContextPath());
