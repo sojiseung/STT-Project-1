@@ -72,7 +72,7 @@
                       </a>
                       <ul>
                         <a href=""><li>프로필 관리</li></a>
-                        <a href="${cp}/app/user/expertjoin.jsp"><li>전문가 정보</li></a>
+                        <a href="${cp}/app/user/chef_register.jsp"><li>전문가 정보</li></a>
                         <a href=""><li>나의 찜목록</li></a>
                         <a href="${cp}/user/userlogout.us"><li>로그아웃</li></a>
                       </ul>
