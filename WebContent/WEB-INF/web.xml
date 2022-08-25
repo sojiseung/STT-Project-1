@@ -29,14 +29,20 @@
 		<url-pattern>*.ad</url-pattern>
 	</servlet-mapping>
 	<servlet>
-
-
 		<servlet-name>ServiceFrontController</servlet-name>
 		<servlet-class>com.sttproject.app.service.ServiceFrontController</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>ServiceFrontController</servlet-name>
 		<url-pattern>*.sv</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>ChatFrontController</servlet-name>
+		<servlet-class>com.sttproject.app.chat.ChatFrontController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ChatFrontController</servlet-name>
+		<url-pattern>*.ct</url-pattern>
 	</servlet-mapping>
 </web-app>
 

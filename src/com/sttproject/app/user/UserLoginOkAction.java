@@ -25,6 +25,7 @@ public class UserLoginOkAction implements Action{
 		if(udao.userlogin(userid,userpw) != null) {
 			UserDTO user = udao.userlogin(userid,userpw);
 			req.getSession().setAttribute("loginUser", user);
+			req.getSession().setAttribute("userid", userid);
 			transfer.setPath("/");
 		} else {
 			transfer.setPath("/");
