@@ -18,10 +18,16 @@ function sendit() {
 		}
 	  
 	  const userpw = joinForm.userpw;
+	  const userpw_re = joinForm.userpw_re;
 	  if (userpw.value == "") {
 	    alert("비밀번호를 입력하세요!");
 	    userpw.focus();
 	    return false;
+	  }
+	  if(userpw.value != userpw_re.value){
+		  alert("비밀번호가 같은지 확인해주세요!");
+		  userpw.focus();
+		  return false;
 	  }
 	  const reg =
 	    /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[~?!@#$%^&*_-]).{8,}$/;

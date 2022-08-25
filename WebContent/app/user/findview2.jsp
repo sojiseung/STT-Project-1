@@ -37,7 +37,6 @@
 					<div class="pw">
 						<div class="input_wrapper" id="userpw1">
 
-							<p >${userid}</p>
 							<p style="text-align : center">${userid}</p> <!-- 이부분 가운데 정렬 및 폰트 사이즈 키워주면 좋을것 같아요~! -->
 							<c:remove var="userid"/>
 							<%
@@ -49,7 +48,6 @@
 					<div class="join_button">
 						<input type="submit" value="확인" class="join_btn" />
 					</div>
-					<input type="submit" value="로그인 하러 가기" class="join_btn" />
 				</form>
 			</div>
 		</div>

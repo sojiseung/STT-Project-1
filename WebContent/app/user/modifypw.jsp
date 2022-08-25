@@ -40,14 +40,14 @@
 					onsubmit="return sendit()">
 					<input type="hidden" name="userid" value="<%=userid%>">
 					<div class="pw">
-						<div class="input_wrapper" id="userpw1">
-							<input type="text" class="input_login" name="userpw"
+						<div class="input_wrapper" id="userpw1" style="display:flex; justify-content:space-between; align-items:center;">
+							<input type="password" class="input_login" name="userpw"
 								id="userpw" placeholder="새 비밀번호" />
 								<i class="fa fa-eye fa-lg" ></i>
 								
 						</div>
-						<div class="input_wrapper" id="userpw2">
-							<input type="text" class="input_login" name="userpw_re"
+						<div class="input_wrapper" id="userpw2" style="display:flex; justify-content:space-between; align-items:center;">
+							<input type="password" class="input_login" name="userpw_re"
 								id="userpw_re" placeholder="비밀번호 확인" onblur="pwcheck()" />
 							<i class="fa fa-eye fa-lg"></i>
 						</div>

@@ -1,5 +1,7 @@
 package com.sttproject.app.user;
 
+import java.io.PrintWriter;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -11,6 +13,8 @@ import com.sttproject.dto.UserDTO;
 public class UserJoinOkAction implements Action{
 	@Override
 	public ActionTo execute(HttpServletRequest req, HttpServletResponse resp) throws Exception {
+		resp.setCharacterEncoding("utf-8");
+		resp.setContentType("text/html; charset=utf-8");
 		UserDTO user = new UserDTO();
 		
 		String userid = req.getParameter("userid");
@@ -22,24 +26,26 @@ public class UserJoinOkAction implements Action{
 		
 		UserDAO udao = new UserDAO();
 		
-		ActionTo transfer = new ActionTo();
-		transfer.setRedirect(true);
-		
+		PrintWriter out = resp.getWriter();
 		
 		if(udao.userjoin(user)) {
-
-			//회원가입 후 캐쉬충천.
+			//회원가입 후 캐쉬증정
 			user.setUsercash(user.getUsercash()+10000);
-			transfer.setPath(req.getContextPath()+"/user/userlogin.us?userid="+userid);
-			
+			out.print("<script>");
+			//alert('apple님 어서오세요~!');
+			out.print("alert('회원가입 성공!!');");
+			//location.href = '???/app/board/main.jsp';
+			out.print("location.href = '"+req.getContextPath()+"/user/userlogin.us?userid=" + userid + "';");
+			out.print("</script>");
 			
 		} else {
-			transfer.setPath(req.getContextPath());
+			out.print("<script>");
+			out.print("alert('회원가입 실패ㅜㅜ 다시 시도해주세요!');");
+			out.print("location.href = '"+req.getContextPath()+"/';");
+			out.print("</script>");
 		}
 		
 		
-		
-		
-		return transfer;
+		return null;
 	}
 }

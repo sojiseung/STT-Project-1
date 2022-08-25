@@ -25,7 +25,7 @@ public class SmsSendOkAction implements Action{
 		String userphone = req.getParameter("userphone");
 		System.out.println(username);
 		System.out.println(userphone);
-
+		System.out.println(userphone.replaceAll("-",""));
 		ActionTo transfer = new ActionTo();
 		transfer.setRedirect(false);
 		if(adao.findid(username, userphone) != null){
@@ -47,7 +47,7 @@ public class SmsSendOkAction implements Action{
 
 			// 4 params(to, from, type, text) are mandatory. must be filled
 			HashMap<String, String> params = new HashMap<String, String>();
-			params.put("to", "01034302944");
+			params.put("to", userphone.replaceAll("-",""));
 			params.put("from", "01034302944");
 			params.put("type", "SMS");
 			params.put("text", result);
