@@ -123,7 +123,7 @@
             <ul>
               <li>
                 <div id="reg">
-                  <a href="${cp}/app/user/expertjoin.jsp">전문가 등록</a>
+                  <a href="${cp}/app/user/chef_register.jsp">전문가 등록</a>
                 </div>
               </li>
               <li>

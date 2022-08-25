@@ -12,7 +12,7 @@ import com.sttproject.dto.UserDTO;
 public class ExpertProfileOkAction implements Action{
 	@Override
 	public ActionTo execute(HttpServletRequest req, HttpServletResponse resp) throws Exception {
-		ExpertDTO expert= new ExpertDTO();
+	ExpertDTO expert= new ExpertDTO();
 		
 		UserDTO user = (UserDTO)req.getSession().getAttribute("loginUser");
 		System.out.println("룰루");
@@ -22,19 +22,15 @@ public class ExpertProfileOkAction implements Action{
 		
 		expert.setUseridx(useridx);
 		expert.setExpertnickname(req.getParameter("expertnickname"));
-		expert.setExpertintro(req.getParameter("expertintro"));
-		expert.setExpertworkplace(req.getParameter("expertworkplace"));
+		expert.setExpertjob(req.getParameter("expertjob"));
 		expert.setExpertmajor(req.getParameter("expertmajor"));
-		expert.setExpertmajorpart(req.getParameter("expertmajorpart"));
-		expert.setExpertmajortechnic(req.getParameter("expertmajortechnic"));
-		expert.setFreelancercheck(req.getParameter("freelancercheck"));
-		expert.setExpertresident(req.getParameter("expertresident"));
+		expert.setExpertinterest(req.getParameter("expertinterest"));
 		
 		UserDAO udao = new UserDAO();
 		ActionTo transfer = new ActionTo();
 		transfer.setRedirect(true);
 		if(udao.expertjoin(expert)) {
-			transfer.setPath(req.getContextPath()+"/app/service/service_register.jsp");
+			transfer.setPath(req.getContextPath()+"/app/mypage/mytable_chef_myservice.jsp");
 			
 		} else {
 			transfer.setPath(req.getContextPath());
