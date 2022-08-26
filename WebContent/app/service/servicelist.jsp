@@ -168,8 +168,8 @@
                   <span id="score">평점순</span>
                 </div>
               </div>
+              <!-- 리스트시작 -->
               <div id="service_items">
-                <div class="fourlist">
                   <div class="withouti">
                     <a href="" class="service_item">
                       <div class="imgbox">
@@ -286,8 +286,6 @@
                     </a>
                     <i class="fa-regular fa-heart"></i>
                   </div>
-                </div>
-                <div class="fourlist">
                   <div class="withouti">
                     <a href="" class="service_item">
                       <div class="imgbox">
@@ -404,8 +402,6 @@
                     </a>
                     <i class="fa-regular fa-heart"></i>
                   </div>
-                </div>
-                <div class="fourlist">
                   <div class="withouti">
                     <a href="" class="service_item">
                       <div class="imgbox">
@@ -522,7 +518,6 @@
                     </a>
                     <i class="fa-regular fa-heart"></i>
                   </div>
-                </div>
               </div>
               <div class="pagination">
                 <a href="">&lt;</a>

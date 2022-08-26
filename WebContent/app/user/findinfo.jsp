@@ -99,7 +99,7 @@
         <div class="header">
             <div class="header_title">
                 <div class="img_wrapper">
-                    <a href="${cp}">
+                    <a href="/">
                         <img src="${cp}/img/setthetable.png" alt="">
                     </a>
                 </div>

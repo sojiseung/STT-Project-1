@@ -1,7 +1,7 @@
 #pjbanner {
   position: relative;
   width: 100%;
-  margin-top: 170px;
+  margin-top: 180px;
   margin-bottom: 70px;
 }
 #pjbanner .inner {
@@ -14,7 +14,7 @@
 }
 
 #pjbanner #pjlist {
-  height: 1500px;
+  height: 2527.72px;
 }
 #pjbanner #pjlist > p {
   margin-top: 50px;
@@ -164,13 +164,15 @@
 #service_items {
   margin-top: 30px;
   width: 930px;
-}
-#service_items .fourlist {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 55px;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-content: space-between;
+  height: 1013px;
 }
-#service_items .fourlist .withouti {
+#service_items  .withouti {
+  /* margin-bottom: 55px; */
   position: relative;
 }
 #service_items .service_item .imgbox div {
@@ -260,3 +262,4 @@
   color: #270949;
   font-weight: bold;
 }
+

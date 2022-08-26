@@ -32,15 +32,18 @@ popularity.addEventListener("click", function () {
 
 const hearts = document.querySelectorAll(".fa-heart");
 for (let i = 0; i < hearts.length; i++) {
-  if (i % 2 == 0) {
-    hearts[i].addEventListener("click", function () {
-      hearts[i].classList.replace("fa-regular", "fa-solid");
-      hearts[i].style.color = "#f11376";
-    });
-  } else {
-    hearts[i].addEventListener("click", function () {
-      hearts[i].classList.replace("fa-regular", "fa-solid");
-      hearts[i].style.color = "#ef5350";
-    });
-  }
+  hearts[i].addEventListener("click", function () {
+    if (hearts[i].classList.contains("fa-regular")) {
+      if (i % 2 == 0) {
+        hearts[i].classList.replace("fa-regular", "fa-solid");
+        hearts[i].style.color = "#f11376";
+      } else {
+        hearts[i].classList.replace("fa-regular", "fa-solid");
+        hearts[i].style.color = "#ef5350";
+      }
+    } else {
+      hearts[i].classList.replace("fa-solid", "fa-regular");
+      hearts[i].style.color = "#3f7fa1";
+    }
+  });
 }
