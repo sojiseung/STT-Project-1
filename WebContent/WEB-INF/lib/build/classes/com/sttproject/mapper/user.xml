@@ -8,18 +8,14 @@
 		values(#{userid},#{userpw},#{username},#{usergender},#{userphone})
 	</insert>
 	<select id="userlogin" parameterType="hashmap" resultType="userdto">
-		select * from stt_user where userid=#{userid} and binary(userpw)=#{userpw}
+		select * from stt_user where userid=#{userid} and userpw=#{userpw}
 	</select>
 	<select id="checkid" parameterType="string" resultType="_int">
 		select count(*) from stt_user where userid=#{userid}
 	</select>
-	<select id="expertinfo" parameterType="_int" resultType="expertdto">
-		select * from stt_expert where useridx = #{useridx}
-	</select>
 	<insert id="expertjoin" parameterType="expertdto">
-		insert into
-		stt_expert(expertidx,useridx,expertnickname,expertjob,expertmajor,expertinterest)
-		values(#{expertidx},#{useridx},#{expertnickname},#{expertjob},#{expertmajor},#{expertinterest})
+insert into stt_expert (useridx,expertnickname,expertintro,expertworkplace,expertmajor,expertmajorpart,expertmajortechnic,freelancercheck,expertresident)
+		values(#{useridx},#{expertnickname},#{expertintro},#{expertworkplace},#{expertmajor},#{expertmajorpart},#{expertmajortechnic},#{freelancercheck},#{expertresident})
 	</insert>
 	<update id="expertupdate">
 		update stt_user set expertjoin = 'O' where useridx = #{useridx}

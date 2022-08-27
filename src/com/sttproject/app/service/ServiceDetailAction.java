@@ -31,7 +31,7 @@ public class ServiceDetailAction implements Action { //boardview
 		FileDAO fdao = new FileDAO();
 	
 	//servicedetail.jsp 로 가져갈 내용	
-		req.setAttribute("files", fdao.getFiles(serviceidx));
+		/* req.setAttribute("files", fdao.getFiles(serviceidx)); */
 		req.setAttribute("service", service);
 		
 	//결제 페이지를 위해 세션에 저장 

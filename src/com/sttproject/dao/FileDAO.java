@@ -1,6 +1,5 @@
 package com.sttproject.dao;
 
-import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 
@@ -15,12 +14,13 @@ public class FileDAO {
 		
 	}
 
-	public boolean insertFile(FileDTO file) {
-		return sqlsession.insert("File.insertfile",file) == 1;
+	public boolean insertFile(FileDTO savefile) {
+		return sqlsession.insert("File.insertfile",savefile) == 1;
 	}
 
-	public List<FileDTO> getFiles(int serviceidx) {
-		return sqlsession.selectList("File.getfile", serviceidx);
+	public int getServiceNum(int expertidx) {
+		
+		return sqlsession.selectOne("File.servicenum", expertidx);
 	}
 	
 }

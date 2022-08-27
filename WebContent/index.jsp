@@ -90,7 +90,7 @@ prefix="c"%>
   <body>
     <c:choose>
       <c:when test="${loginUser != null}">	
-        <%@ include file="/fix/loginheader.jsp" %>
+        <%@ include file="/fix/loginheader.jsp"%>
       </c:when>
       <c:otherwise> <%@ include file="/fix/header.jsp" %> </c:otherwise>
     </c:choose>

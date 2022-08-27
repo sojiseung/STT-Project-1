@@ -7,7 +7,9 @@ import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 import com.sttproject.action.Action;
 import com.sttproject.action.ActionTo;
+import com.sttproject.dao.FileDAO;
 import com.sttproject.dao.ServiceDAO;
+import com.sttproject.dto.FileDTO;
 import com.sttproject.dto.ServiceDTO;
 
 public class ServiceRegisterAction implements Action {
@@ -50,11 +52,15 @@ public class ServiceRegisterAction implements Action {
 		uploadFilename = multi.getOriginalFileName("chooseFile");
 		System.out.println(uploadFilename);
 		
-		// service 정보 저장
+		
+		//===service 정보 저장===\\
 		ServiceDTO serviceresident = new ServiceDTO();
 		ServiceDAO sdao = new ServiceDAO();
+		int expertidx = (Integer)req.getSession().getAttribute("expertidx");
+		System.out.println(expertidx);
 		
 		serviceresident.setServicetitle(multi.getParameter("servicetitle"));
+		serviceresident.setExpertidx(expertidx);
 		serviceresident.setServicecompany(multi.getParameter("servicecompany"));
 		serviceresident.setServicecategory(Integer.parseInt(multi.getParameter("servicecategory")));
 		serviceresident.setServicetype(Integer.parseInt(multi.getParameter("servicetype")));
@@ -64,16 +70,38 @@ public class ServiceRegisterAction implements Action {
 		serviceresident.setServiceperiod(multi.getParameter("serviceperiod"));
 		serviceresident.setServiceinfo(multi.getParameter("serviceinfo"));
 		serviceresident.setServicereadyto(multi.getParameter("servicereadyto"));
+		
+		//==file 정보 저장===\\
+		
+		
+		
+		
+
+		
+		
 
 
 		ActionTo transfer = new ActionTo();
 		transfer.setRedirect(true);
 		if (sdao.serviceregister(serviceresident)) {
-			transfer.setPath(req.getContentType() + "/service/servicelist.sv");
+			FileDAO fdao = new FileDAO();
+			System.out.println(expertidx);
+			int serviceidx = fdao.getServiceNum(expertidx);
+			System.out.println(serviceidx);
+			if(!fcheck1) {
+				FileDTO savefile = new FileDTO();
+				savefile.setServiceidx(serviceidx);
+				savefile.setSaveFilename(saveFilename);
+				savefile.setUploadFilename(uploadFilename);
+				fcheck1 =  fdao.insertFile(savefile);
+				System.out.println(serviceidx);
+			}
+			if(fcheck1) {
+				transfer.setPath(req.getContentType() + "/service/servicelist.sv");
+			}
 		} else {
 			transfer.setPath(req.getContentType());
 		}
-
 
 		return transfer;
 	}

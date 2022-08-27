@@ -7,8 +7,8 @@
 		select count(*) from stt_service
 	</select>
 	<insert id ="register" parameterType="servicedto">
-		insert into stt_service(expertidx, servicetitle, servicecompany, servicecategory, servicetype, serviceteamscale, serviceresident, serviceprice, serviceperiod, serviceinfo,servicereadyto)
-		values(#{expertidx}, #{servicetitle}, #{servicecompany}, #{servicecategory},#{servicetype}, #{serviceteamscale},#{serviceresident},#{serviceprice},#{serviceperiod}, #{serviceinfo}, #{servicereadyto} ) 
+		insert into stt_service(expertidx, useridx, servicetitle, servicecategory, servicetype, serviceteamscale, serviceresident, serviceprice, serviceperiod, serviceinfo)
+		values(${expertidx}, ${useridx}, ${servicetitle}, ${servicecategory}, ${servicetype}, ${serviceteamscale}, ${serviceresident}, ${serviceprice}, ${serviceperiod}, ${serviceinfo} ) 
 	</insert>
 	<select id="getservicelist" resultType="servicedto" parameterType="hashmap">
 		select * from stt_service order by serviceidx desc limit #{statrRow}, #{pageSize}
