@@ -13,6 +13,9 @@
 	<select id="checkid" parameterType="string" resultType="_int">
 		select count(*) from stt_user where userid=#{userid}
 	</select>
+	<select id="expertinfo" parameterType="_int" resultType="expertdto">
+		select * from stt_expert where useridx = #{useridx}
+	</select>
 	<insert id="expertjoin" parameterType="expertdto">
 		insert into
 		stt_expert(expertidx,useridx,expertnickname,expertjob,expertmajor,expertinterest)

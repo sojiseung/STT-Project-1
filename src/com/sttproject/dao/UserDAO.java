@@ -40,6 +40,10 @@ public class UserDAO {
 		return (Integer)sqlsession.selectOne("User.checkid", userid) == 0;
 	}
 
+	public ExpertDTO expertinfo(int useridx) {
+		return sqlsession.selectOne("User.expertinfo", useridx);
+	}
+
 	
 
 }
