@@ -1,11 +1,27 @@
+<%@page import="com.sttproject.dto.UserDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:set var="cp" value="${pageContext.request.contextPath }"/>
+<%
+
+		String expertjoin = null;
+	
+		if(request.getSession().getAttribute("loginUser")!=null){
+			UserDTO user = (UserDTO)request.getSession().getAttribute("loginUser");
+			expertjoin = user.getExpertjoin();
+		}
+	
+		out.print(expertjoin);
+
+%>
+<c:set var="expertjoin" value="<%=expertjoin %>"/>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
+
 <title>Insert title here</title>
     <!-- 파비콘 -->
     <link rel="icon" href="../img/favicon.ico" />
@@ -72,7 +88,14 @@
                       </a>
                       <ul>
                         <a href=""><li>프로필 관리</li></a>
-                        <a href="${cp}/app/user/chef_register.jsp"><li>전문가 정보</li></a>
+                        <c:choose>
+                        	<c:when test="${expertjoin.equals('O')}">
+                       			<a href="${cp}/app/mypage/mytable_chef_myservice.jsp"><li>전문가 정보</li></a>
+                       		</c:when>
+                       		<c:otherwise>
+                       			<a href="" id ="expertjoin" onclick="expertjoin();"><li>전문가 정보</li></a>
+                       		</c:otherwise>
+                        </c:choose>
                         <a href=""><li>나의 찜목록</li></a>
                         <a href="${cp}/user/userlogout.us"><li>로그아웃</li></a>
                       </ul>
@@ -164,4 +187,16 @@
           </div>
         </header>
 </body>
+<script>
+function expertjoin(){
+	if(!confirm("전문가로 등록되어있지 않습니다\n전문가로 등록하시겠습니까?\n확인(예) 또는 취소(아니오)를 선택해주세요.")){
+		alert("취소(아니오)를 누르셨습니다")
+	} else {
+		alert("확인(예)를 누르셨습니다.\n전문가 등록  페이지로 이동합니다.")
+		$('#expertjoin').attr('href', '${cp}/app/user/chef_register.jsp')
+	}
+	
+}
+
+</script>
 </html>

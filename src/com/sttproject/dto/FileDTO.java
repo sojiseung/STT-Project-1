@@ -2,27 +2,32 @@ package com.sttproject.dto;
 
 public class FileDTO {
 	private int	serviceidx;
-	private String filename;
-	private String systemname;
+	private String uploadFilename;
+	private String saveFilename;
 	
-
-
+	
 	public int getServiceidx() {
 		return serviceidx;
+	}
+	public String getUploadFilename() {
+		return uploadFilename;
+	}
+	public String getSaveFilename() {
+		return saveFilename;
 	}
 	public void setServiceidx(int serviceidx) {
 		this.serviceidx = serviceidx;
 	}
-	public String getFilename() {
-		return filename;
+	public void setUploadFilename(String uploadFilename) {
+		this.uploadFilename = uploadFilename;
 	}
-	public void setFilename(String filename) {
-		this.filename = filename;
+	public void setSaveFilename(String saveFilename) {
+		this.saveFilename = saveFilename;
 	}
-	public String getSystemname() {
-		return systemname;
-	}
-	public void setSystemname(String systemname) {
-		this.systemname = systemname;
-	}
+	
+	
+	
+	
+
+
 }
