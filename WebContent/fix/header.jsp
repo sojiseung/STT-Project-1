@@ -104,7 +104,7 @@
         <div class="inner">
           <div id="headup">
             <div id="logo">
-              <a href="${cp}">
+              <a href="/">
                 <img src="${cp}/img/logo.png" alt="Set The Table" />
               </a>
             </div>
