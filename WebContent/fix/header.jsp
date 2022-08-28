@@ -140,7 +140,7 @@
           </div>
           <div id="headdown">
             <div>
-              <a href="" id="allcategory">
+              <a href="${cp}/service/servicelist.sv" id="allcategory">
                 <i class="fa-solid fa-bars"></i>
                 <div>전체 카테고리</div>
                 <i class="fa-solid fa-caret-down"></i>
@@ -148,7 +148,7 @@
               <ul class="displayNone1">
                 <li>비즈니스</li>
                 <li>
-                  <a href="">
+                  <a href="${cp}/service/servicelist.sv">
                     IT∙프로그래밍
                     <i class="fa-solid fa-chevron-right"></i>
                   </a>

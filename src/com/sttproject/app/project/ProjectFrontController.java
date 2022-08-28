@@ -1,4 +1,4 @@
-package com.sttproject.app.service;
+package com.sttproject.app.project;
 
 import java.io.IOException;
 
@@ -8,8 +8,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.sttproject.action.ActionTo;
+import com.sttproject.app.service.ReplyWriteAction;
+import com.sttproject.app.service.ServiceDetailAction;
+import com.sttproject.app.service.ServiceListAction;
+import com.sttproject.app.service.ServiceOrderAction;
+import com.sttproject.app.service.ServiceRegisterAction;
 
-public class ServiceFrontController extends HttpServlet {
+public class ProjectFrontController extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 
@@ -33,14 +38,10 @@ public class ServiceFrontController extends HttpServlet {
 		ActionTo transfer = null;
 
 		switch (command) {
-		case "/service/serviceregister.sv":
-			transfer = new ActionTo();
-			transfer.setPath("/app/service/mytable_chef_myservice.jsp");
-			transfer.setRedirect(false);
-			break;
+
 		case "/service/serviceregisterok.sv":
 			try {
-			 transfer = new ServiceRegisterAction().execute(req,resp);
+			 new ServiceRegisterAction().execute(req,resp);
 			} catch (Exception e) {
 				System.out.println("/service/servieclist.sv" +e);
 			}
@@ -49,7 +50,7 @@ public class ServiceFrontController extends HttpServlet {
 			try {
 				transfer = new ServiceDetailAction().execute(req, resp);
 			}catch (Exception e) {
-				System.out.println("/service/servicedetail.sv :" + e);
+				System.out.println("/service/servicedetail.sv");
 			}
 			break;
 			

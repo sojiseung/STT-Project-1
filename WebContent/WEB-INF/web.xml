@@ -44,5 +44,13 @@
 		<servlet-name>ChatFrontController</servlet-name>
 		<url-pattern>*.ct</url-pattern>
 	</servlet-mapping>
+		<servlet>
+		<servlet-name>ProjectFrontController</servlet-name>
+		<servlet-class>com.sttproject.app.project.ProjectFrontController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ProjectFrontController</servlet-name>
+		<url-pattern>*.pj</url-pattern>
+	</servlet-mapping>
 </web-app>
 

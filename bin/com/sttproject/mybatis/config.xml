@@ -7,6 +7,7 @@
   	<typeAlias type="com.sttproject.dto.UserDTO" alias="userdto"/>  
   	<typeAlias type="com.sttproject.dto.ExpertDTO" alias="expertdto"/>  
   	<typeAlias type="com.sttproject.dto.ServiceDTO" alias="servicedto"/>  
+  	<typeAlias type="com.sttproject.dto.ProjectDTO" alias="projectdto"/>  
   	<typeAlias type="com.sttproject.dto.FileDTO" alias="filedto"/>
 	<typeAlias type="com.sttproject.dto.OrderDTO" alias="orderdto"/> 
 	<typeAlias type="com.sttproject.dto.ChatDTO" alias="chatdto"/>  	
@@ -27,6 +28,7 @@
   	<mapper resource="com/sttproject/mapper/user.xml"/>
   	<mapper resource="com/sttproject/mapper/admin.xml"/>
   	<mapper resource="com/sttproject/mapper/service.xml"/>
+  	<mapper resource="com/sttproject/mapper/project.xml"/>
   	<mapper resource="com/sttproject/mapper/file.xml"/>
   	<mapper resource="com/sttproject/mapper/chat.xml"/>
   </mappers>

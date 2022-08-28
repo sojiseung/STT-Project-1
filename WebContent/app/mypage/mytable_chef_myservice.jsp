@@ -24,7 +24,7 @@
     ></script>
 </head>
 <body>
-    <form action="">
+    <form action="${cp}/app/service/service_register.jsp">
         <div id="wrap">
             <div id="left">
                 <div id="my_img">

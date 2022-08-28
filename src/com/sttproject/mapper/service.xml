@@ -14,13 +14,13 @@
 		select * from stt_service order by serviceidx desc limit #{statrRow}, #{pageSize}
 	</select>
 	<select id="getdetail" resultType="servicedto" parameterType="_int">
-		select * from stt_service where expertidx=${expertidx}
+		select * from stt_service where serviceidx=#{serviceidx}
 	</select>
 	<select id="getlastidx" resultType="_int" parameterType="string">
 		select max(serviceidx) from stt_service where expertidx=#{expertidx}
 	</select>
 	<insert id="orderservice" parameterType="orderdto">
 		insert into stt_order(useridx, serviceidx, servicetitle, servicecnt, serviceperiod, serviceprice, usercash)
-		values (${useridx}, ${serviceidx}, ${servicetitle}, ${servicecnt}, ${serviceperiod}, ${serviceprice}, ${usercash})
+		values (#{useridx}, #{serviceidx}, #{servicetitle}, #{servicecnt}, #{serviceperiod}, #{serviceprice}, #{usercash})
 	</insert>
 </mapper>

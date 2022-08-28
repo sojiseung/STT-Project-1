@@ -89,6 +89,7 @@ public class UserFrontController extends HttpServlet{
 			
 		case "/user/userlogout.us":
 			req.getSession().removeAttribute("loginUser");
+			req.getSession().removeAttribute("userid");
 			transfer = new ActionTo();
 			transfer.setPath("/");
 			transfer.setRedirect(false);

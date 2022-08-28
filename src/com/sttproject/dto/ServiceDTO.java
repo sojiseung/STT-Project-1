@@ -7,10 +7,10 @@ public class ServiceDTO {
 	private String servicetitle;
 	private int serviceprice;
 	private String serviceinfo;
-	private int servicecategory;
-	private	int servicetype;
+	private String servicecategory;
+	private	String servicetype;
 	private String serviceteamscale;
-	private int serviceresident;
+	private String serviceresident;
 	private	String serviceperiod;
 	private int likecnt;
 	private String servicereadyto;
@@ -35,17 +35,8 @@ public class ServiceDTO {
 	public String getServiceinfo() {
 		return serviceinfo;
 	}
-	public int getServicecategory() {
-		return servicecategory;
-	}
-	public int getServicetype() {
-		return servicetype;
-	}
 	public String getServiceteamscale() {
 		return serviceteamscale;
-	}
-	public int getServiceresident() {
-		return serviceresident;
 	}
 	public String getServiceperiod() {
 		return serviceperiod;
@@ -83,17 +74,8 @@ public class ServiceDTO {
 	public void setServiceinfo(String serviceinfo) {
 		this.serviceinfo = serviceinfo;
 	}
-	public void setServicecategory(int servicecategory) {
-		this.servicecategory = servicecategory;
-	}
-	public void setServicetype(int servicetype) {
-		this.servicetype = servicetype;
-	}
 	public void setServiceteamscale(String serviceteamscale) {
 		this.serviceteamscale = serviceteamscale;
-	}
-	public void setServiceresident(int serviceresident) {
-		this.serviceresident = serviceresident;
 	}
 	public void setServiceperiod(String serviceperiod) {
 		this.serviceperiod = serviceperiod;
@@ -112,6 +94,24 @@ public class ServiceDTO {
 	}
 	public void setServiceratingcount(String serviceratingcount) {
 		this.serviceratingcount = serviceratingcount;
+	}
+	public String getServicetype() {
+		return servicetype;
+	}
+	public void setServicetype(String servicetype) {
+		this.servicetype = servicetype;
+	}
+	public String getServiceresident() {
+		return serviceresident;
+	}
+	public void setServiceresident(String serviceresident) {
+		this.serviceresident = serviceresident;
+	}
+	public String getServicecategory() {
+		return servicecategory;
+	}
+	public void setServicecategory(String servicecategory) {
+		this.servicecategory = servicecategory;
 	}
 	
 	

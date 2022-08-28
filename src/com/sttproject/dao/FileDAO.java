@@ -22,5 +22,10 @@ public class FileDAO {
 		
 		return sqlsession.selectOne("File.servicenum", expertidx);
 	}
+
+	public FileDTO getFile(int serviceidx) {
+
+		return sqlsession.selectOne("File.getFile",serviceidx);
+	}
 	
 }

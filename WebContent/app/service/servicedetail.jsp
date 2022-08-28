@@ -41,7 +41,7 @@
 		<div class="inner">
 			<!-- MAIN -->
 			<div class="main_detail">
-				<img src="${cp}/img/pj1.jpg" alt="" />
+				<img src="${cp}/file/${file.saveFilename}" alt="" />
 				<section class="ratingscore">
 					<div class="starrating">
 						<i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i>
@@ -63,6 +63,7 @@
 					<div id="book1" class="h60"></div>
 					<div>서비스설명</div>
 					<pre class="exp">
+					${service.serviceinfo}
               <!-- 2021년 크몽어워즈 수상 "메이크홈즈"
               보러가기
 
@@ -97,10 +98,11 @@
 					<div id="book2" class="h60"></div>
 					<div>의뢰인 준비사항</div>
 					<pre class="exp">
-              벤치마킹하실 사이트 주소 (링크로 전달)
+					${service.servicereadyto }
+<!--               벤치마킹하실 사이트 주소 (링크로 전달)
               기획중인 페이지수 (구성한 대메뉴-하위메뉴)
               꼭 필요한 기능(결제기능,실시간상담 등)
-              홈페이지 작업에 사용될 자료</pre>
+              홈페이지 작업에 사용될 자료 --></pre>
 				</section>
 				<section id="cancel" class="size">
 					<div id="book3" class="h60"></div>
@@ -157,18 +159,19 @@
 						</button>
 					</form>
 				</section>
-				<h1>SEO최적화 거품없는 가격으로 반응형 홈페이지 제작해 드립니다.</h1>
+				<h1>${service.servicetitle }</h1>
 				<section id="purchase">
 					<div id="purchaseinfo">
 						<div class="pinfo1">
 							<div class="price">
-								550,000원 <span class="vat">(VAT 포함가)</span>
+								${service.serviceprice}원 <span class="vat">(VAT 포함가)</span>
 							</div>
-							<div class="info1">반응형홈페이지(디럭스)</div>
-							<div class="info2">반응형홈페이지/관리자모드/개발 &amp; 디자인모드/실시간채팅,소셜로그인
+							<div class="info1">${service.servicetype }</div>
+							<div class="info2">${service.serviceresident }<br> 
+											팀 규모 : ${service.serviceteamscale}명
 							</div>
 							<div class="period">
-								<span>작업일</span> <span>14일</span>
+								<span>작업일</span> <span>${service.serviceperiod}</span>
 							</div>
 								<button onclick="location.href='${cp}/app/service/serviceorder.jsp'"	
 								role="button" color="prime" class="pc">
@@ -183,8 +186,8 @@
 				</section>
 				<section id="purchase3">
 					<div>
-						<a href=""> <img src="${cp}/img/makehomes.jpg" alt="" />
-							<h1>메이크홈즈</h1>
+						<a href=""> <img src="${cp}/img/setthetable.png" alt="" />
+							<h1>${service.servicecompany}</h1>
 						</a>
 					</div>
 					<div>

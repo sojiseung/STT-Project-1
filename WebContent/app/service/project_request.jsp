@@ -16,89 +16,90 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>서비스 등록</title>
-    <link rel="stylesheet" href="${cp}/css/service_register.css">
+    <title>프로젝트 등록</title>
+        <!-- 파비콘 -->
+    <link rel="icon" href="${cp}/img/favicon.ico" />
+    <!-- 글꼴 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square-round.css"
+      rel="stylesheet"
+    />
+    <!-- 아이콘 -->
+    <script
+      src="https://kit.fontawesome.com/bd7db36e77.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="${cp}/css/project_request.css">
 </head>
 <body>
 <div id="header"></div>
-        <p id="service_up">내 서비스 등록</p>
-        <form method = "post" action="${cp}/service/serviceregisterok.sv" enctype="multipart/form-data">
+        <p id="service_up">프로젝트 의뢰하기</p>
+        <form method = "post" action="${cp}/project/requestproject.pj" enctype="multipart/form-data">
             <div class="wrap">
-                <p>서비스 기본 정보</p>
+                <p>프로젝트 기본 정보</p>
                 <div class="info">
                     <ul>
                         <li>
                              <div class="cont_sub">
                              <label class="cont_title" for="">제목</label> <br><br>
-                             <input id="servicetitle" name="servicetitle" type="text" size="83" placeholder="서비스를 잘 드러낼 수 있는 제목을 지어주세요." maxlength="30">
+                             <input id="projecttitle" name="projecttitle" type="text" size="83" placeholder="어떤 프로젝트인지 잘 드러날 수 있는 제목을 지어주세요." maxlength="30">
                             </div>
                             <div class="cont_sub">
-                             <label class="cont_title">회사이름 </label> <br><br>
-                             <input id="servicecompany" name="servicecompany" type="text" size="83" placeholder="회사이름을 입력해주세요 ." maxlength="30">
+                             <label class="cont_title">예산 </label> <br><br>
+                             <input id="projectbudget" name="projectbudget" type="text" size="83" placeholder="예산을 적어주세요.(ex. 1,000,000원, 제안 가능)" maxlength="30">
                             </div>
                         </li>
                         <li>
                             <div class="cont_sub">
-                             <label class="cont_title" for="">카테고리</label><br><br>
-                             <select name="servicecategory" id="servicecategory">
-                                <option value="" disabled selected>선택해주세요</option>
-                                <option value="IT · 프로그래밍">IT · 프로그래밍</option>
-                                <option value="디자인">디자인</option>
-                                <option value="마케팅">마케팅</option>
-                                <option value="문서 · 글쓰기">문서 · 글쓰기</option>
-                                <option value="영상 · 사진 · 음향">영상 · 사진 · 음향</option>
+                             <label class="cont_title" for="">프로젝트 진행 방식(외주, 상주)</label><br><br>
+                             <select name="projectresident" id="servicecategory">
+                                <option value="외주">외주</option>
+                                <option value="상주">상주</option>
                              </select>
                             </div>
                         </li> 
                         <li>
                             <div class="cont_sub">
-                                <label class="cont_title" for="">서비스 타입</label><br><br>
-                                <select name="servicetype" class="servicetype">
-                                    <option value="" disabled selected>선택해주세요</option>
-                                    <option value="신입·초급 : 소스분석/수정">신입·초급 : 소스분석/수정</option>
-                                    <option value="중급 : 설계/코딩">중급 : 설계/코딩</option>
-                                    <option value="고급 : 최적화 설계">고급 : 최적화 설계</option>
-                                    <option value="전문가">전문가</option>
-                                 </select>
-                                <input  type="number" id="serviceteamscale" name="serviceteamscale" min="1"  size="" placeholder="팀 규모(최소 1명)">
-                                <select name="serviceresident" class="serviceresident">
-                                    <option value="" disabled selected>상주 여부를 선택해주세요</option>
-                                    <option value="상주 가능">상주 가능</option>
-                                    <option value="상주 불가능">상주 불가능</option>
-                                 </select>
+                             <label class="cont_title" for="">개인 / 기업 여부</label><br><br>
+                             <select name="projectpersonal" id="servicecategory">
+                                <option value="개인">개인</option>
+                                <option value="기업">기업</option>
+                             </select>
                             </div>
-                        </li>
+                        </li> 
                         <li>
                             <div class="cont_sub">
-                                <label class="cont_title" for="">금액</label><br><br> <input id="serviceprice" name="serviceprice" type="text" size="83" placeholder="서비스 금액을 적어주세요.">
-                            </div>
-                        </li>
-                        <li>
-                            <div class="cont_sub">
-                                <label class="cont_title" for="">작업 기간</label><br><br> <input id="serviceperiod" name="serviceperiod" type="text" size="83" placeholder="작업 기간을 정해주세요. ex) 45일">
+                                <label class="cont_title" for="">작업 기간</label><br><br> 
+                                <input id="projectdeadline" name="projectdeadline" type="date">
                             </div>
                         </li> 
                      </ul>
                 </div>
             </div>
             <div class="wrap">
-                <p>서비스 설명</p>
+                <p>프로젝트 개요</p>
                 <div class="info">
                     <div class="service_box">
-                        <textarea name="serviceinfo" id="serviceinfo" cols="30" rows="10" placeholder="서비스에 대한 설명을 적어주세요."></textarea>
+                        <textarea name="serviceinfo" id="projectouline" cols="30" rows="10" placeholder="전체적인 프로젝트 개요에 대한 설명을 적어주세요."></textarea>
                     </div>
                 </div>
             </div>
             <div class="wrap">
-                <p>의뢰인 준비사항</p>
+                <p>상세내용</p>
                 <div class="info">
                     <div class="service_box">
-                        <textarea name="servicereadyto" class="servicereadyto" cols="30" rows="10" placeholder="의뢰인 준비 사항을 적어주세요."></textarea>
+                        <textarea name="servicereadyto" class="projectdetail" cols="30" rows="10" placeholder="프로젝트 상세내용을 적어주세요."></textarea>
                     </div>
                 </div>
             </div>
             <div class="wrap">
-                <p>서비스 썸네일</p>
+                <p>프로젝트 썸네일</p>
                 <div class="container">
                     <div class="image-upload" id="image-upload">
                             <div class="button">
@@ -121,7 +122,7 @@
                 </div>
             </div>
             <div id="fin">
-                <button id="fin_btn">서비스 등록하기</button>
+                <button id="fin_btn">프로젝트 등록하기</button>
             </div>
         </form>
         <%@ include file="/fix/footer.jsp" %>

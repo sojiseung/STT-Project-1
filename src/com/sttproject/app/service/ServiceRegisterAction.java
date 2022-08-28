@@ -62,10 +62,10 @@ public class ServiceRegisterAction implements Action {
 		serviceresident.setServicetitle(multi.getParameter("servicetitle"));
 		serviceresident.setExpertidx(expertidx);
 		serviceresident.setServicecompany(multi.getParameter("servicecompany"));
-		serviceresident.setServicecategory(Integer.parseInt(multi.getParameter("servicecategory")));
-		serviceresident.setServicetype(Integer.parseInt(multi.getParameter("servicetype")));
+		serviceresident.setServicecategory(multi.getParameter("servicecategory"));
+		serviceresident.setServicetype(multi.getParameter("servicetype"));
 		serviceresident.setServiceteamscale(multi.getParameter("serviceteamscale"));
-		serviceresident.setServiceresident(Integer.parseInt(multi.getParameter("serviceresident")));
+		serviceresident.setServiceresident(multi.getParameter("serviceresident"));
 		serviceresident.setServiceprice(Integer.parseInt(multi.getParameter("serviceprice")));
 		serviceresident.setServiceperiod(multi.getParameter("serviceperiod"));
 		serviceresident.setServiceinfo(multi.getParameter("serviceinfo"));
@@ -88,22 +88,24 @@ public class ServiceRegisterAction implements Action {
 			System.out.println(expertidx);
 			int serviceidx = fdao.getServiceNum(expertidx);
 			System.out.println(serviceidx);
+			
 			if(!fcheck1) {
 				FileDTO savefile = new FileDTO();
 				savefile.setServiceidx(serviceidx);
 				savefile.setSaveFilename(saveFilename);
 				savefile.setUploadFilename(uploadFilename);
 				fcheck1 =  fdao.insertFile(savefile);
-				System.out.println(serviceidx);
 			}
+			
 			if(fcheck1) {
-				transfer.setPath(req.getContentType() + "/service/servicelist.sv");
+				transfer.setPath(req.getContextPath() + "/service/servicedetail.sv?serviceidx="+ serviceidx);
+			}else {
+			transfer.setPath(req.getContextPath() + "/service/serviceregister.sv");
 			}
-		} else {
-			transfer.setPath(req.getContentType());
+
 		}
-
+		System.out.println(transfer.getPath());
 		return transfer;
-	}
 
+	}
 }

@@ -15,17 +15,12 @@ public class ServiceDetailAction implements Action { //boardview
 	@Override
 	public ActionTo execute(HttpServletRequest req, HttpServletResponse resp) throws Exception {
 		//select, forward, boardview.jsp, BoardDTO
-		
-		ServiceDAO sdao = new ServiceDAO ();
 		int serviceidx = Integer.parseInt(req.getParameter("serviceidx"));
-		int expertidx = Integer.parseInt(req.getParameter("expertidx"));
+		ServiceDAO sdao = new ServiceDAO ();
+		String userid = (String)req.getSession().getAttribute("userid");
+		System.out.println("여기까지 와?");
 	//게시글정보 		
 		ServiceDTO service = sdao.getdetail(serviceidx);
-
-	//좋아요카운트 	
-		if(!(service.getExpertidx()==expertidx)) {
-			service.setLikecnt(service.getLikecnt()+1);
-		}
 
 	//파일정보 	
 		FileDAO fdao = new FileDAO();
@@ -33,9 +28,8 @@ public class ServiceDetailAction implements Action { //boardview
 	//servicedetail.jsp 로 가져갈 내용	
 		/* req.setAttribute("files", fdao.getFiles(serviceidx)); */
 		req.setAttribute("service", service);
+		req.setAttribute("file", fdao.getFile(serviceidx));
 		
-	//결제 페이지를 위해 세션에 저장 
-		req.getSession().setAttribute("service", service); //위랑 중복인가 ? ..
 		
 		ActionTo transfer = new ActionTo();
 		transfer.setRedirect(false);
