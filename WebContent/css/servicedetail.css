@@ -5,7 +5,7 @@ html {
   width: 1168px;
   height: 3000px;
   position: relative;
-  margin: 150px auto 70px;
+  margin: 30px auto 70px;
 }
 
 #service_detail .inner {
@@ -50,7 +50,6 @@ html {
   background-color: #ffffff;
   z-index: 1;
   position: sticky;
-  top: 130px;
   margin-bottom: 48px;
 }
 #service_detail .inner .main_detail .sticky .flex {

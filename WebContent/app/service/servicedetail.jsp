@@ -205,4 +205,8 @@
 	<!-- FOOTER -->
 	<%@ include file="/fix/footer.jsp"%>
 </body>
+  <script>
+    const header = document.querySelector("header");
+    header.style.position = "relative";
+  </script>
 </html>
