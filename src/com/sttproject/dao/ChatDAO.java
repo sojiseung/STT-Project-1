@@ -129,6 +129,10 @@ public class ChatDAO {
 		}
 		return null;
 	}
+
+	public String getID(int serviceidx) {
+		return sqlsession.selectOne("Chat.getID", serviceidx);
+	}
 	
 }
 

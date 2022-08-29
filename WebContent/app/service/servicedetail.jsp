@@ -48,8 +48,8 @@
 						<i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i>
 						<i class="fa-solid fa-star"></i>
 					</div>
-					<div class="score">4.9</div>
-					<div class="ratingcnt">(290개의 평가)</div>
+					<div class="score">${service.servicerating }</div>
+					<div class="ratingcnt">(${service.serviceratingcount}개의 평가)</div>
 				</section>
 				<nav class="sticky">
 					<div class="flex">
@@ -132,14 +132,14 @@
 								<i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i>
 								<i class="fa-solid fa-star"></i>
 							</div>
-							<div class="score">4.9</div>
-							<div class="ratingcnt">(290개의 평가)</div>
+							<div class="score">${service.servicerating }</div>
+							<div class="ratingcnt">(${service.serviceratingcount }개의 평가)</div>
 						</section>
 						<div id="realrating">실제 STT를 통해 구매한 이용자들이 남긴 평가입니다.</div>
 					</div>
 					<section>
 						<div id="realrevieworderby">
-							<div>서비스후기290개</div>
+							<div>서비스후기${service.serviceratingcount}개</div>
 							<div></div>
 						</div>
 						<div>
@@ -155,7 +155,7 @@
 					<div></div>
 					<form action="">
 						<button id="like" onclick="change()">
-							<i id="heart" class="fa-regular fa-heart"></i> <span>2552</span>
+							<i id="heart" class="fa-regular fa-heart"></i> <span>${service.likecnt }</span>
 						</button>
 					</form>
 				</section>
@@ -195,7 +195,7 @@
 							<i class="fa-regular fa-clock"></i> 연락 가능 시간 : 9시 ~ 20시
 						</div>
 						<button>
-							<span>쪽지 보내기</span>
+							<a href="${cp}/chat/chatting.ct?serviceidx=${service.serviceidx}&servicecompany=${service.servicecompany}">쪽지 보내기</a>
 						</button>
 					</div>
 				</section>

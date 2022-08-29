@@ -18,6 +18,7 @@ public class ServiceDetailAction implements Action { //boardview
 		int serviceidx = Integer.parseInt(req.getParameter("serviceidx"));
 		ServiceDAO sdao = new ServiceDAO ();
 		String userid = (String)req.getSession().getAttribute("userid");
+			
 	//게시글정보 		
 		ServiceDTO service = sdao.getdetail(serviceidx);
 

@@ -20,6 +20,10 @@
 		select * from chat where chatID in (select max(chatID) from chat 
 		where toID = #{userid} or fromID = #{userid} group by fromID, toID)
 	</select>
+	<select id="getID" resultType="string" parameterType="_int">
+		select u.userid from stt_expert e join stt_service s on s.expertidx = e.expertidx
+		join stt_user u on u.useridx = e.useridx where serviceidx = #{serviceidx};
+	</select>
 	<insert id="submit" parameterType="hashmap">
 		insert into chat values(null, #{fromID},#{toID},#{chatContent}, NOW(), 0)
 	</insert>

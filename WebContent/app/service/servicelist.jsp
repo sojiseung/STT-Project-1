@@ -149,7 +149,7 @@
               </li>
             </ul>
           </div>
-          <form action="${cp }/service/servicelist.se">
+          <form action="${cp}/service/serviceserach.sv">
             <div id="service_list">
               <div id="pj_search">
                 <div id="project_search">
@@ -172,7 +172,7 @@
               <div id="service_items">
               <c:forEach items="${list}" var="service" varStatus="s">
                   <div class="withouti">
-                    <a href="" class="service_item">
+                    <a href="${cp}/service/servicedetail.sv?serviceidx=${service.serviceidx}&page=${page}&keyword=${keyword}" class="service_item">
                       <div class="imgbox">
                       <c:forEach items="${flist}" var="file" varStatus="f">
                       <c:if test ="${f.index == s.index }">

@@ -70,6 +70,7 @@ public class ServiceRegisterAction implements Action {
 		serviceresident.setServiceperiod(multi.getParameter("serviceperiod"));
 		serviceresident.setServiceinfo(multi.getParameter("serviceinfo"));
 		serviceresident.setServicereadyto(multi.getParameter("servicereadyto"));
+	
 		
 		//==file 정보 저장===\\
 		

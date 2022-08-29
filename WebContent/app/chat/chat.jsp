@@ -33,10 +33,10 @@
 		if(session.getAttribute("userid") != null){
 			userid = (String)session.getAttribute("userid");
 		}
-		String toID = null;
-		if(request.getParameter("toID") != null){
-			toID = (String)request.getParameter("toID");
-		}
+/* 		String toID = null;
+		if(request.getParameter("toid") != null){
+			toID = (String)request.getParameter("toid");
+		} */
 	%>
     <!--  -->
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
@@ -52,7 +52,8 @@
 		}
 		function submitFunction(){
 			var fromID = '<%= userid %>';
-			var toID = '<%= toID %>';
+			var toID = '${toid}<%-- <%= toID %> --%>';
+			console.log(toID);
 			var chatContent = $('#chatContent').val();
 			$.ajax({
 				type: "POST",
@@ -79,7 +80,7 @@
 			if (window.event.keyCode == 13) {
 		    	// 엔터키가 눌렸을 때
 			var fromID = '<%= userid %>';
-			var toID = '<%= toID %>';
+			var toID = '${toid}<%-- <%= toID %> --%>';
 			var chatContent = $('#chatContent').val();
 			$.ajax({
 				type: "POST",
@@ -108,7 +109,7 @@
 		
 		function chatListFunction(type){
 			var fromID = '<%=userid%>';
-			var toID = '<%=toID%>';
+			var toID = '<%-- <%=toID%> --%>${toid}';
 			$.ajax({
 				type: "POST",
 				url: "${cp}/chat/chatlist.ct",
@@ -136,7 +137,7 @@
 		}
 		
 			function addChat(chatName, chatContent, chatTime){
-				let toID = '<%=toID%>';
+				let toID = '<%-- <%=toID%> --%>${toid}';
 				if(chatName == '나'){
 				$('#chatList').append('<div class="row">' +
 						'<div class="col-lg-12">' +
@@ -165,7 +166,7 @@
 						'</a>'+
 						'<div class="media-body">'+
 						'<h4 class="media-heading">'+
-						chatName +
+						chatName+
 						'<span class="small pull-right">'+
 						chatTime + 
 						'</span>' +
