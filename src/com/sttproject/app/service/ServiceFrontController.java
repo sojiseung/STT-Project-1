@@ -35,7 +35,7 @@ public class ServiceFrontController extends HttpServlet {
 		switch (command) {
 		case "/service/serviceregister.sv":
 			transfer = new ActionTo();
-			transfer.setPath("/app/service/mytable_chef_myservice.jsp");
+			transfer.setPath("/app/mypage/mytable_chef_myservice.jsp");
 			transfer.setRedirect(false);
 			break;
 		case "/service/serviceregisterok.sv":

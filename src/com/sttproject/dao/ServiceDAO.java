@@ -16,15 +16,27 @@ public class ServiceDAO {
 	}
 
 	
-	public int getserviceCnt() {//total page 계산
-		return sqlsession.selectOne("Service.servicecnt");
+	public int getserviceCnt(String keyword) {//total page 계산
+		if(keyword == null || keyword.equals("")) {
+			return sqlsession.selectOne("Service.servicecnt");
+		}else {
+			// title과 keyword 비교
+			return sqlsession.selectOne("Service.servicecntwithkey", keyword);
+		}
 	}
 
-	public List<ServiceDTO> getservicelist(int startRow, int pageSize) {
-		HashMap<String, Integer> datas = new HashMap<String, Integer>();
+	public List<ServiceDTO> getservicelist(int startRow, int pageSize, String keyword) {
+		List<ServiceDTO> list;
+		HashMap<String, Object> datas = new HashMap<String, Object>();
 		datas.put("startRow",startRow);
 		datas.put("pageSize",pageSize);
-		return sqlsession.selectList("Service.getservicelist",datas);
+		if(keyword == null || keyword.equals("")) {
+			list = sqlsession.selectList("Service.getservicelist",datas);
+		}else {
+			datas.put("keyword",keyword);
+			list = sqlsession.selectList("Service.getservicelistwithkey",datas);
+		}
+		return list;
 	}
 
 	public boolean serviceregister(ServiceDTO register) {

@@ -13,5 +13,15 @@
 	<select id="servicenum" parameterType="_int" resultType="_int">
 		select max(serviceidx) from stt_service where expertidx=#{expertidx};
 	</select>
-	
+	<select id="getFileList" resultType="filedto" parameterType="hashmap">
+		select 	f.serviceidx, uploadFilename, saveFilename 
+		from stt_file f join stt_service s on s.serviceidx = f.serviceidx order by 
+		f.serviceidx desc limit #{startRow}, #{pageSize}
+	</select>
+	<select id="getFileWithKey" resultType="filedto" parameterType="hashmap">
+		select 	f.serviceidx, uploadFilename, saveFilename 
+		from stt_file f join stt_service s on s.serviceidx = f.serviceidx 
+		where servicetitle like('%${keyword}%')
+		order by f.serviceidx desc limit #{startRow}, #{pageSize}
+	</select>	
 </mapper>

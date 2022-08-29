@@ -1,6 +1,9 @@
 package com.sttproject.dao;
 
 
+import java.util.HashMap;
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 
 import com.sttproject.dto.FileDTO;
@@ -26,6 +29,21 @@ public class FileDAO {
 	public FileDTO getFile(int serviceidx) {
 
 		return sqlsession.selectOne("File.getFile",serviceidx);
+	}
+
+	public List<FileDTO> getfilelist(int startRow, int pageSize, String keyword) {
+		List<FileDTO> list;
+		HashMap<String, Object> datas = new HashMap<String, Object>();
+		datas.put("startRow",startRow);
+		datas.put("pageSize",pageSize);
+		if(keyword == null || keyword.equals("")) {
+			list = sqlsession.selectList("File.getFileList",datas);
+		}
+		else {
+			datas.put("keyword", keyword);
+			list = sqlsession.selectList("File.getFileWithKey", datas);
+		}
+		return list;
 	}
 	
 }

@@ -51,6 +51,7 @@ html {
   z-index: 1;
   position: sticky;
   margin-bottom: 48px;
+  top:0;
 }
 #service_detail .inner .main_detail .sticky .flex {
   display: flex;

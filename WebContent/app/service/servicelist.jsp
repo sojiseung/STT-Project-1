@@ -170,360 +170,60 @@
               </div>
               <!-- 리스트시작 -->
               <div id="service_items">
+              <c:forEach items="${list}" var="service" varStatus="s">
                   <div class="withouti">
                     <a href="" class="service_item">
                       <div class="imgbox">
-                        <img src="${cp}/img/pj1.jpg" alt="" />
+                      <c:forEach items="${flist}" var="file" varStatus="f">
+                      <c:if test ="${f.index == s.index }">
+                        <img src="${cp}/file/${file.saveFilename}" alt="" />
+                      </c:if>
+                      </c:forEach>
                         <!-- 하트 눌리면 좋아요 +1 -->
                       </div>
                       <div class="sv_content">
                         <div>
-                          <span class="company">홈페이지제작전문웹드림</span>
+                          <span class="company">${service.servicecompany}</span>
                         </div>
                         <!-- 회사이름 -->
                         <h3>
-                          홈페이지 디자인부터 제작까지 고객님의 꿈을
-                          이뤄드립니다.
+                        ${service.servicetitle }
+			            <!-- 홈페이지 디자인부터 제작까지 고객님의 꿈을
+			                          이뤄드립니다. -->
                         </h3>
                         <!-- 타이틀 -->
-                        <div class="price">590,000원~</div>
+                        <div class="price">${service.serviceprice}원</div>
                         <!-- 가격 -->
                         <div class="rating">
                           <div><i class="fa-solid fa-star"></i></div>
-                          &nbsp;4.9
+                          &nbsp;${service.servicerating}
                           <span class="ib"></span>
-                          <div>671개의 평가</div>
+                          <div>${service.serviceratingcount}개의 평가</div>
                         </div>
                         <!-- 별점 및 평가수 -->
                       </div>
                     </a>
                     <i class="fa-regular fa-heart"></i>
                   </div>
-                  <div class="withouti">
-                    <a href="" class="service_item">
-                      <div class="imgbox">
-                        <img src="${cp}/img/pj2.jpg" alt="" />
-                        <!-- 하트 눌리면 좋아요 +1 -->
-                      </div>
-                      <div class="sv_content">
-                        <div>
-                          <span class="company">홈페이지제작전문웹드림</span>
-                        </div>
-                        <!-- 회사이름 -->
-                        <h3>
-                          홈페이지 디자인부터 제작까지 고객님의 꿈을
-                          이뤄드립니다.
-                        </h3>
-                        <!-- 타이틀 -->
-                        <div class="price">590,000원~</div>
-                        <!-- 가격 -->
-                        <div class="rating">
-                          <div><i class="fa-solid fa-star"></i></div>
-                          &nbsp;4.9
-                          <span class="ib"></span>
-                          <div>671개의 평가</div>
-                        </div>
-                        <!-- 별점 및 평가수 -->
-                      </div>
-                    </a>
-                    <i class="fa-regular fa-heart"></i>
-                  </div>
-                  <div class="withouti">
-                    <a href="" class="service_item">
-                      <div class="imgbox">
-                        <img src="${cp}/img/pj3.jpg" alt="" />
-                        <!-- 하트 눌리면 좋아요 +1 -->
-                      </div>
-                      <div class="sv_content">
-                        <div>
-                          <span class="company">홈페이지제작전문웹드림</span>
-                        </div>
-                        <!-- 회사이름 -->
-                        <h3>
-                          홈페이지 디자인부터 제작까지 고객님의 꿈을
-                          이뤄드립니다.
-                        </h3>
-                        <!-- 타이틀 -->
-                        <div class="price">590,000원~</div>
-                        <!-- 가격 -->
-                        <div class="rating">
-                          <div><i class="fa-solid fa-star"></i></div>
-                          &nbsp;4.9
-                          <span class="ib"></span>
-                          <div>671개의 평가</div>
-                        </div>
-                        <!-- 별점 및 평가수 -->
-                      </div>
-                    </a>
-                    <i class="fa-regular fa-heart"></i>
-                  </div>
-                  <div class="withouti">
-                    <a href="" class="service_item">
-                      <div class="imgbox">
-                        <img src="${cp}/img/pj4.jpg" alt="" />
-                        <!-- 하트 눌리면 좋아요 +1 -->
-                      </div>
-                      <div class="sv_content">
-                        <div>
-                          <span class="company">홈페이지제작전문웹드림</span>
-                        </div>
-                        <!-- 회사이름 -->
-                        <h3>
-                          홈페이지 디자인부터 제작까지 고객님의 꿈을
-                          이뤄드립니다.
-                        </h3>
-                        <!-- 타이틀 -->
-                        <div class="price">590,000원~</div>
-                        <!-- 가격 -->
-                        <div class="rating">
-                          <div><i class="fa-solid fa-star"></i></div>
-                          &nbsp;4.9
-                          <span class="ib"></span>
-                          <div>671개의 평가</div>
-                        </div>
-                        <!-- 별점 및 평가수 -->
-                      </div>
-                    </a>
-                    <i class="fa-regular fa-heart"></i>
-                  </div>
-                  <div class="withouti">
-                    <a href="" class="service_item">
-                      <div class="imgbox">
-                        <img src="${cp}/img/pj5.jpg" alt="" />
-                        <!-- 하트 눌리면 좋아요 +1 -->
-                      </div>
-                      <div class="sv_content">
-                        <div>
-                          <span class="company">홈페이지제작전문웹드림</span>
-                        </div>
-                        <!-- 회사이름 -->
-                        <h3>
-                          홈페이지 디자인부터 제작까지 고객님의 꿈을
-                          이뤄드립니다.
-                        </h3>
-                        <!-- 타이틀 -->
-                        <div class="price">590,000원~</div>
-                        <!-- 가격 -->
-                        <div class="rating">
-                          <div><i class="fa-solid fa-star"></i></div>
-                          &nbsp;4.9
-                          <span class="ib"></span>
-                          <div>671개의 평가</div>
-                        </div>
-                        <!-- 별점 및 평가수 -->
-                      </div>
-                    </a>
-                    <i class="fa-regular fa-heart"></i>
-                  </div>
-                  <div class="withouti">
-                    <a href="" class="service_item">
-                      <div class="imgbox">
-                        <img src="${cp}/img/pj6.jpg" alt="" />
-                        <!-- 하트 눌리면 좋아요 +1 -->
-                      </div>
-                      <div class="sv_content">
-                        <div>
-                          <span class="company">홈페이지제작전문웹드림</span>
-                        </div>
-                        <!-- 회사이름 -->
-                        <h3>
-                          홈페이지 디자인부터 제작까지 고객님의 꿈을
-                          이뤄드립니다.
-                        </h3>
-                        <!-- 타이틀 -->
-                        <div class="price">590,000원~</div>
-                        <!-- 가격 -->
-                        <div class="rating">
-                          <div><i class="fa-solid fa-star"></i></div>
-                          &nbsp;4.9
-                          <span class="ib"></span>
-                          <div>671개의 평가</div>
-                        </div>
-                        <!-- 별점 및 평가수 -->
-                      </div>
-                    </a>
-                    <i class="fa-regular fa-heart"></i>
-                  </div>
-                  <div class="withouti">
-                    <a href="" class="service_item">
-                      <div class="imgbox">
-                        <img src="${cp}/img/pj7.jpg" alt="" />
-                        <!-- 하트 눌리면 좋아요 +1 -->
-                      </div>
-                      <div class="sv_content">
-                        <div>
-                          <span class="company">홈페이지제작전문웹드림</span>
-                        </div>
-                        <!-- 회사이름 -->
-                        <h3>
-                          홈페이지 디자인부터 제작까지 고객님의 꿈을
-                          이뤄드립니다.
-                        </h3>
-                        <!-- 타이틀 -->
-                        <div class="price">590,000원~</div>
-                        <!-- 가격 -->
-                        <div class="rating">
-                          <div><i class="fa-solid fa-star"></i></div>
-                          &nbsp;4.9
-                          <span class="ib"></span>
-                          <div>671개의 평가</div>
-                        </div>
-                        <!-- 별점 및 평가수 -->
-                      </div>
-                    </a>
-                    <i class="fa-regular fa-heart"></i>
-                  </div>
-                  <div class="withouti">
-                    <a href="" class="service_item">
-                      <div class="imgbox">
-                        <img src="${cp}/img/pj8.jpg" alt="" />
-                        <!-- 하트 눌리면 좋아요 +1 -->
-                      </div>
-                      <div class="sv_content">
-                        <div>
-                          <span class="company">홈페이지제작전문웹드림</span>
-                        </div>
-                        <!-- 회사이름 -->
-                        <h3>
-                          홈페이지 디자인부터 제작까지 고객님의 꿈을
-                          이뤄드립니다.
-                        </h3>
-                        <!-- 타이틀 -->
-                        <div class="price">590,000원~</div>
-                        <!-- 가격 -->
-                        <div class="rating">
-                          <div><i class="fa-solid fa-star"></i></div>
-                          &nbsp;4.9
-                          <span class="ib"></span>
-                          <div>671개의 평가</div>
-                        </div>
-                        <!-- 별점 및 평가수 -->
-                      </div>
-                    </a>
-                    <i class="fa-regular fa-heart"></i>
-                  </div>
-                  <div class="withouti">
-                    <a href="" class="service_item">
-                      <div class="imgbox">
-                        <img src="${cp}/img/pj1.jpg" alt="" />
-                        <!-- 하트 눌리면 좋아요 +1 -->
-                      </div>
-                      <div class="sv_content">
-                        <div>
-                          <span class="company">홈페이지제작전문웹드림</span>
-                        </div>
-                        <!-- 회사이름 -->
-                        <h3>
-                          홈페이지 디자인부터 제작까지 고객님의 꿈을
-                          이뤄드립니다.
-                        </h3>
-                        <!-- 타이틀 -->
-                        <div class="price">590,000원~</div>
-                        <!-- 가격 -->
-                        <div class="rating">
-                          <div><i class="fa-solid fa-star"></i></div>
-                          &nbsp;4.9
-                          <span class="ib"></span>
-                          <div>671개의 평가</div>
-                        </div>
-                        <!-- 별점 및 평가수 -->
-                      </div>
-                    </a>
-                    <i class="fa-regular fa-heart"></i>
-                  </div>
-                  <div class="withouti">
-                    <a href="" class="service_item">
-                      <div class="imgbox">
-                        <img src="${cp}/img/pj3.jpg" alt="" />
-                        <!-- 하트 눌리면 좋아요 +1 -->
-                      </div>
-                      <div class="sv_content">
-                        <div>
-                          <span class="company">홈페이지제작전문웹드림</span>
-                        </div>
-                        <!-- 회사이름 -->
-                        <h3>
-                          홈페이지 디자인부터 제작까지 고객님의 꿈을
-                          이뤄드립니다.
-                        </h3>
-                        <!-- 타이틀 -->
-                        <div class="price">590,000원~</div>
-                        <!-- 가격 -->
-                        <div class="rating">
-                          <div><i class="fa-solid fa-star"></i></div>
-                          &nbsp;4.9
-                          <span class="ib"></span>
-                          <div>671개의 평가</div>
-                        </div>
-                        <!-- 별점 및 평가수 -->
-                      </div>
-                    </a>
-                    <i class="fa-regular fa-heart"></i>
-                  </div>
-                  <div class="withouti">
-                    <a href="" class="service_item">
-                      <div class="imgbox">
-                        <img src="${cp}/img/pj5.jpg" alt="" />
-                        <!-- 하트 눌리면 좋아요 +1 -->
-                      </div>
-                      <div class="sv_content">
-                        <div>
-                          <span class="company">홈페이지제작전문웹드림</span>
-                        </div>
-                        <!-- 회사이름 -->
-                        <h3>
-                          홈페이지 디자인부터 제작까지 고객님의 꿈을
-                          이뤄드립니다.
-                        </h3>
-                        <!-- 타이틀 -->
-                        <div class="price">590,000원~</div>
-                        <!-- 가격 -->
-                        <div class="rating">
-                          <div><i class="fa-solid fa-star"></i></div>
-                          &nbsp;4.9
-                          <span class="ib"></span>
-                          <div>671개의 평가</div>
-                        </div>
-                        <!-- 별점 및 평가수 -->
-                      </div>
-                    </a>
-                    <i class="fa-regular fa-heart"></i>
-                  </div>
-                  <div class="withouti">
-                    <a href="" class="service_item">
-                      <div class="imgbox">
-                        <img src="${cp}/img/pj7.jpg" alt="" />
-                        <!-- 하트 눌리면 좋아요 +1 -->
-                      </div>
-                      <div class="sv_content">
-                        <div>
-                          <span class="company">홈페이지제작전문웹드림</span>
-                        </div>
-                        <!-- 회사이름 -->
-                        <h3>
-                          홈페이지 디자인부터 제작까지 고객님의 꿈을
-                          이뤄드립니다.
-                        </h3>
-                        <!-- 타이틀 -->
-                        <div class="price">590,000원~</div>
-                        <!-- 가격 -->
-                        <div class="rating">
-                          <div><i class="fa-solid fa-star"></i></div>
-                          &nbsp;4.9
-                          <span class="ib"></span>
-                          <div>671개의 평가</div>
-                        </div>
-                        <!-- 별점 및 평가수 -->
-                      </div>
-                    </a>
-                    <i class="fa-regular fa-heart"></i>
-                  </div>
-              </div>
+              	</c:forEach>
+                </div>
               <div class="pagination">
-                <a href="">&lt;</a>
-                <span class="nowPage">1</span>
-                <a href="">2</a>
-                <a href="">&gt;</a>
+              	<c:if test="${startPage != 1 }">
+                	<a href="${cp}/service/servicelist.sv?page=${startPage - 1}&keyword=${keyword}">&lt;</a>
+              	</c:if>
+              	<c:forEach begin="${startPage}" end="${endPage}" var="i">
+              		<c:choose>
+              			<c:when test="${page ==i}">
+		    	            <span class="nowPage">${i}</span>
+              			</c:when>
+              			<c:otherwise>
+    		    	        <a href="${cp}/service/servicelist.sv?page=${i}&keyword=${keyword}">${i}</a>
+              			</c:otherwise>
+              		</c:choose>
+              	</c:forEach>
+              	<c:if test="${endPage != totalPage}">
+	                <a href="${cp}/service/servicelist.sv?page=${endPage + 1}&keyword=${keyword}">&gt;</a>
+              	</c:if>
               </div>
             </div>
           </form>

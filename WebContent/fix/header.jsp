@@ -123,7 +123,19 @@
             <ul>
               <li>
                 <div id="reg">
-                  <a href="${cp}/app/user/chef_register.jsp">전문가 등록</a>
+            <c:choose>
+				<c:when test="${loginUser != null}">
+	            	<a href="${cp}/app/user/chef_register.jsp">전문가 등록</a>
+				</c:when>
+				<c:otherwise>
+	            	<a href="javascript:btnOpenPopup" onclick="loginalert()">전문가 등록</a>
+					<script>
+						function loginalert(){
+							alert("로그인 후 등록해주세요!");
+						}
+					</script>
+				</c:otherwise>
+			</c:choose>
                 </div>
               </li>
               <li>
@@ -320,6 +332,6 @@
 	  }
 	});
 */
-  
   </script>
+
 </html>

@@ -14,7 +14,7 @@
 }
 
 #pjbanner #pjlist {
-  height: 2527.72px;
+  height: 1400px;
 }
 #pjbanner #pjlist > p {
   margin-top: 50px;
@@ -29,7 +29,7 @@
 
 #pjbanner #pjlist #project_list #left_menu {
   width: 214px;
-  height: 2469.13px;
+  height: 1400px;
   border-top: 2px solid #3f7fa1;
 }
 #pjbanner #pjlist #project_list #left_menu img {
@@ -97,7 +97,7 @@
 #pjbanner #pjlist #project_list #service_list {
   width: 930px;
   margin-left: 26px;
-  height: 2469.13px;
+  height: 1400px;
 }
 
 #pjbanner #pjlist #project_list #service_list #pj_search {
@@ -165,15 +165,21 @@
   margin-top: 30px;
   width: 930px;
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
   flex-direction: row;
-  align-content: space-between;
-  height: 1013px;
+  height: auto;
+  position: relative;
 }
-#service_items  .withouti {
+
+#service_items .withouti {
+  position: relative;
+  margin-right: 24.6px;
+  margin-bottom: 55px;
+}
+#service_items .withouti:nth-child(4n) {
   /* margin-bottom: 55px; */
   position: relative;
+  margin-right: 0;
 }
 #service_items .service_item .imgbox div {
   width: 26px;

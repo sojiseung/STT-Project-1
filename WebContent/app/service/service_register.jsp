@@ -20,9 +20,16 @@
     <link rel="stylesheet" href="${cp}/css/service_register.css">
 </head>
 <body>
+	<c:if test="${loginUser == null }">
+		<script>
+			let cp = "${pageContext.request.contextPath}";
+			alert("로그인 후 이용하세요!");
+			location.replace(cp+"/user/userlogin.us");
+		</script>
+	</c:if>
 <div id="header"></div>
         <p id="service_up">내 서비스 등록</p>
-        <form method = "post" action="${cp}/service/serviceregisterok.sv" enctype="multipart/form-data">
+        <form id="serviceForm" method="post" action="${cp}/service/serviceregisterok.sv" enctype="multipart/form-data">
             <div class="wrap">
                 <p>서비스 기본 정보</p>
                 <div class="info">
@@ -101,7 +108,7 @@
                 <p>서비스 썸네일</p>
                 <div class="container">
                     <div class="image-upload" id="image-upload">
-                            <div class="button">
+                            <div class="button" style="display:flex; justify-content:space-between;margin:0 auto; width:300px;">
                                 <a href="javascript:upload('chooseFile')">이미지 선택</a>
                                 <a href="javascript:cancelFile('chooseFile')">이미지 삭제</a>
                             </div>
@@ -111,9 +118,6 @@
                                 <p>FILE NAME: </p>
                                 <p id="fileName"></p>
                             </div>
-                            <div class="buttonContainer">
-                     <input type="button" class="submitButton" id="submitButton" value="">
-                            </div>
                         </div>
                         
                     </div>
@@ -122,6 +126,7 @@
             </div>
             <div id="fin">
                 <button id="fin_btn">서비스 등록하기</button>
+                <a href="${cp}/service/serviceregister.sv" style="padding: 10px; background-color: #27314c; cursor: pointer; border: solid 1px #333;font-size: 15px; border-radius: 10px; color: #fff;">서비스 취소하기</a>
             </div>
         </form>
         <%@ include file="/fix/footer.jsp" %>
