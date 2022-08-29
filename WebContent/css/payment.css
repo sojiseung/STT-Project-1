@@ -1,3 +1,6 @@
+*	{
+    font-family: "나눔고딕";
+}
 div {
     box-sizing: border-box;
 }
@@ -8,17 +11,12 @@ body {
     width: 630px;
     margin:0px;
 }
-#header {
-    height: 130px;
-}
 #order_page {
     font-size: 25px;
-    margin-bottom:20px;
 }
 #pay_box p, .order_menu  {
     font-size: 16px;
     font-weight: 900;
-    margin-bottom:15px;
 }
 #pay_box {
    border: solid 1px #ccc;
@@ -51,6 +49,9 @@ th {
     padding-bottom: 10px;
     font-size: 14px;
     border-bottom: solid 1px #ccc;
+}
+input {
+    cursor: pointer;
 }
 #order_option td {
     padding-top: 10px;
@@ -87,6 +88,7 @@ th {
     margin-right: 10px;
     border: solid 1px #ccc;
     border-radius: 5px;
+    width: 90px;
 }
 #cash_box input[type=text]:focus {
     outline: none !important;
@@ -96,13 +98,16 @@ th {
     outline: none !important;
 }
 #cash_box button {
-    border: solid 1px #000;
+    border: solid 1px #666;
     font-size: 14px;
     background-color: #fff;
     padding: 5px 8px 5px 8px;
     color: #333;
     border-radius: 5px;
     font-weight: 900;
+}
+button {
+    cursor: pointer;
 }
 #pay_way {
     border-radius: 5px;
@@ -117,7 +122,8 @@ th {
     margin:0 3px 2px 0;
     padding:0; 
     border: solid none; 
-    vertical-align: middle;
+    cursor: pointer;
+    vertical-align: -3px
 }
 #tax {
     border-radius: 5px;
@@ -128,21 +134,23 @@ th {
 }
 #tax ul {
     padding: 0;
-    margin0: 0;
 }
 #tax li {
-    padding-bottom: 5px;
-    font-size: 10px;
+    padding-bottom: 2px;
+    margin-left: 20px;
+    font-size: 10.5px;
 }
 #pay {
     border: solid 1px #ccc;
     border-radius: 5px;
-    margin-left: 680px;
+    margin-left: 50px;
     height: 340px;
     padding: 30px 10px 40px 45px;
-    margin-top: 58px;
-    position: fixed;
+    margin-top: 40px;
+    position: sticky;
     width: 480px;
+    box-sizing: border-box;
+    top:200px;
 }
 #pay1 {
     width: 450px;
@@ -153,8 +161,6 @@ th {
     display: flex;
     margin: 0 auto;
     width: 1200px;
-    margin-top:30px;
-    margin-bottom:50px;
 }
 .td_1 {
     text-align: left;
@@ -176,7 +182,6 @@ th {
     margin-top: 10px;
 }
 #pay p {
-	padding-top:10px;
     text-align: center;
     font-size: 11px;
     color: #ccc;
@@ -192,10 +197,25 @@ th {
     width: 13px;
     height: 13px;
     vertical-align: -2px;
+    cursor: pointer;
 }
 #order_option button {
     background-color: #eee;
     border: none;
     width: 20px;
     text-align: center;
+}
+#pay_way label{
+    font-size: 12px;
+    margin-right: 8px;
+}
+#cash_balance {
+    font-size: 10px;
+    font-weight: 900;
+}
+#cash_balance input {
+    width: 68px;
+    border: none;
+    pointer-events: none;
+    font: 11px;
 }
