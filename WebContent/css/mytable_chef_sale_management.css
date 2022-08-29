@@ -162,7 +162,7 @@ input[type=text] {
     padding: 5px 6px 5px 6px;
     border: solid 1px #ccc;
 }
-input[type=submit] {
+#input_top button[type=submit] {
     padding: 8px 20px 5px 20px;
     border: solid 1px #ccc;
     background-color: #fff;

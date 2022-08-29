@@ -17,7 +17,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Set The Table</title>
-    <link rel="stylesheet" href="${cp}/css/mytable_myproject.css">
+    <link rel="stylesheet" href="${cp}/css/mytable_pay_management.css">
     <script
       src="https://kit.fontawesome.com/bd7db36e77.js"
       crossorigin="anonymous"
@@ -115,7 +115,7 @@
     </form>
     <div id="end"><%@ include file="/fix/footer.jsp" %></div>
     <script src="http://code.jquery.com/jquery-latest.js"></script>
-    <script type="text/javascript" src="./js/mypage_left.js"></script>
+    <script type="text/javascript" src="${cp}/js/mypage_left.js"></script>
     
 </body>
 </html>

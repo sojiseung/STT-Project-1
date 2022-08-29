@@ -32,7 +32,7 @@
                     <p class="chef_spoon">전문가</p>
                 </div>
                 <div id="change_chef">
-                    <img id="change_img" src="./img/change.png" alt="">
+                    <img id="change_img" src="${cp}/img/change.png" alt="">
                     <span id="ch_p">의뢰인로 전환</span>
                 </div>
                 <div id="menu">

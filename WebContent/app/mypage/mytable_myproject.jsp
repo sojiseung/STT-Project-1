@@ -93,6 +93,6 @@
     </form>
     <div id="end"><%@ include file="/fix/footer.jsp" %></div>
     <script src="http://code.jquery.com/jquery-latest.js"></script>
-    <script type="text/javascript" src="./js/mypage_left.js"></script>
+    <script type="text/javascript" src="${cp}/js/mypage_left.js"></script>
 </body>
 </html>
