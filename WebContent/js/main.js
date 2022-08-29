@@ -1,7 +1,8 @@
 const typing = document.getElementById("gocoder_typing");
 const typewriter = new Typewriter(typing, { loop: true });
 const parent = document.getElementById("typingAnimation");
-const search = document.getElementById("hidden_search");
+
+
 typewriter
   .typeString("웹사이트 제작")
   .pauseFor(1000)
@@ -28,7 +29,7 @@ function remove() {
 }
 
 function append() {
-  search.value = "";
+  searching.value = "";
   parent.appendChild(typing);
   const typewriter = new Typewriter(typing, { loop: true });
   typewriter

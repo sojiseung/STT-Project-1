@@ -66,7 +66,7 @@
                     autocomplete="off"
                     placeholder="서비스, 쉐프를 검색해 보세요!"
                   />
-                  <i class="fa-solid fa-magnifying-glass"></i>
+                  <i class="fa-solid fa-magnifying-glass" onclick="headsearch()" style="font-size: 16px;"></i>
                 </form>
               </div>
               <ul>
@@ -194,9 +194,12 @@ function expertjoin(){
 	} else {
 		alert("확인(예)를 누르셨습니다.\n전문가 등록  페이지로 이동합니다.")
 		$('#expertjoin').attr('href', '${cp}/app/user/chef_register.jsp')
-	}
+	}	
 	
 }
-
+function headsearch(){
+	const q = document.getElementById("headSearch");
+	location.href = "${cp}/service/servicelist.sv?keyword="+q.value;
+}
 </script>
 </html>

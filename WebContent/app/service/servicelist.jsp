@@ -161,13 +161,14 @@
               <div id="pj_search">
                 <div id="project_search">
                   <input
-                    type="text"
+                    type="search"
                     name="search"
                     id="search_project"
                     autocomplete="off"
                     placeholder="키워드를 검색하세요."
+                    value="${keyword == null ? '' : keyword}"
                   />
-                  <i class="fa-solid fa-magnifying-glass"></i>
+                  <i class="fa-solid fa-magnifying-glass" onclick="search()"></i>
                 </div>
                 <div id="order_by">
                   <span id="popularity">인기순</span>
@@ -239,4 +240,10 @@
     </section>
 <%@ include file="/fix/footer.jsp" %>
 </body>
+<script>
+	function search(){
+		const q = document.getElementById("search_project");
+		location.href = "${cp}/service/servicelist.sv?keyword="+q.value;
+	}
+</script>
 </html>

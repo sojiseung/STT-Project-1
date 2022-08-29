@@ -117,7 +117,7 @@
                   autocomplete="off"
                   placeholder="서비스, 쉐프를 검색해 보세요!"
                 />
-                <i class="fa-solid fa-magnifying-glass"></i>
+                <i class="fa-solid fa-magnifying-glass" style="font-size: 16px;"onclick="headsearch()"></i>
               </form>
             </div>
             <ul>
@@ -332,6 +332,11 @@
 	  }
 	});
 */
+function headsearch(){
+	const q = document.getElementById("headSearch");
+	location.href = "${cp}/service/servicelist.sv?keyword="+q.value;
+}
   </script>
+  
 
 </html>

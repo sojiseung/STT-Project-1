@@ -117,7 +117,7 @@ prefix="c"%>
                 onfocus="remove()"
                 onblur="append()"
               />
-              <i class="fa-solid fa-magnifying-glass"></i>
+              <i class="fa-solid fa-magnifying-glass" onclick="mainsearch()"></i>
             </div>
           </form>
           <div id="hashtag">
@@ -436,4 +436,11 @@ prefix="c"%>
         	}
         %>
   </body>
+<script>
+const searching = document.getElementById("hidden_search");
+function mainsearch(){
+	console.log(searching.value);
+	location.href = "${cp}/service/servicelist.sv?keyword="+searching.value;
+}
+</script>
 </html>
