@@ -33,7 +33,14 @@
     <script defer src="${cp}/js/servicelist.js"></script>
 </head>
 <body>
-<%@ include file="/fix/header.jsp" %>
+	<c:choose>
+		<c:when test="${loginUser != null}">
+			<%@ include file="/fix/loginheader.jsp"%>
+		</c:when>
+		<c:otherwise>
+			<%@ include file="/fix/header.jsp"%>
+		</c:otherwise>
+	</c:choose>
     <section id="pjbanner">
       <div class="inner">
         <img src="${cp}/img/topbanner.png" alt="" />
