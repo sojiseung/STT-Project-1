@@ -136,7 +136,7 @@
   font-size: 14px;
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: baseline;
   color: rgb(85, 89, 105);
   margin-top: 12px;
   margin-bottom: 35px;

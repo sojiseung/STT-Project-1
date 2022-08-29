@@ -72,7 +72,7 @@ function chatBoxFunction() {
 	});
 }
 function addBox(lastID, toID, chatContent, chatTime){//테이블 이동
-	$('#boxTable').append('<tr onclick="location.href=\'${cp}/chat/chatting.ct?toID=' + encodeURIComponent(toID) + '\'">' +
+	$('#boxTable').append('<tr onclick="location.href=\'${cp}/chat/chatfrombox.ct?toID=' + encodeURIComponent(toID) + '\'">' +
 			'<td style="width: 150px;"><h5>'+ toID + '</h5></td>' +
 			'<td>' +
 			'<h5>' + chatContent + '</h5>' +

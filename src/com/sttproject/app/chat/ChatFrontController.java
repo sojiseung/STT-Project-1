@@ -40,7 +40,12 @@ public class ChatFrontController extends HttpServlet{
 			transfer.setPath("/app/chat/box.jsp");
 			transfer.setRedirect(false);
 			break;
-		
+		case "/chat/chatfrombox.ct":
+			transfer = new ActionTo();
+			transfer.setPath("/app/chat/chatfrombox.jsp");
+			transfer.setRedirect(false);
+			break;
+			
 		case "/chat/chatting.ct":
 			try {
 				transfer = new chatAction().execute(req,resp);

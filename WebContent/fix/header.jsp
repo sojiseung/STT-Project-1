@@ -64,7 +64,7 @@
                         <div class="snslog">
                             <a href="javascript:kakaoLogin()">
                                 <button class="kakao_naver">
-                                    <img src="${cp}/img/kakao2.png" class="kakaoimg" alt=""><p>카카오 로그인</p>
+                                    <img src="${cp}/img/kakao2.png" class="kakaoimg" alt=""><p style="margin:0">카카오 로그인</p>
                                 </button>
                             </a>
                         </div>
@@ -73,7 +73,7 @@
                                 <div class="snslog" id="naver_id_login">
                                     <button class="naver_kakao" value="네이버 로그인">
                                         <img src="${cp}/img/naver_icon.png" class="naverimg" alt="">
-                                        <p>네이버 로그인</p>
+                                        <p style="margin:0">네이버 로그인</p>
                                     </button>
                                 </div>
                             </a>
