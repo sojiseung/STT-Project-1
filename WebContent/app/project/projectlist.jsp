@@ -42,7 +42,12 @@
 			deleteCookie('w');
 		</script>
 	</c:if>
-<%@ include file="/fix/header.jsp" %>
+    <c:choose>
+      <c:when test="${loginUser != null}">	
+        <%@ include file="/fix/loginheader.jsp"%>
+      </c:when>
+      <c:otherwise> <%@ include file="/fix/header.jsp" %> </c:otherwise>
+    </c:choose>
     <section id="pjbanner">
       <div class="inner">
      	 <a href="${cp}/app/project/project_request.jsp">
