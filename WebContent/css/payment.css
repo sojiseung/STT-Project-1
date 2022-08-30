@@ -181,6 +181,9 @@ button {
     border-radius: 10px;
     margin-top: 10px;
 }
+#order_button:hover {
+	background-color: #270949;	
+}
 #pay p {
     text-align: center;
     font-size: 11px;

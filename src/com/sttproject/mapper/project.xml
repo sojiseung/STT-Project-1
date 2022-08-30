@@ -3,4 +3,9 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="Project">
+	<insert id="request" parameterType="projectdto">
+		insert into stt_project(userid, projecttitle, projectresident, projectpersonal, projectoutline,
+		projectdetail, projectbudget) values(#{userid}, #{projecttitle}, #{projectresident}, #{projectpersonal}, #{projectoutline},
+		#{projectdetail}, #{projectbudget})
+	</insert>
 </mapper>

@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:set var="cp" value="${pageContext.request.contextPath }"/>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ page errorPage = "/app/error/errorpage.jsp" %>
 <!DOCTYPE html>
 <html>
@@ -200,7 +201,7 @@
 			                          이뤄드립니다. -->
                         </h3>
                         <!-- 타이틀 -->
-                        <div class="price">${service.serviceprice}원</div>
+                        <div class="price"><fmt:formatNumber value="${service.serviceprice}" pattern="#,###"/>원</div>
                         <!-- 가격 -->
                         <div class="rating">
                           <div><i class="fa-solid fa-star"></i></div>

@@ -38,44 +38,21 @@ public class ProjectFrontController extends HttpServlet {
 		ActionTo transfer = null;
 
 		switch (command) {
-
-		case "/service/serviceregisterok.sv":
-			try {
-			 new ServiceRegisterAction().execute(req,resp);
-			} catch (Exception e) {
-				System.out.println("/service/servieclist.sv" +e);
-			}
+		case "/project/projectrequest.pj" :
+			transfer = new ActionTo();
+			transfer.setPath("/app/project/project_request.jsp");
+			transfer.setRedirect(false);
 			break;
-		case "/service/servicedetail.sv":
+		case "/project/projectrequestok.pj" :
 			try {
-				transfer = new ServiceDetailAction().execute(req, resp);
-			}catch (Exception e) {
-				System.out.println("/service/servicedetail.sv");
+				transfer = new ProjectrequestOkAction().execute(req,resp);
+			} catch (Exception e) {
+				System.out.println("/project/projectrequestok : " + e);
 			}
 			break;
 			
-		case "/service/servicelist.sv" :
-			try {
-				transfer = new ServiceListAction().execute(req,resp);
-			}catch (Exception e) {
-				System.out.println("/service/servicelist.sv"+e);
-			}
-			break;
-		case "/reply/replywrite.sv" :
-			try {
-				new ReplyWriteAction().execute(req,resp);
-			}catch (Exception e) {
-				System.out.println("/reply/replywrite.sv오류 " +e);
-			}
-			break;
-		case "/service/serviceorder.sv" :
-			try {
-				transfer = new ServiceOrderAction().execute(req, resp);
-			} catch(Exception e) {
-				System.out.println("serviceorder.sv 오류" + e);
-			}
-			break;
 		}
+		
 		if (transfer != null) {
 			if (transfer.isRedirect()) {
 				resp.sendRedirect(transfer.getPath());

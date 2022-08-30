@@ -74,7 +74,22 @@ public class ServiceFrontController extends HttpServlet {
 				System.out.println("serviceorder.sv 오류" + e);
 			}
 			break;
+		case "/service/payment.sv":
+			try {
+				transfer = new ServicePaymentAction().execute(req,resp);
+			} catch (Exception e) {
+				System.out.println("servicepayment.sv : " + e);
+			}
+			break;
+		case "/service/serviceremove.sv":
+			try {
+				transfer = new ServiceRemoveAction().execute(req,resp);
+			} catch (Exception e) {
+				System.out.println("/service/serviceremove : "+e);
+			}
+			break;
 		}
+		
 		if (transfer != null) {
 			if (transfer.isRedirect()) {
 				resp.sendRedirect(transfer.getPath());

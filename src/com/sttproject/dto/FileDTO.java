@@ -4,8 +4,14 @@ public class FileDTO {
 	private int	serviceidx;
 	private String uploadFilename;
 	private String saveFilename;
+	private int projectidx;
 	
-	
+	public int getProjectidx() {
+		return projectidx;
+	}
+	public void setProjectidx(int projectidx) {
+		this.projectidx = projectidx;
+	}
 	public int getServiceidx() {
 		return serviceidx;
 	}

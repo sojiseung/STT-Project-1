@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <c:set var="cp" value="${pageContext.request.contextPath }"/>
 <!DOCTYPE html>
 <html lang="en">
@@ -38,9 +39,16 @@
     <link rel="stylesheet" href="${cp}/css/project_request.css">
 </head>
 <body>
+	<c:if test="${loginUser == null }">
+		<script>
+			let cp = "${pageContext.request.contextPath}";
+			alert("로그인 후 이용하세요!");
+			location.replace(cp+"/user/userlogin.us");
+		</script>
+	</c:if>
 <div id="header"></div>
         <p id="service_up">프로젝트 의뢰하기</p>
-        <form method = "post" action="${cp}/project/requestproject.pj" enctype="multipart/form-data">
+        <form id="projectForm" method = "post" action="${cp}/project/projectrequestok.pj" enctype="multipart/form-data">
             <div class="wrap">
                 <p>프로젝트 기본 정보</p>
                 <div class="info">
@@ -102,7 +110,7 @@
                 <p>프로젝트 썸네일</p>
                 <div class="container">
                     <div class="image-upload" id="image-upload">
-                            <div class="button">
+                            <div class="button" style="display:flex; justify-content:space-between;margin:0 auto; width:300px;">
                                 <a href="javascript:upload('chooseFile')">이미지 선택</a>
                                 <a href="javascript:cancelFile('chooseFile')">이미지 삭제</a>
                             </div>
@@ -112,17 +120,15 @@
                                 <p>FILE NAME: </p>
                                 <p id="fileName"></p>
                             </div>
-                            <div class="buttonContainer">
-                     <input type="button" class="submitButton" id="submitButton" value="">
-                            </div>
                         </div>
                         
                     </div>
                     <div class="image-show" id="image-show"></div>
-                </div>
+                </div>	
             </div>
             <div id="fin">
                 <button id="fin_btn">프로젝트 등록하기</button>
+                <a href="${cp}/project/projectlist.pj" style="padding: 10px; background-color: #27314c; cursor: pointer; border: solid 1px #333;font-size: 15px; border-radius: 10px; color: #fff;">프로젝트 의뢰 취소하기</a>
             </div>
         </form>
         <%@ include file="/fix/footer.jsp" %>

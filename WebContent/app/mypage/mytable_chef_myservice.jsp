@@ -24,6 +24,7 @@
     ></script>
 </head>
 <body>
+
     <form action="${cp}/app/service/service_register.jsp">
         <div id="wrap">
             <div id="left">
@@ -90,5 +91,13 @@
     <div id="end"><%@ include file="/fix/footer.jsp" %></div>
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script type="text/javascript" src="${cp} }/js/mypage_left.js"></script>
+    	<c:if test="${cookie.w.value == 'f'}">
+		<script>
+			alert("프로젝트 의뢰 실패... 다시 시도해주세요!");
+			//자바스크립트로 쿠키삭제 하기
+			var deleteCookie = function(name) {document.cookie = name + '=; expires=Thu, 01 Jan 1999 00:00:10 GMT;';  }
+			deleteCookie('w');
+		</script>
+	</c:if>
 </body>
 </html>

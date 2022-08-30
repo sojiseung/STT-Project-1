@@ -43,8 +43,6 @@ public class UserFrontController extends HttpServlet{
 			transfer.setPath("/");
 			transfer.setRedirect(false);
 			break;
-			
-			
 		case "/user/userjoinok.us": 
 			try {
 				transfer = new UserJoinOkAction().execute(req,resp);

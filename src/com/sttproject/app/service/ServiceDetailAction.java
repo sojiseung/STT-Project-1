@@ -7,6 +7,7 @@ import com.sttproject.action.Action;
 import com.sttproject.action.ActionTo;
 import com.sttproject.dao.FileDAO;
 import com.sttproject.dao.ServiceDAO;
+import com.sttproject.dto.ExpertDTO;
 import com.sttproject.dto.ServiceDTO;
 
 public class ServiceDetailAction implements Action { //boardview
@@ -21,7 +22,7 @@ public class ServiceDetailAction implements Action { //boardview
 			
 	//게시글정보 		
 		ServiceDTO service = sdao.getdetail(serviceidx);
-
+		ExpertDTO expert = sdao.getexpert(serviceidx);
 	//파일정보 	
 		FileDAO fdao = new FileDAO();
 	
@@ -29,7 +30,7 @@ public class ServiceDetailAction implements Action { //boardview
 		/* req.setAttribute("files", fdao.getFiles(serviceidx)); */
 		req.setAttribute("service", service);
 		req.setAttribute("file", fdao.getFile(serviceidx));
-		
+		req.setAttribute("expert", expert);
 		
 		ActionTo transfer = new ActionTo();
 		transfer.setRedirect(false);

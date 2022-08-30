@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <c:set var="cp" value="${pageContext.request.contextPath }" />
 <%@ page errorPage="/app/error/errorpage.jsp"%>
 <!DOCTYPE html>
@@ -49,7 +50,7 @@
 						<i class="fa-solid fa-star"></i>
 					</div>
 					<div class="score">${service.servicerating }</div>
-					<div class="ratingcnt">(${service.serviceratingcount}개의 평가)</div>
+					<div class="ratingcnt">(<fmt:formatNumber value="${service.serviceratingcount}" pattern="#,###"/>개의 평가)</div>
 				</section>
 				<nav class="sticky">
 					<div class="flex">
@@ -133,13 +134,13 @@
 								<i class="fa-solid fa-star"></i>
 							</div>
 							<div class="score">${service.servicerating }</div>
-							<div class="ratingcnt">(${service.serviceratingcount }개의 평가)</div>
+							<div class="ratingcnt">(<fmt:formatNumber value="${service.serviceratingcount}" pattern="#,###"/>개의 평가)</div>
 						</section>
 						<div id="realrating">실제 STT를 통해 구매한 이용자들이 남긴 평가입니다.</div>
 					</div>
 					<section>
 						<div id="realrevieworderby">
-							<div>서비스후기${service.serviceratingcount}개</div>
+							<div>서비스후기 <fmt:formatNumber value="${service.serviceratingcount}" pattern="#,###"/>개</div>
 							<div></div>
 						</div>
 						<div>
@@ -155,7 +156,7 @@
 					<div></div>
 					<form action="">
 						<button id="like" onclick="change()">
-							<i id="heart" class="fa-regular fa-heart"></i> <span>${service.likecnt }</span>
+							<i id="heart" class="fa-regular fa-heart"></i> <span><fmt:formatNumber value="${service.likecnt }" pattern="#,###"/></span>
 						</button>
 					</form>
 				</section>
@@ -164,7 +165,7 @@
 					<div id="purchaseinfo">
 						<div class="pinfo1">
 							<div class="price">
-								${service.serviceprice}원 <span class="vat">(VAT 포함가)</span>
+								<fmt:formatNumber value="${service.serviceprice}" pattern="#,###"/>원 <span class="vat">(VAT 포함가)</span>
 							</div>
 							<div class="info1">${service.servicetype }</div>
 							<div class="info2">${service.serviceresident }<br> 
@@ -173,7 +174,7 @@
 							<div class="period">
 								<span>작업일</span> <span>${service.serviceperiod}</span>
 							</div>
-								<button onclick="location.href='${cp}/app/service/serviceorder.jsp'"	
+								<button onclick="location.href='${cp}/service/payment.sv?saveFilename=${file.saveFilename}&serviceidx=${service.serviceidx}'"	
 								role="button" color="prime" class="pc">
 									<span class="cppc"><span>구매하기</span></span>
 								</button>
@@ -198,7 +199,17 @@
 							<a href="${cp}/chat/chatting.ct?serviceidx=${service.serviceidx}&servicecompany=${service.servicecompany}">쪽지 보내기</a>
 						</button>
 					</div>
+					
 				</section>
+				<c:if test="${loginUser.useridx == expert.useridx}">
+				<section id="purchase4">
+					<div>
+						<button>
+							<a href="${cp}/service/serviceremove.sv?serviceidx=${service.serviceidx}">삭제하기</a>
+						</button>
+					</div>
+				</section>
+				</c:if>
 			</aside>
 		</div>
 	</section>

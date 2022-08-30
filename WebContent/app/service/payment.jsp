@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <c:set var="cp" value="${pageContext.request.contextPath }"/>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,6 +19,13 @@
       </c:when>
       <c:otherwise> <%@ include file="/fix/header.jsp" %> </c:otherwise>
     </c:choose>
+    <c:if test="${userid == null }">
+    	<script>
+    		alert("로그인 후 이용해주세요");
+    		location.href = "/";
+    	</script>
+    </c:if>
+    <form>
     <div id="max" style="margin-top:180px; margin-bottom:300px;">
         <div id="wrap">
             <p id="order_page"><b>결제하기</b></p>
@@ -25,11 +33,11 @@
                 <p class="order_menu">주문 내역</p>
                 <div id="orderinfo">
                     <div id="pay_img">
-                        <img src="" alt="">   
+                        <img src="${cp}/file/${saveFilename}" alt="" style="width:140px;height:90px;object-fit: cover;">   
                     </div>
                     <div id="pay_title">
-                        <h4>트랜디한 디자인과 깔금한 코드로 네이티브 앱 개발해드립니다.</h4>
-                        <p style="color: #aaa;">-레이드-</p>
+                        <h4>${service.servicetitle}.</h4>
+                        <p style="color: #aaa;">-${service.servicecompany}-</p>
                     </div>
                 </div>
                     <table id="order_option">
@@ -54,8 +62,8 @@
                                         <!-- <button>+</button> -->
                                     </div>
                                 </td>
-                                <td>1일</td>
-                                <td>24,400,000원</td>
+                                <td>${service.serviceperiod}</td>
+                                <td><fmt:formatNumber value="${service.serviceprice}" pattern="#,###"/>원</td>
                             </tr>
                         </tbody>
                     </table>
@@ -75,7 +83,8 @@
                     </li>
                     <li>
                         <label for="">캐시사용</select></label>
-                        <input type="" name="" id="cash" placeholder="0원"><button name="">전액사용</button> <span id="cash_balance">캐시잔액 : <input type="text" name="" readonly />캐시</span> 
+                        <input type="" name="" id="cash" placeholder="0원"><button name="">전액사용</button> <span id="cash_balance">
+                        	캐시잔액 : <input type="text" name="" value="<fmt:formatNumber value="${user.usercash}" pattern="#,###"/>" readonly />캐시</span> 
                     </li>
                 </ul>
             </div>
@@ -108,7 +117,7 @@
                         </colgroup>
                         <tr>
                             <td class="td_1">총 서비스 금액</td>
-                            <td class="td_2">24,400,000원</td>
+                            <td class="td_2"><fmt:formatNumber value="${service.serviceprice}" pattern="#,###"/>원</td>
                         </tr>
                         <tr>
                             <td class="td_1">쿠폰 할인</td>
@@ -120,7 +129,7 @@
                         </tr>
                         <tr class="last_pay">
                             <td class="td_1">총 결제금액</td>
-                            <td class="td_2">24,2400,000원</td>
+                            <td class="td_2"><fmt:formatNumber value="${service.serviceprice}" pattern="#,###"/>원</td>
                         </tr>
                     </table>
                 </div>
@@ -128,10 +137,11 @@
                     <input type="checkbox"><label for=""> 주문 내용을 확인했으며, 결제에 동의합니다. (필수)</label><br>
                 </div>
                 <button id="order_button">결제하기</button>
-                <p>서비스 제공이 완료된 이후에 전문가에게 결제대금이 전달됩니다.</p>
+                <p style="margin-top:10px;">서비스 제공이 완료된 이후에 전문가에게 결제대금이 전달됩니다.</p>
             </div>
         </div>
     </div>
+    </form>
     <%@ include file="/fix/footer.jsp" %>
 </body>
 <script src="http://code.jquery.com/jquery-lastest.js"></script>

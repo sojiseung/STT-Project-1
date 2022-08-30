@@ -406,3 +406,49 @@ html {
 #service_detail .inner .sub_detail #purchase3 .resptime {
   margin: 12px 0;
 }
+
+
+#service_detail .inner .sub_detail #purchase4 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 20px;
+  border: 1px solid #e4e5ed;
+  background: #fff;
+}
+
+
+
+#service_detail .inner .sub_detail #purchase4 button {
+  outline: none;
+  border-width: 1px;
+  border-style: solid;
+  box-sizing: border-box;
+  border-radius: 4px;
+  line-height: 1;
+  font-weight: 500;
+  -webkit-transition: background-color 0.3s, border-color 0.3s;
+  transition: background-color 0.3s, border-color 0.3s;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  user-select: none;
+  white-space: nowrap;
+  width: 230px;
+  height: 52px;
+  font-size: 16px;
+  padding: 0 24px;
+  background-color: transparent;
+  border-color: #270949;
+  color: #270949;
+}
+
+#service_detail .inner .sub_detail #purchase4 button:hover {
+  background-color: rgba(63, 127, 161, 0.1);
+}
+

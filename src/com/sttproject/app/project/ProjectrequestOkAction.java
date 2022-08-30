@@ -1,4 +1,4 @@
-package com.sttproject.app.service;
+package com.sttproject.app.project;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -9,16 +9,13 @@ import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 import com.sttproject.action.Action;
 import com.sttproject.action.ActionTo;
 import com.sttproject.dao.FileDAO;
-import com.sttproject.dao.ServiceDAO;
+import com.sttproject.dao.ProjectDAO;
 import com.sttproject.dto.FileDTO;
-import com.sttproject.dto.ServiceDTO;
+import com.sttproject.dto.ProjectDTO;
 
-public class ServiceRegisterAction implements Action {
-
+public class ProjectrequestOkAction implements Action {
 	@Override
-	
 	public ActionTo execute(HttpServletRequest req, HttpServletResponse resp) throws Exception {
-
 		// 파일 등록 =================================>
 		
 		// 저장될 파일의 최대 크기
@@ -53,63 +50,52 @@ public class ServiceRegisterAction implements Action {
 		uploadFilename = multi.getOriginalFileName("chooseFile");
 		System.out.println(uploadFilename);
 		
+		// project 정보 저장
+		ProjectDAO pdao = new ProjectDAO();
+		ProjectDTO project = new ProjectDTO();
+		String userid = (String)req.getSession().getAttribute("userid");
 		
-		//===service 정보 저장===\\
-		ServiceDTO serviceresident = new ServiceDTO();
-		ServiceDAO sdao = new ServiceDAO();
-		int expertidx = (Integer)req.getSession().getAttribute("expertidx");
-		System.out.println(expertidx);
+		project.setProjecttitle(multi.getParameter("projecttitle"));
+		project.setProjectresident(multi.getParameter("projectresident"));
+		project.setUserid(userid);
+		project.setProjectdetail(multi.getParameter("projectdetail"));
+		project.setProjectpersonal(multi.getParameter("projectpersonal"));
+		project.setProjectdeadline(multi.getParameter("projectdeadline"));
+		project.setProjectoutline(multi.getParameter("projectoutline"));
+		project.setProjectbudget(Integer.parseInt(multi.getParameter("projectbudget")));
 		
-		serviceresident.setServicetitle(multi.getParameter("servicetitle"));
-		serviceresident.setExpertidx(expertidx);
-		serviceresident.setServicecompany(multi.getParameter("servicecompany"));
-		serviceresident.setServicecategory(multi.getParameter("servicecategory"));
-		serviceresident.setServicetype(multi.getParameter("servicetype"));
-		serviceresident.setServiceteamscale(multi.getParameter("serviceteamscale"));
-		serviceresident.setServiceresident(multi.getParameter("serviceresident"));
-		serviceresident.setServiceprice(Integer.parseInt(multi.getParameter("serviceprice")));
-		serviceresident.setServiceperiod(multi.getParameter("serviceperiod"));
-		serviceresident.setServiceinfo(multi.getParameter("serviceinfo"));
-		serviceresident.setServicereadyto(multi.getParameter("servicereadyto"));
-	
-		
-		//==file 정보 저장===\\
-		
-		
-		
-		
-
-		
-		
-
-
 		ActionTo transfer = new ActionTo();
 		transfer.setRedirect(true);
-		if (sdao.serviceregister(serviceresident)) {
+		if(pdao.projectrequest(project)) {
 			FileDAO fdao = new FileDAO();
-			System.out.println(expertidx);
-			int serviceidx = fdao.getServiceNum(expertidx);
-			System.out.println(serviceidx);
+			System.out.println(userid);
+			int projectidx = fdao.getProjectNum(userid);
+			System.out.println(projectidx);
 			
 			if(!fcheck1) {
 				FileDTO savefile = new FileDTO();
-				savefile.setServiceidx(serviceidx);
+				savefile.setProjectidx(projectidx);
 				savefile.setSaveFilename(saveFilename);
 				savefile.setUploadFilename(uploadFilename);
 				fcheck1 =  fdao.insertFile(savefile);
-			}
+			}	
 			
 			if(fcheck1) {
-				transfer.setPath(req.getContextPath() + "/service/servicedetail.sv?serviceidx="+ serviceidx);
+				transfer.setPath(req.getContextPath() + "/project/projectdetail.pj?projectidx="+ projectidx);
 			}else {
-			transfer.setPath(req.getContextPath() + "/service/serviceregister.sv");
+			transfer.setPath(req.getContextPath() + "/project/projectlist.pj");
 			Cookie cookie = new Cookie("w", "f");
 			resp.addCookie(cookie);
 			}
-
 		}
-		System.out.println(transfer.getPath());
+		
+		
+		
 		return transfer;
-
+		
+		
+		
+		
+		
 	}
 }

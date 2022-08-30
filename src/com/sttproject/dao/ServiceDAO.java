@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
+
+import com.sttproject.dto.ExpertDTO;
 import com.sttproject.dto.ServiceDTO;
 import com.sttproject.mybatis.SqlMapConfig;
 
@@ -53,6 +55,16 @@ public class ServiceDAO {
 
 	public int getLastidx(int expertidx) {
 		return sqlsession.selectOne("Service.getlastnum",expertidx);
+	}
+
+
+	public boolean removeService(int serviceidx) {
+		return sqlsession.delete("Service.removeService",serviceidx) == 1;
+	}
+
+
+	public ExpertDTO getexpert(int serviceidx) {
+		return sqlsession.selectOne("Service.getexpert",serviceidx);
 	}
 
 }

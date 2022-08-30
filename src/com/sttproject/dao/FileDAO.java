@@ -30,6 +30,7 @@ public class FileDAO {
 
 		return sqlsession.selectOne("File.getFile",serviceidx);
 	}
+	
 
 	public List<FileDTO> getfilelist(int startRow, int pageSize, String keyword) {
 		List<FileDTO> list;
@@ -44,6 +45,15 @@ public class FileDAO {
 			list = sqlsession.selectList("File.getFileWithKey", datas);
 		}
 		return list;
+	}
+
+	public int getProjectNum(String userid) {
+		return sqlsession.selectOne("File.getprojectnum", userid);
+	}
+
+	public void deleteByName(String saveFilename) {
+		sqlsession.delete("File.deleteByName",saveFilename);
+		
 	}
 	
 }

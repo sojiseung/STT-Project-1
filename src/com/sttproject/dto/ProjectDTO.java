@@ -1,29 +1,23 @@
 package com.sttproject.dto;
 
 public class ProjectDTO {
-	int projectidx;
-	 int useridx;
+	private int projectidx;
 	private String regdate;
 	private String projecttitle;
 	private String projectresident;
 	private String projectpersonal;
 	private String projectoutline;
 	private String projectdetail;
-	private String projectbudget;
+	private int projectbudget;
 	private int projectprocess;
 	private String projectdeadline;
 	private int projectoffercount;
+	private String userid;
 	public int getProjectidx() {
 		return projectidx;
 	}
 	public void setProjectidx(int projectidx) {
 		this.projectidx = projectidx;
-	}
-	public int getUseridx() {
-		return useridx;
-	}
-	public void setUseridx(int useridx) {
-		this.useridx = useridx;
 	}
 	public String getRegdate() {
 		return regdate;
@@ -61,10 +55,10 @@ public class ProjectDTO {
 	public void setProjectdetail(String projectdetail) {
 		this.projectdetail = projectdetail;
 	}
-	public String getProjectbudget() {
+	public int getProjectbudget() {
 		return projectbudget;
 	}
-	public void setProjectbudget(String projectbudget) {
+	public void setProjectbudget(int projectbudget) {
 		this.projectbudget = projectbudget;
 	}
 	public int getProjectprocess() {
@@ -85,6 +79,14 @@ public class ProjectDTO {
 	public void setProjectoffercount(int projectoffercount) {
 		this.projectoffercount = projectoffercount;
 	}
+	public String getUserid() {
+		return userid;
+	}
+	public void setUserid(String userid) {
+		this.userid = userid;
+	}
+	
+	
 	
 	
 

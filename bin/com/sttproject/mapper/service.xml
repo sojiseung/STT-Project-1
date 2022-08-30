@@ -24,6 +24,9 @@
 	<select id="getdetail" resultType="servicedto" parameterType="_int">
 		select * from stt_service where serviceidx=#{serviceidx}
 	</select>
+	<select id="getexpert" resultType="expertdto" parameterType="_int">
+		select e.* from stt_expert e join stt_service s on s.expertidx = e.expertidx where serviceidx=#{serviceidx}
+	</select>
 	<select id="getlastidx" resultType="_int" parameterType="string">
 		select max(serviceidx) from stt_service where expertidx=#{expertidx}
 	</select>
@@ -31,4 +34,7 @@
 		insert into stt_order(useridx, serviceidx, servicetitle, servicecnt, serviceperiod, serviceprice, usercash)
 		values (#{useridx}, #{serviceidx}, #{servicetitle}, #{servicecnt}, #{serviceperiod}, #{serviceprice}, #{usercash})
 	</insert>
+	<delete id="removeService" parameterType="_int">
+		delete from stt_service where serviceidx = #{serviceidx}
+	</delete>
 </mapper>

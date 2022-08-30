@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <c:set var="cp" value="${pageContext.request.contextPath }"/>
 <%@ page errorPage = "/app/error/errorpage.jsp" %>
 <!DOCTYPE html>
@@ -33,10 +34,20 @@
     <script defer src="${cp}/js/project.js"></script>
 </head>
 <body>
+	<c:if test="${cookie.w.value == 'f'}">
+		<script>
+			alert("프로젝트 의뢰 실패... 다시 시도해주세요!");
+			//자바스크립트로 쿠키삭제 하기
+			var deleteCookie = function(name) {document.cookie = name + '=; expires=Thu, 01 Jan 1999 00:00:10 GMT;';  }
+			deleteCookie('w');
+		</script>
+	</c:if>
 <%@ include file="/fix/header.jsp" %>
     <section id="pjbanner">
       <div class="inner">
-        <img src="${cp}/img/registerPJ.png" alt="" />
+     	 <a href="${cp}/app/project/project_request.jsp">
+       	 	<img src="${cp}/img/registerPJ.png" alt="" />
+	     </a>
       </div>
       <div id="pjlist" class="inner">
         <p>프로젝트 리스트</p>
