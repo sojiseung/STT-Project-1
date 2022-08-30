@@ -30,15 +30,15 @@
                 <div id="my_img">
                     <p class="chef_spoon">의뢰인</p>
                 </div>
-                <div id="change_chef">
-                    <img id="change_img" src="./img/change.png" alt="">
+                <div id="change_chef" onclick="location.href='${cp}/app/mypage/mytable_chef_sale_management.jsp'">
+                    <img id="change_img" src="${cp}/img/change.png" alt="">
                     <span id="ch_p">쉐프로 전환</span>
                 </div>
                 <div id="menu">
                     <p id="line_bottom">내 테이블</p>
                         <div class="sub_menu">
                             <ul class="big_menu">
-                                    <li class="fun"><a class="big_a" href="">내 프로젝트</a><span class="fun2"><i class="fa-solid fa-angle-down question" id="que-5"> </i></span></li>
+                                <li class="fun"><a class="big_a" href="${cp}/app/mypage/mytable_myproject.jsp">내 프로젝트</a><span class="fun2"><i class="fa-solid fa-angle-down question" id="que-5"> </i></span></li>
                                 <ul class="small_menu">
                                     <li><a class="small_a" href="#">전체 (0)</a></li>
                                     <li><a class="small_a" href="#">승인대기중 (0)</a></li>
@@ -48,7 +48,7 @@
                                 </ul>
                             </ul>
                             <ul class="big_menu">
-                                <li class="fun"><a class="big_a" href="">구매관리</a><span class="fun2"><i class="fa-solid fa-angle-down question" id="que-5"> </i></span></li>
+                                <li class="fun"><a class="big_a" href="${cp}/app/mypage/mytable_buy_management.jsp">구매관리</a><span class="fun2"><i class="fa-solid fa-angle-down question" id="que-5"> </i></span></li>
                                 <ul class="small_menu">
                                     <li><a class="small_a" href="#">전체 (0)</a></li>
                                     <li><a class="small_a" href="#">요청사항 미작성 (0)</a></li>
@@ -67,10 +67,7 @@
                                 <li><a class="big_a" href="">STT 캐시</a></li>
                             </ul>
                             <ul class="big_menu">
-                                <li><a class="big_a" href="">캐시 충전</a></li>
-                            </ul>
-                            <ul class="big_menu">
-                                <li><a class="big_a" href="">결제 내역</a></li>
+                                <li><a class="big_a" href="${cp}/app/mypage/mytable_pay_management.jsp">결제 내역</a></li>
                             </ul>
                             <ul class="big_menu">
                                 <li><a class="big_a" href="">프로필 설정</a></li>
@@ -111,6 +108,6 @@
     </form>
     <div id="end"><%@ include file="/fix/footer.jsp" %></div>
     <script src="http://code.jquery.com/jquery-latest.js"></script>
-    <script type="text/javascript" src="./js/mypage_left.js"></script>
+    <script type="text/javascript" src="${cp}/js/mypage_left.js"></script>
 </body>
 </html>

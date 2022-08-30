@@ -77,7 +77,7 @@
                 </li>
                 <li>
                   <div id="mypage">
-                    <a href="javascript:void(0)">마이스푼</a>
+                    <a href="${cp}/app/mypage/mytable_buy_management.jsp">마이스푼</a>
                   </div>
                 </li>
                 <li>
@@ -167,7 +167,7 @@
                   <div><b>TOP 2% 전문가</b>의 서비스를 만나보세요!</div>
                 </div>
                 <div id="sub_item2">
-                  <a href="">엔터프라이즈</a>
+                  <a href="${cp}/project/projectlist.pj">엔터프라이즈</a>
                   <div>
                     <b>기업 외주 ∙ 상주 ∙ 정부지원사업</b> 전용 솔루션입니다.
                   </div>
@@ -178,7 +178,7 @@
                 </div>
               </div>
               <div id="pj">
-                <a href="">
+                <a href="${cp}/project/projectrequest.pj">
                   원하는 서비스를 못 찾겠다면, <b>프로젝트 의뢰</b>하세요!
                 </a>
                 <i class="fa-solid fa-chevron-right"></i>

@@ -13,6 +13,7 @@ public class ProjectDTO {
 	private String projectdeadline;
 	private int projectoffercount;
 	private String userid;
+	
 	public int getProjectidx() {
 		return projectidx;
 	}

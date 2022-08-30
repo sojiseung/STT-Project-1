@@ -177,7 +177,7 @@
               </div>
             </form>
           </div>
-          <form action="">
+          <form action="${cp }project/projectlist.pj">
             <div id="request_list">
               <div id="pj_search">
                 <div id="project_search">
@@ -187,8 +187,9 @@
                     id="search_project"
                     autocomplete="off"
                     placeholder="키워드를 검색하세요."
+                    value="${keyword == null ? '' : keyword}"
                   />
-                  <i class="fa-solid fa-magnifying-glass"></i>
+                  <i class="fa-solid fa-magnifying-glass" onclick="search()"></i>
                 </div>
                 <div id="order_by">
                   <span>최신등록순</span>
@@ -197,190 +198,49 @@
                 </div>
               </div>
               
+              <c:forEach items="${list}" var="project" varStatus="p">
               <div id="request_list_group1" class="request_list_group">
-                <a href="">
+                <a href="${cp}/project/projectdetail.pj?projectidx=${project.projectidx}&page=${page}&keyword=${keyword}">
                   <div class="img_wrapper">
                     <div class="img_size">
-                      <img src="${cp}/img/projectlist1.jpg" alt="" />
+                      <c:forEach items="${flist}" var="file" varStatus="f">
+                      <c:if test ="${f.index == p.index }">                    
+                      <img src="${cp}/file/${file.saveFilename}" alt="" />
+                      </c:if>
+                      </c:forEach>
                     </div>
                   </div>
                   <div class="request_detail">
                     <div class="request_detail1">
-                      <div class="d-day"><span>D-10</span></div>
+                      <div class="d-day"><span>D-7</span></div>
                       <div class="rqtitle">
-                        <span>[상주]SAS ER SAS MA를 활용 DM구성</span>
+                        <span>[${project.projectresident}]${project.projecttitle}</span>
                       </div>
                       <div class="rqoption">
+                      <c:choose>
+                      <c:when test="${project.projectresident == '상주'}">
                         <img src="${cp}/img/location.png" alt="" />
                         <span>상주</span>
-                        <img src="${cp}/img/tax.png" class="ml" alt="" />
-                        <span>세금계산서</span>
-                      </div>
-                    </div>
-                    <div class="request_detail2">
-                      IT·프로그래밍 / 데이터 사이언스
-                    </div>
-                    <div class="request_detail3">
-                      ■계약기간: 3개월■월 단가: ~800만원 ■상세 업무 내용-SAS
-                      ER을 사용 SAS로 구성된 정보계에 신규TABLE에다수의
-                      기초TABLE의자료를 취합. 선택.합산 등 을 통해 자료를
-                      옮김-완성된 TABLE 을 엑셀로 내보내는 기능 제공■협력 예정
-                      인력동일 포지션 개발자 2명 상주 ※실제 상주 근무 가능자만
-                      지원 부탁드립니다.※ ※프젝트 제안시 이력카드 필히! 첨부해
-                      주시길 바랍니다.※ ※이력카드/소개서 및 제안 내용에 외부
-                      연락처 기입 시 정책 위반으로 불이익을 당할 수 있으니 유의
-                      바랍니다.※ 
-                    </div>
-                    <div class="request_detail4">
-                      <div class="salary">
-                        <div class="cg">예산</div>
-                        <div>8,000,000원</div>
-                      </div>
-                      <div class="period">
-                        <div class="cg">진행기간</div>
-                        <div>90일</div>
-                      </div>
-                      <div class="nowoffer">
-                        <div class="cg">받은 제안</div>
-                        <div>0개</div>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div id="request_list_group1" class="request_list_group">
-                <a href="">
-                  <div class="img_wrapper">
-                    <div class="img_size">
-                      <img src="${cp}/img/projectlist1.jpg" alt="" />
-                    </div>
-                  </div>
-                  <div class="request_detail">
-                    <div class="request_detail1">
-                      <div class="d-day"><span>D-10</span></div>
-                      <div class="rqtitle">
-                        <span>[상주]SAS ER SAS MA를 활용 DM구성</span>
-                      </div>
-                      <div class="rqoption">
+                      </c:when>
+                      <c:otherwise>
                         <img src="${cp}/img/os.png" alt="" />
                         <span>외주</span>
-                      </div>
-                    </div>
-                    <div class="request_detail2">
-                      IT·프로그래밍 / 데이터 사이언스
-                    </div>
-                    <div class="request_detail3">
-                      ■계약기간: 3개월■월 단가: ~800만원 ■상세 업무 내용-SAS
-                      ER을 사용 SAS로 구성된 정보계에 신규TABLE에다수의
-                      기초TABLE의자료를 취합. 선택.합산 등 을 통해 자료를
-                      옮김-완성된 TABLE 을 엑셀로 내보내는 기능 제공■협력 예정
-                      인력동일 포지션 개발자 2명 상주 ※실제 상주 근무 가능자만
-                      지원 부탁드립니다.※ ※프젝트 제안시 이력카드 필히! 첨부해
-                      주시길 바랍니다.※ ※이력카드/소개서 및 제안 내용에 외부
-                      연락처 기입 시 정책 위반으로 불이익을 당할 수 있으니 유의
-                      바랍니다.※
-                    </div>
-                    <div class="request_detail4">
-                      <div class="salary">
-                        <div class="cg">예산</div>
-                        <div>8,000,000원</div>
-                      </div>
-                      <div class="period">
-                        <div class="cg">진행기간</div>
-                        <div>90일</div>
-                      </div>
-                      <div class="nowoffer">
-                        <div class="cg">받은 제안</div>
-                        <div>0개</div>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div id="request_list_group1" class="request_list_group">
-                <a href="">
-                  <div class="img_wrapper">
-                    <div class="img_size">
-                      <img src="${cp}/img/projectlist1.jpg" alt="" />
-                    </div>
-                  </div>
-                  <div class="request_detail">
-                    <div class="request_detail1">
-                      <div class="d-day"><span>D-10</span></div>
-                      <div class="rqtitle">
-                        <span>[상주]SAS ER SAS MA를 활용 DM구성</span>
-                      </div>
-                      <div class="rqoption"></div>
-                    </div>
-                    <div class="request_detail2">
-                      IT·프로그래밍 / 데이터 사이언스
-                    </div>
-                    <div class="request_detail3">
-                      ■계약기간: 3개월■월 단가: ~800만원 ■상세 업무 내용-SAS
-                      ER을 사용 SAS로 구성된 정보계에 신규TABLE에다수의
-                      기초TABLE의자료를 취합. 선택.합산 등 을 통해 자료를
-                      옮김-완성된 TABLE 을 엑셀로 내보내는 기능 제공■협력 예정
-                      인력동일 포지션 개발자 2명 상주 ※실제 상주 근무 가능자만
-                      지원 부탁드립니다.※ ※프젝트 제안시 이력카드 필히! 첨부해
-                      주시길 바랍니다.※ ※이력카드/소개서 및 제안 내용에 외부
-                      연락처 기입 시 정책 위반으로 불이익을 당할 수 있으니 유의
-                      바랍니다.※
-                    </div>
-                    <div class="request_detail4">
-                      <div class="salary">
-                        <div class="cg">예산</div>
-                        <div>8,000,000원</div>
-                      </div>
-                      <div class="period">
-                        <div class="cg">진행기간</div>
-                        <div>90일</div>
-                      </div>
-                      <div class="nowoffer">
-                        <div class="cg">받은 제안</div>
-                        <div>0개</div>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div id="request_list_group1" class="request_list_group">
-                <a href="">
-                  <div class="img_wrapper">
-                    <div class="img_size">
-                      <img src="${cp}/img/projectlist1.jpg" alt="" />
-                    </div>
-                  </div>
-                  <div class="request_detail">
-                    <div class="request_detail1">
-                      <div class="d-day"><span>D-10</span></div>
-                      <div class="rqtitle">
-                        <span>[상주]SAS ER SAS MA를 활용 DM구성</span>
-                      </div>
-                      <div class="rqoption">
-                        <img src="${cp}/img/location.png" alt="" />
-                        <span>상주</span>
+                      </c:otherwise>
+                      </c:choose>
                         <img src="${cp}/img/tax.png" class="ml" alt="" />
                         <span>세금계산서</span>
                       </div>
                     </div>
                     <div class="request_detail2">
-                      IT·프로그래밍 / 데이터 사이언스
+                      IT·프로그래밍
                     </div>
                     <div class="request_detail3">
-                      ■계약기간: 3개월■월 단가: ~800만원 ■상세 업무 내용-SAS
-                      ER을 사용 SAS로 구성된 정보계에 신규TABLE에다수의
-                      기초TABLE의자료를 취합. 선택.합산 등 을 통해 자료를
-                      옮김-완성된 TABLE 을 엑셀로 내보내는 기능 제공■협력 예정
-                      인력동일 포지션 개발자 2명 상주 ※실제 상주 근무 가능자만
-                      지원 부탁드립니다.※ ※프젝트 제안시 이력카드 필히! 첨부해
-                      주시길 바랍니다.※ ※이력카드/소개서 및 제안 내용에 외부
-                      연락처 기입 시 정책 위반으로 불이익을 당할 수 있으니 유의
-                      바랍니다.※
+                      ■마감일: ${project.projectdeadline}■예산: <fmt:formatNumber value="${project.projectbudget}" pattern="#,###"/>원 ■상세 업무 내용-${project.projectdetail}※ 
                     </div>
                     <div class="request_detail4">
                       <div class="salary">
                         <div class="cg">예산</div>
-                        <div>8,000,000원</div>
+                        <div><fmt:formatNumber value="${project.projectbudget}" pattern="#,###"/>원</div>
                       </div>
                       <div class="period">
                         <div class="cg">진행기간</div>
@@ -388,323 +248,31 @@
                       </div>
                       <div class="nowoffer">
                         <div class="cg">받은 제안</div>
-                        <div>0개</div>
+                        <div>${project.projectoffercount}개</div>
                       </div>
                     </div>
                   </div>
                 </a>
               </div>
-              <div id="request_list_group1" class="request_list_group">
-                <a href="">
-                  <div class="img_wrapper">
-                    <div class="img_size">
-                      <img src="${cp}/img/projectlist1.jpg" alt="" />
-                    </div>
-                  </div>
-                  <div class="request_detail">
-                    <div class="request_detail1">
-                      <div class="d-day"><span>D-10</span></div>
-                      <div class="rqtitle">
-                        <span>[상주]SAS ER SAS MA를 활용 DM구성</span>
-                      </div>
-                      <div class="rqoption">
-                        <img src="${cp}/img/location.png" alt="" />
-                        <span>상주</span>
-                        <img src="${cp}/img/tax.png" class="ml" alt="" />
-                        <span>세금계산서</span>
-                      </div>
-                    </div>
-                    <div class="request_detail2">
-                      IT·프로그래밍 / 데이터 사이언스
-                    </div>
-                    <div class="request_detail3">
-                      ■계약기간: 3개월■월 단가: ~800만원 ■상세 업무 내용-SAS
-                      ER을 사용 SAS로 구성된 정보계에 신규TABLE에다수의
-                      기초TABLE의자료를 취합. 선택.합산 등 을 통해 자료를
-                      옮김-완성된 TABLE 을 엑셀로 내보내는 기능 제공■협력 예정
-                      인력동일 포지션 개발자 2명 상주 ※실제 상주 근무 가능자만
-                      지원 부탁드립니다.※ ※프젝트 제안시 이력카드 필히! 첨부해
-                      주시길 바랍니다.※ ※이력카드/소개서 및 제안 내용에 외부
-                      연락처 기입 시 정책 위반으로 불이익을 당할 수 있으니 유의
-                      바랍니다.※
-                    </div>
-                    <div class="request_detail4">
-                      <div class="salary">
-                        <div class="cg">예산</div>
-                        <div>8,000,000원</div>
-                      </div>
-                      <div class="period">
-                        <div class="cg">진행기간</div>
-                        <div>90일</div>
-                      </div>
-                      <div class="nowoffer">
-                        <div class="cg">받은 제안</div>
-                        <div>0개</div>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div id="request_list_group1" class="request_list_group">
-                <a href="">
-                  <div class="img_wrapper">
-                    <div class="img_size">
-                      <img src="${cp}/img/projectlist1.jpg" alt="" />
-                    </div>
-                  </div>
-                  <div class="request_detail">
-                    <div class="request_detail1">
-                      <div class="d-day"><span>D-10</span></div>
-                      <div class="rqtitle">
-                        <span>[상주]SAS ER SAS MA를 활용 DM구성</span>
-                      </div>
-                      <div class="rqoption">
-                        <img src="${cp}/img/location.png" alt="" />
-                        <span>상주</span>
-                        <img src="${cp}/img/tax.png" class="ml" alt="" />
-                        <span>세금계산서</span>
-                      </div>
-                    </div>
-                    <div class="request_detail2">
-                      IT·프로그래밍 / 데이터 사이언스
-                    </div>
-                    <div class="request_detail3">
-                      ■계약기간: 3개월■월 단가: ~800만원 ■상세 업무 내용-SAS
-                      ER을 사용 SAS로 구성된 정보계에 신규TABLE에다수의
-                      기초TABLE의자료를 취합. 선택.합산 등 을 통해 자료를
-                      옮김-완성된 TABLE 을 엑셀로 내보내는 기능 제공■협력 예정
-                      인력동일 포지션 개발자 2명 상주 ※실제 상주 근무 가능자만
-                      지원 부탁드립니다.※ ※프젝트 제안시 이력카드 필히! 첨부해
-                      주시길 바랍니다.※ ※이력카드/소개서 및 제안 내용에 외부
-                      연락처 기입 시 정책 위반으로 불이익을 당할 수 있으니 유의
-                      바랍니다.※
-                    </div>
-                    <div class="request_detail4">
-                      <div class="salary">
-                        <div class="cg">예산</div>
-                        <div>8,000,000원</div>
-                      </div>
-                      <div class="period">
-                        <div class="cg">진행기간</div>
-                        <div>90일</div>
-                      </div>
-                      <div class="nowoffer">
-                        <div class="cg">받은 제안</div>
-                        <div>0개</div>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div id="request_list_group1" class="request_list_group">
-                <a href="">
-                  <div class="img_wrapper">
-                    <div class="img_size">
-                      <img src="${cp}/img/projectlist1.jpg" alt="" />
-                    </div>
-                  </div>
-                  <div class="request_detail">
-                    <div class="request_detail1">
-                      <div class="d-day"><span>D-10</span></div>
-                      <div class="rqtitle">
-                        <span>[상주]SAS ER SAS MA를 활용 DM구성</span>
-                      </div>
-                      <div class="rqoption">
-                        <img src="${cp}/img/location.png" alt="" />
-                        <span>상주</span>
-                        <img src="${cp}/img/tax.png" class="ml" alt="" />
-                        <span>세금계산서</span>
-                      </div>
-                    </div>
-                    <div class="request_detail2">
-                      IT·프로그래밍 / 데이터 사이언스
-                    </div>
-                    <div class="request_detail3">
-                      ■계약기간: 3개월■월 단가: ~800만원 ■상세 업무 내용-SAS
-                      ER을 사용 SAS로 구성된 정보계에 신규TABLE에다수의
-                      기초TABLE의자료를 취합. 선택.합산 등 을 통해 자료를
-                      옮김-완성된 TABLE 을 엑셀로 내보내는 기능 제공■협력 예정
-                      인력동일 포지션 개발자 2명 상주 ※실제 상주 근무 가능자만
-                      지원 부탁드립니다.※ ※프젝트 제안시 이력카드 필히! 첨부해
-                      주시길 바랍니다.※ ※이력카드/소개서 및 제안 내용에 외부
-                      연락처 기입 시 정책 위반으로 불이익을 당할 수 있으니 유의
-                      바랍니다.※
-                    </div>
-                    <div class="request_detail4">
-                      <div class="salary">
-                        <div class="cg">예산</div>
-                        <div>8,000,000원</div>
-                      </div>
-                      <div class="period">
-                        <div class="cg">진행기간</div>
-                        <div>90일</div>
-                      </div>
-                      <div class="nowoffer">
-                        <div class="cg">받은 제안</div>
-                        <div>0개</div>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div id="request_list_group1" class="request_list_group">
-                <a href="">
-                  <div class="img_wrapper">
-                    <div class="img_size">
-                      <img src="${cp}/img/projectlist1.jpg" alt="" />
-                    </div>
-                  </div>
-                  <div class="request_detail">
-                    <div class="request_detail1">
-                      <div class="d-day"><span>D-10</span></div>
-                      <div class="rqtitle">
-                        <span>[상주]SAS ER SAS MA를 활용 DM구성</span>
-                      </div>
-                      <div class="rqoption">
-                        <img src="${cp}/img/location.png" alt="" />
-                        <span>상주</span>
-                        <img src="${cp}/img/tax.png" class="ml" alt="" />
-                        <span>세금계산서</span>
-                      </div>
-                    </div>
-                    <div class="request_detail2">
-                      IT·프로그래밍 / 데이터 사이언스
-                    </div>
-                    <div class="request_detail3">
-                      ■계약기간: 3개월■월 단가: ~800만원 ■상세 업무 내용-SAS
-                      ER을 사용 SAS로 구성된 정보계에 신규TABLE에다수의
-                      기초TABLE의자료를 취합. 선택.합산 등 을 통해 자료를
-                      옮김-완성된 TABLE 을 엑셀로 내보내는 기능 제공■협력 예정
-                      인력동일 포지션 개발자 2명 상주 ※실제 상주 근무 가능자만
-                      지원 부탁드립니다.※ ※프젝트 제안시 이력카드 필히! 첨부해
-                      주시길 바랍니다.※ ※이력카드/소개서 및 제안 내용에 외부
-                      연락처 기입 시 정책 위반으로 불이익을 당할 수 있으니 유의
-                      바랍니다.※
-                    </div>
-                    <div class="request_detail4">
-                      <div class="salary">
-                        <div class="cg">예산</div>
-                        <div>8,000,000원</div>
-                      </div>
-                      <div class="period">
-                        <div class="cg">진행기간</div>
-                        <div>90일</div>
-                      </div>
-                      <div class="nowoffer">
-                        <div class="cg">받은 제안</div>
-                        <div>0개</div>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div id="request_list_group1" class="request_list_group">
-                <a href="">
-                  <div class="img_wrapper">
-                    <div class="img_size">
-                      <img src="${cp}/img/projectlist1.jpg" alt="" />
-                    </div>
-                  </div>
-                  <div class="request_detail">
-                    <div class="request_detail1">
-                      <div class="d-day"><span>D-10</span></div>
-                      <div class="rqtitle">
-                        <span>[상주]SAS ER SAS MA를 활용 DM구성</span>
-                      </div>
-                      <div class="rqoption">
-                        <img src="${cp}/img/location.png" alt="" />
-                        <span>상주</span>
-                        <img src="${cp}/img/tax.png" class="ml" alt="" />
-                        <span>세금계산서</span>
-                      </div>
-                    </div>
-                    <div class="request_detail2">
-                      IT·프로그래밍 / 데이터 사이언스
-                    </div>
-                    <div class="request_detail3">
-                      ■계약기간: 3개월■월 단가: ~800만원 ■상세 업무 내용-SAS
-                      ER을 사용 SAS로 구성된 정보계에 신규TABLE에다수의
-                      기초TABLE의자료를 취합. 선택.합산 등 을 통해 자료를
-                      옮김-완성된 TABLE 을 엑셀로 내보내는 기능 제공■협력 예정
-                      인력동일 포지션 개발자 2명 상주 ※실제 상주 근무 가능자만
-                      지원 부탁드립니다.※ ※프젝트 제안시 이력카드 필히! 첨부해
-                      주시길 바랍니다.※ ※이력카드/소개서 및 제안 내용에 외부
-                      연락처 기입 시 정책 위반으로 불이익을 당할 수 있으니 유의
-                      바랍니다.※
-                    </div>
-                    <div class="request_detail4">
-                      <div class="salary">
-                        <div class="cg">예산</div>
-                        <div>8,000,000원</div>
-                      </div>
-                      <div class="period">
-                        <div class="cg">진행기간</div>
-                        <div>90일</div>
-                      </div>
-                      <div class="nowoffer">
-                        <div class="cg">받은 제안</div>
-                        <div>0개</div>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div id="request_list_group1" class="request_list_group">
-                <a href="">
-                  <div class="img_wrapper">
-                    <div class="img_size">
-                      <img src="${cp}/img/projectlist1.jpg" alt="" />
-                    </div>
-                  </div>
-                  <div class="request_detail">
-                    <div class="request_detail1">
-                      <div class="d-day"><span>D-10</span></div>
-                      <div class="rqtitle">
-                        <span>[상주]SAS ER SAS MA를 활용 DM구성</span>
-                      </div>
-                      <div class="rqoption">
-                        <img src="${cp}/img/location.png" alt="" />
-                        <span>상주</span>
-                        <img src="${cp}/img/tax.png" class="ml" alt="" />
-                        <span>세금계산서</span>
-                      </div>
-                    </div>
-                    <div class="request_detail2">
-                      IT·프로그래밍 / 데이터 사이언스
-                    </div>
-                    <div class="request_detail3">
-                      ■계약기간: 3개월■월 단가: ~800만원 ■상세 업무 내용-SAS
-                      ER을 사용 SAS로 구성된 정보계에 신규TABLE에다수의
-                      기초TABLE의자료를 취합. 선택.합산 등 을 통해 자료를
-                      옮김-완성된 TABLE 을 엑셀로 내보내는 기능 제공■협력 예정
-                      인력동일 포지션 개발자 2명 상주 ※실제 상주 근무 가능자만
-                      지원 부탁드립니다.※ ※프젝트 제안시 이력카드 필히! 첨부해
-                      주시길 바랍니다.※ ※이력카드/소개서 및 제안 내용에 외부
-                      연락처 기입 시 정책 위반으로 불이익을 당할 수 있으니 유의
-                      바랍니다.※
-                    </div>
-                    <div class="request_detail4">
-                      <div class="salary">
-                        <div class="cg">예산</div>
-                        <div>8,000,000원</div>
-                      </div>
-                      <div class="period">
-                        <div class="cg">진행기간</div>
-                        <div>90일</div>
-                      </div>
-                      <div class="nowoffer">
-                        <div class="cg">받은 제안</div>
-                        <div>0개</div>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </div>
+              </c:forEach>
+              
               <div class="pagination">
-                <a href="">&lt;</a>
-                <span class="nowPage">1</span>
-                <a href="">2</a>
-                <a href="">&gt;</a>
+              	<c:if test="${startPage != 1 }">
+                	<a href="${cp}/project/projectlist.pj?page=${startPage - 1}&keyword=${keyword}">&lt;</a>
+              	</c:if>
+              	<c:forEach begin="${startPage}" end="${endPage}" var="i">
+              		<c:choose>
+              			<c:when test="${page ==i}">
+		    	            <span class="nowPage">${i}</span>
+              			</c:when>
+              			<c:otherwise>
+    		    	        <a href="${cp}/project/projectlist.pj?page=${i}&keyword=${keyword}">${i}</a>
+              			</c:otherwise>
+              		</c:choose>
+              	</c:forEach>
+              	<c:if test="${endPage != totalPage}">
+	                <a href="${cp}/project/projectlist.pj?page=${endPage + 1}&keyword=${keyword}">&gt;</a>
+              	</c:if>
               </div>
             </div>
           </form>
@@ -714,4 +282,10 @@
     <!-- FOOTER -->
     <%@ include file="/fix/footer.jsp" %>    
 </body>
+<script>
+	function search(){
+		const q = document.getElementById("search_project");
+		location.href = "${cp}/project/projectlist.pj?keyword="+q.value;
+	}
+</script>
 </html>

@@ -50,7 +50,20 @@ public class ProjectFrontController extends HttpServlet {
 				System.out.println("/project/projectrequestok : " + e);
 			}
 			break;
-			
+		case "/project/projectdetail.pj":
+			try {
+				transfer = new ProjectDetailAction().execute(req,resp);
+			} catch (Exception e) {
+				System.out.println("/project/projectdetail.pj : " + e);
+			}
+			break;
+		case "/project/projectlist.pj" :
+			try {
+				transfer = new ProjectListAction().execute(req,resp);
+			}catch (Exception e) {
+				System.out.println("/service/servicelist.sv"+e);
+			}
+			break;
 		}
 		
 		if (transfer != null) {

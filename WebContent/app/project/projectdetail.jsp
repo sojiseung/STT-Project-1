@@ -3,7 +3,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <c:set var="cp" value="${pageContext.request.contextPath }"/>
-<%@ page errorPage = "/app/error/errorpage.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,52 +36,49 @@
       <div id="pjdetail" class="grid">
         <div id="pjtitle">
           <div id="title">IT·프로그래밍 / 웹사이트・모바일앱 신규 제작</div>
-          <h1 id="subtitle">웹사이트 or 어플리케이션 프로토타입개발</h1>
+          <h1 id="subtitle">${project.projecttitle}</h1>
         </div>
         <div id="withouttitle">
           <div id="pjmethod" class="grid">
             <div class="question">프로젝트 진행 방식</div>
             <div class="answer">
-              외주 : 외부 프리랜서 & 사업자와 프로젝트 진행
+              ${project.projectresident } : 외부 프리랜서 & 사업자와 프로젝트 진행
             </div>
           </div>
           <div id="porb" class="grid">
             <div class="question">개인 / 기업 여부</div>
-            <div class="answer">기업 (법인/개인사업자/예비창업자)</div>
+            <div class="answer">${project.projectpersonal}</div>
           </div>
           <div id="pjcontents" class="grid">
             <div class="question">구체적인 내용 설명</div>
             <pre class="answer">
 1. 프로젝트 개요
-첨부파일의 인트로 및 커버, 홈(1차) 부분에 대해 개발 의뢰 드립니다.
-웹 개발과 어플리케이션 개발 각각 1차 견적 부탁드리며, 웹과 어플리케이션 중 한 부분만 먼저 개발 계획입니다.
+${project.projectoutline}
               
 2. 상세내용
-- 상세 기획서는 추후 미팅 통해 전달 가능함
-- 인트로 및 커버, 홈(1차) 완성 후 추후 나머지 부분도 의뢰 가능함
-- 별도로 희망하는 개발 언어 없음
+${project.projectdetail}
               
 3. 기한 및 예산
-- 기한 : 11월 15일
+- 기한 : ${project.projectdeadline }
 - 예산 : 제안 가능
             </pre>
-            <div class="fileup">
-              <section>
-                <div></div>
-                <p>
-                  <i class="fa-regular fa-file"></i>
-                  (주)더하이픈어플기획내용.png
-                </p>
-              </section>
-            </div>
           </div>
           <div class="grid">
             <div class="question">프로젝트 작업 마감 일자</div>
-            <div class="answer">2022.11.15</div>
+            <div class="answer">
+            ${project.projectdeadline }
+            </div>
           </div>
           <div class="grid">
             <div class="question">작업 기간(일)</div>
-            <div class="answer">100</div>
+            <div class="answer">
+            ${project.projectdeadline}
+			<%-- <fmt:parseDate var="sDate" value="${project.regdate }" pattern="yyyy-MM-dd" />
+        	<fmt:parseNumber value="${sDate.time / (1000*60*60*24)}" integerOnly="true" var="isDate" scope="request" />
+        	<fmt:parseDate var="tDate" value="${project.projectdeadline }" pattern="yyyy-MM-dd" />
+        	<fmt:parseNumber value="${tDate.time / (1000*60*60*24)}" integerOnly="true" var="itDate" scope="request" />
+        	${itDate - isDate} --%>
+			</div>
           </div>
         </div>
       </div>
@@ -103,14 +99,17 @@
               </div>
               <div id="budget">
                 <div>예산</div>
-                <div class="fs24"><span>10,000,000</span>원</div>
+                <div class="fs24"><span><fmt:formatNumber value="${project.projectbudget}" pattern="#,###"/></span>원</div>
               </div>
             </div>
             <div id="bt">
               <button><span>제안하기</span></button>
               <div id="closingdate">
                 마감일까지
-                <div>9일</div>
+                <div>
+               ${project.projectdeadline}
+                	일
+                </div>
                 남았습니다.
               </div>
             </div>

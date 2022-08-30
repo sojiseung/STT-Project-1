@@ -79,7 +79,7 @@ public class ProjectrequestOkAction implements Action {
 				savefile.setUploadFilename(uploadFilename);
 				fcheck1 =  fdao.insertFile(savefile);
 			}	
-			
+			System.out.println(project.getProjectdeadline());
 			if(fcheck1) {
 				transfer.setPath(req.getContextPath() + "/project/projectdetail.pj?projectidx="+ projectidx);
 			}else {

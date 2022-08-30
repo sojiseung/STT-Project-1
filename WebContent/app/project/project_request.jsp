@@ -60,7 +60,7 @@
                             </div>
                             <div class="cont_sub">
                              <label class="cont_title">예산 </label> <br><br>
-                             <input id="projectbudget" name="projectbudget" type="text" size="83" placeholder="예산을 적어주세요.(ex. 1,000,000원, 제안 가능)" maxlength="30">
+                             <input id="projectbudget" name="projectbudget" type="text" size="83" placeholder="예산을 적어주세요.(ex. 1000000, 550000)" maxlength="30">
                             </div>
                         </li>
                         <li>
@@ -94,7 +94,7 @@
                 <p>프로젝트 개요</p>
                 <div class="info">
                     <div class="service_box">
-                        <textarea name="serviceinfo" id="projectouline" cols="30" rows="10" placeholder="전체적인 프로젝트 개요에 대한 설명을 적어주세요."></textarea>
+                        <textarea name="projectoutline" id="projectoutline" cols="30" rows="10" placeholder="전체적인 프로젝트 개요에 대한 설명을 적어주세요."></textarea>
                     </div>
                 </div>
             </div>
@@ -102,7 +102,7 @@
                 <p>상세내용</p>
                 <div class="info">
                     <div class="service_box">
-                        <textarea name="servicereadyto" class="projectdetail" cols="30" rows="10" placeholder="프로젝트 상세내용을 적어주세요."></textarea>
+                        <textarea name="projectdetail" id="projectdetail" cols="30" rows="10" placeholder="프로젝트 상세내용을 적어주세요."></textarea>
                     </div>
                 </div>
             </div>

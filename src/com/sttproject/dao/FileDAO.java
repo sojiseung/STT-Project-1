@@ -27,10 +27,12 @@ public class FileDAO {
 	}
 
 	public FileDTO getFile(int serviceidx) {
-
 		return sqlsession.selectOne("File.getFile",serviceidx);
 	}
 	
+	public FileDTO getFilewithpi(int projectidx) {
+		return sqlsession.selectOne("File.getFileWithPI",projectidx);
+	}
 
 	public List<FileDTO> getfilelist(int startRow, int pageSize, String keyword) {
 		List<FileDTO> list;
@@ -55,5 +57,22 @@ public class FileDAO {
 		sqlsession.delete("File.deleteByName",saveFilename);
 		
 	}
+
+	public List<FileDTO> getfilelistwithproject(int startRow, int pageSize, String keyword) {
+		List<FileDTO> list;
+		HashMap<String, Object> datas = new HashMap<String, Object>();
+		datas.put("startRow",startRow);
+		datas.put("pageSize",pageSize);
+		if(keyword == null || keyword.equals("")) {
+			list = sqlsession.selectList("File.getFileListWithP",datas);
+		}
+		else {
+			datas.put("keyword", keyword);
+			list = sqlsession.selectList("File.getFileWithKeyWithP", datas);
+		}
+		return list;
+	}
+
+	
 	
 }

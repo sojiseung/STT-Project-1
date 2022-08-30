@@ -113,7 +113,6 @@ prefix="c"%>
                 autocomplete="off"
                 autocorrect="off"
                 autocapitalize="off"
-                value=""
                 onfocus="remove()"
                 onblur="append()"
               />
@@ -181,7 +180,7 @@ prefix="c"%>
               <img src="${cp}/img/ic_category_1.png" alt="디자인" />
               <span>디자인</span>
             </a>
-            <a href="">
+            <a href="${cp}/service/servicelist.sv">
               <img src="${cp}/img/ic_category_2.png" alt="IT∙프로그래밍" />
               <span>IT∙프로그래밍</span>
             </a>
@@ -226,7 +225,9 @@ prefix="c"%>
       <div class="inner">
         <h2>STT에서 가장 인기있는 분야!</h2>
         <div id="favorite_items">
+        	<a href="${cp}/service/servicelist.sv">
           <img src="${cp}/img/theme1.png" alt="" />
+        	</a>
           <img src="${cp}/img/theme2.png" alt="" />
           <img src="${cp}/img/theme3.png" alt="" />
           <img src="${cp}/img/theme4.png" alt="" />
@@ -237,7 +238,7 @@ prefix="c"%>
     <!-- REQUEST_PROJECT -->
     <section id="rp">
       <div class="inner">
-        <a href="">
+        <a href="${cp}/project/projectlist.pj">
           <img
             src="${cp}/img/joinproject.png"
             alt="프로젝트 의뢰(엔터프라이즈)"
@@ -416,9 +417,24 @@ prefix="c"%>
     <!-- REGISTER_CHEF -->
     <section id="register_chef">
       <div class="inner">
-        <a href="">
-          <img src="${cp}/img/joinforpro.png" alt="전문가 등록" />
-        </a>
+      <c:choose>
+		<c:when test="${loginUser != null and loginUser.expertjoin != 'O'}">
+	        <a href="${cp}/app/user/chef_register.jsp">
+	          <img src="${cp}/img/joinforpro.png" alt="전문가 등록" />
+	        </a>
+		</c:when>
+		<c:otherwise>
+	        <a href="javascript:btnOpenPopup">
+	          <img src="${cp}/img/joinforpro.png" onclick="loginalert()" alt="전문가 등록" />
+	        </a>
+			<script>
+				function loginalert(){
+					alert("로그인 후 등록해주세요!");
+				}
+			</script>
+		</c:otherwise>
+	</c:choose>    
+      
       </div>
     </section>
     <!-- FOOTER -->
@@ -436,11 +452,11 @@ prefix="c"%>
         	}
         %>
   </body>
-<script>
-const searching = document.getElementById("hidden_search");
-function mainsearch(){
-	console.log(searching.value);
-	location.href = "${cp}/service/servicelist.sv?keyword="+searching.value;
-}
-</script>
+  <script>
+  const searching = document.getElementById("hidden_search");
+  function mainsearch(){
+  	console.log(searching.value);
+  	location.href = "${cp}/service/servicelist.sv?keyword="+searching.value;
+  }
+  </script>
 </html>

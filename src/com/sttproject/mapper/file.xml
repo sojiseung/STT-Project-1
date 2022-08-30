@@ -10,10 +10,13 @@
 	<select id="getFile" parameterType="_int" resultType="filedto">
 		select * from stt_file where serviceidx = #{serviceidx}
 	</select>
+	<select id="getFileWithPI" parameterType="_int" resultType="filedto">
+		select * from stt_file where projectidx = #{projectidx}
+	</select>
 	<select id="servicenum" parameterType="_int" resultType="_int">
 		select max(serviceidx) from stt_service where expertidx=#{expertidx};
 	</select>
-		<select id="getprojectnum" parameterType="_int" resultType="_int">
+		<select id="getprojectnum" parameterType="string" resultType="_int">
 		select max(projectidx) from stt_project where userid=#{userid};
 	</select>
 	<select id="getFileList" resultType="filedto" parameterType="hashmap">
@@ -26,6 +29,17 @@
 		from stt_file f join stt_service s on s.serviceidx = f.serviceidx 
 		where servicetitle like('%${keyword}%')
 		order by f.serviceidx desc limit #{startRow}, #{pageSize}
+	</select>	
+	<select id="getFileListWithP" resultType="filedto" parameterType="hashmap">
+		select 	f.projectidx, uploadFilename, saveFilename 
+		from stt_file f join stt_project p on p.projectidx = f.projectidx order by 
+		f.projectidx desc limit #{startRow}, #{pageSize}
+	</select>
+	<select id="getFileWithKeyWithP" resultType="filedto" parameterType="hashmap">
+		select 	f.projectidx, uploadFilename, saveFilename 
+		from stt_file f join stt_project p on p.projectidx = f.projectidx 
+		where projecttitle like('%${keyword}%')
+		order by f.projectidx desc limit #{startRow}, #{pageSize}
 	</select>	
 	<delete id="deleteByName" parameterType="string">
 		delete from stt_file where saveFilename=#{saveFilenmae}

@@ -5,7 +5,24 @@
 <mapper namespace="Project">
 	<insert id="request" parameterType="projectdto">
 		insert into stt_project(userid, projecttitle, projectresident, projectpersonal, projectoutline,
-		projectdetail, projectbudget) values(#{userid}, #{projecttitle}, #{projectresident}, #{projectpersonal}, #{projectoutline},
-		#{projectdetail}, #{projectbudget})
+		projectdetail, projectbudget,projectdeadline) values(#{userid}, #{projecttitle}, #{projectresident}, #{projectpersonal}
+		, #{projectoutline},#{projectdetail}, #{projectbudget},#{projectdeadline})
 	</insert>
+	<select id="getdetail" resultType="projectdto" parameterType="_int">
+		select * from stt_project where projectidx=#{projectidx}
+	</select>
+	<select id="projectcnt" resultType="_int">
+		select count(*) from stt_project
+	</select>
+	<select id="projectcntwithkey" resultType="_int" parameterType="String">
+		select count(*) from stt_project where projecttitle like('%${keyword}%')
+	</select>
+	<select id="getprojectlist" resultType="projectdto" parameterType="hashmap">
+		select * from stt_project order by projectidx desc 
+		limit #{startRow}, #{pageSize}
+	</select>
+	<select id="getprojectlistwithkey" resultType="projectdto" parameterType="hashmap">
+		select * from stt_project where projecttitle like('%${keyword}%')
+		order by projectidx desc limit #{startRow}, #{pageSize}
+	</select>	
 </mapper>

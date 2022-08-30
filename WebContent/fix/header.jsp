@@ -213,7 +213,7 @@
                 <div><b>TOP 2% 전문가</b>의 서비스를 만나보세요!</div>
               </div>
               <div id="sub_item2">
-                <a href="">엔터프라이즈</a>
+                <a href="${cp}/project/projectlist.pj">엔터프라이즈</a>
                 <div>
                   <b>기업 외주 ∙ 상주 ∙ 정부지원사업</b> 전용 솔루션입니다.
                 </div>
