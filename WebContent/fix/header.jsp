@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:set var="cp" value="${pageContext.request.contextPath }"/>
+<%@ page errorPage = "/app/error/errorpage.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -315,7 +316,7 @@
           success:function(res){
           	  let email = res.kakao_account.email;
         	  console.log(email);
-        	  location.href="${cp}/user/kakaologinok.us?email="+email;
+        	  location.href="${cp}/user/kakaologinok.us?userid="+email;
           }
         });
       }

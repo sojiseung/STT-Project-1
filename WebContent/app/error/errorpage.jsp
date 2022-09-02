@@ -51,7 +51,7 @@
         <div class="inner">
         <span id="gocoder_typing"></span>
         <br />
-        <a href="${cp}/index.html">메인으로 돌아가기</a>
+        <a href="/">메인으로 돌아가기</a>
         </div>
     </body>
     <script>

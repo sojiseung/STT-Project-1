@@ -89,7 +89,7 @@ prefix="c"%>
   </head>
   <body>
     <c:choose>
-      <c:when test="${loginUser != null}">	
+      <c:when test="${userid != null}">	
         <%@ include file="/fix/loginheader.jsp"%>
       </c:when>
       <c:otherwise> <%@ include file="/fix/header.jsp" %> </c:otherwise>
@@ -422,6 +422,16 @@ prefix="c"%>
 	        <a href="${cp}/app/user/chef_register.jsp">
 	          <img src="${cp}/img/joinforpro.png" alt="전문가 등록" />
 	        </a>
+		</c:when>
+		<c:when test="${loginUser != null and loginUser.expertjoin == 'O'}">
+	        <a href="/">
+	          <img src="${cp}/img/joinforpro.png" onclick="already()" alt="전문가 등록" />
+	        </a>
+	        <script>
+				function already(){
+					alert("이미 등록되어있습니다!!");
+				}
+			</script>
 		</c:when>
 		<c:otherwise>
 	        <a href="javascript:btnOpenPopup">

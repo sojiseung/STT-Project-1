@@ -11,16 +11,16 @@ public class KakaoLoginOkAction implements Action{
 	@Override
 	public ActionTo execute(HttpServletRequest req, HttpServletResponse resp) throws Exception {
 
-		String email = req.getParameter("email");
+		String userid = req.getParameter("userid");
 		
 		
 		ActionTo transfer = new ActionTo();
 		transfer.setRedirect(false);
 		
 		
-		if(email != null) {
-			req.getSession().setAttribute("loginUser", email);
-			System.out.println(email);
+		if(userid != null) {
+			req.getSession().setAttribute("userid", userid);
+			System.out.println(userid);
 			transfer.setPath("/");
 		} else {
 			transfer.setPath("/");

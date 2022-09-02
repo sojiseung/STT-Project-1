@@ -27,6 +27,9 @@
 <link rel="stylesheet" href="${cp}/css/common.css" />
 <link rel="stylesheet" href="${cp}/css/servicedetail.css" />
 <!-- js -->
+<script>
+const likecnt = ${service.likecnt};
+</script>
 <script defer src="${cp}/js/servicedetail.js"></script>
 </head>
 <body>
@@ -154,11 +157,9 @@
 			<aside class="sub_detail">
 				<section id="likecnt">
 					<div></div>
-					<form action="">
 						<button id="like" onclick="change()">
-							<i id="heart" class="fa-regular fa-heart"></i> <span><fmt:formatNumber value="${service.likecnt }" pattern="#,###"/></span>
+							<i id="heart" class="fa-regular fa-heart"></i> <span id=cnt><fmt:formatNumber value="${service.likecnt}" pattern="#,###"/></span>
 						</button>
-					</form>
 				</section>
 				<h1>${service.servicetitle }</h1>
 				<section id="purchase">

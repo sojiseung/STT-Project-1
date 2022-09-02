@@ -42,7 +42,7 @@ public class ServiceFrontController extends HttpServlet {
 			try {
 			 transfer = new ServiceRegisterAction().execute(req,resp);
 			} catch (Exception e) {
-				System.out.println("/service/servieclist.sv" +e);
+				System.out.println("/service/serviecregister : " +e);
 			}
 			break;
 		case "/service/servicedetail.sv":
@@ -57,7 +57,7 @@ public class ServiceFrontController extends HttpServlet {
 			try {
 				transfer = new ServiceListAction().execute(req,resp);
 			}catch (Exception e) {
-				System.out.println("/service/servicelist.sv"+e);
+				System.out.println("/service/servicelist.sv : "+e);
 			}
 			break;
 		case "/reply/replywrite.sv" :

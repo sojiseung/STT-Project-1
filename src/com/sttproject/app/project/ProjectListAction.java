@@ -27,7 +27,7 @@ public class ProjectListAction implements Action {
 		int totalCnt =	pdao.getProjectCnt(keyword);
 		
 		//한페이지에 보여줄 게시글 수
-		int pageSize = 12;
+		int pageSize = 5;
 		
 		//페이징처리 		
 		int startPage = (page-1)/10*10+1;

@@ -6,7 +6,6 @@ const book1 = document.getElementById("book1");
 const book2 = document.getElementById("book2");
 const book3 = document.getElementById("book3");
 const book4 = document.getElementById("book4");
-
 function move1() {
   f1.classList.replace("ff", "ff1");
   f2.classList.replace("ff1", "ff");
@@ -35,8 +34,10 @@ function move4() {
   f3.classList.replace("ff1", "ff");
   location.href = "#book4";
 }
+
 const heart = document.getElementById("heart");
 function change() {
+const cnt = document.getElementById("cnt");
   if (heart.classList.contains("fa-regular")) {
     heart.classList.replace("fa-regular", "fa-solid");
     heart.style.color = "#ef5350";

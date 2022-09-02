@@ -73,7 +73,7 @@
   				success:function(res){
   					let email = res.kakao_account.email;
   					console.log(res);
-  					location.href="${cp}/user/kakaologinok.us?email="+email;
+  					location.href="${cp}/user/kakaologinok.us?userid="+email;
   				}
   			});
   		}
