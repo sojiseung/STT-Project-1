@@ -138,6 +138,10 @@
 		
 			function addChat(chatName, chatContent, chatTime){
 				let toID = '<%-- <%=toID%> --%>${toid}';
+				console.log(toID);
+				console.log(chatContent);
+				console.log(chatName == toID);
+				console.log(chatName);
 				if(chatName == '나'){
 				$('#chatList').append('<div class="row">' +
 						'<div class="col-lg-12">' +
@@ -187,7 +191,7 @@
 			setInterval(function() {
 				chatListFunction(lastID);
 			},3000);
-		}
+		} 
 		
 	</script>
 		<script type="text/javascript">
@@ -208,11 +212,12 @@
 				}
 			});
 		}
-		function getInfiniteUnread(){
+		//이새끼 과부하 주범!!!!! chatfrombox.jsp도 같습니다.
+/* 		function getInfiniteUnread(){
 			setInterval(function(){
 				getUnread();
 			},4000)
-		}
+		} */
 		function showUnread(result){
 			$('#unread').html(result);
 		}
@@ -328,7 +333,8 @@
 			getUnread();
 			chatListFunction('0');
 			getInfiniteChat();
-			getInfiniteUnread()
+			//이걸 막아주면 완성
+			/*getInfiniteUnread() */
 		});
 	</script>
 </body>

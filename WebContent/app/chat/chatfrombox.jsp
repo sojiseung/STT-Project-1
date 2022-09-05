@@ -137,7 +137,11 @@
 		}
 		
 			function addChat(chatName, chatContent, chatTime){
-				let toID = '<%=toID%> ';
+				var toID = '<%=toID%>';
+				console.log(toID);
+				console.log(chatContent);
+				console.log(chatName === toID);
+				console.log(chatName);
 				if(chatName == '나'){
 				$('#chatList').append('<div class="row">' +
 						'<div class="col-lg-12">' +
@@ -183,11 +187,11 @@
 				}
 			}
 		
-		function getInfiniteChat(){
+	 	function getInfiniteChat(){
 			setInterval(function() {
 				chatListFunction(lastID);
 			},3000);
-		}
+		} 
 		
 	</script>
 		<script type="text/javascript">
@@ -208,11 +212,12 @@
 				}
 			});
 		}
-		function getInfiniteUnread(){
+		
+	/* 	function getInfiniteUnread(){
 			setInterval(function(){
 				getUnread();
 			},4000)
-		}
+		} */
 		function showUnread(result){
 			$('#unread').html(result);
 		}
@@ -327,8 +332,8 @@
 		$(document).ready(function() {
 			getUnread();
 			chatListFunction('0');
-			getInfiniteChat();
-			getInfiniteUnread()
+			 getInfiniteChat();
+			/*getInfiniteUnread() */
 		});
 	</script>
 </body>

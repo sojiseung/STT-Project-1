@@ -80,11 +80,11 @@ function addBox(lastID, toID, chatContent, chatTime){//테이블 이동
 			'</td>' +
 			'</tr>');
 }
-	function getInfiniteBox() {
+/* 	function getInfiniteBox() {
 		setInterval(function() {
 			chatBoxFunction();
 		}, 3000);
-	}
+	} */
 	</script>	
 	<script type="text/javascript">
 	function getUnread(){
@@ -103,11 +103,11 @@ function addBox(lastID, toID, chatContent, chatTime){//테이블 이동
 			}
 		});
 	}
-	function getInfiniteUnread(){
+/* 	function getInfiniteUnread(){
 		setInterval(function(){
 			getUnread();
 		},4000)
-	}
+	} */
 	function showUnread(result){
 		$('#unread').html(result);
 	}
@@ -189,9 +189,9 @@ function addBox(lastID, toID, chatContent, chatTime){//테이블 이동
 	<script type="text/javascript">
 		$(document).ready(function() {
 			getUnread();
-			getInfiniteUnread();
+/* 			getInfiniteUnread(); */
 			chatBoxFunction();
-			getInfiniteBox();
+		/* 	getInfiniteBox(); */
 		});
 	</script>
 </html>
