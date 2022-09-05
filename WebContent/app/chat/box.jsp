@@ -79,6 +79,8 @@ function addBox(lastID, toID, chatContent, chatTime){//테이블 이동
 			'<div class="pull-right">' + chatTime + '</div>' +
 			'</td>' +
 			'</tr>');
+			console.log(toID);
+			console.log(lastID);
 }
 /* 	function getInfiniteBox() {
 		setInterval(function() {

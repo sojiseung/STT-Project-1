@@ -52,8 +52,10 @@
 		}
 		function submitFunction(){
 			var fromID = '<%= userid %>';
-			var toID = '<%= toID %> ';
+			//띄어쓰기 개객끼
+			var toID = '<%= toID %>';
 			console.log(toID);
+			console.log(fromID);
 			var chatContent = $('#chatContent').val();
 			$.ajax({
 				type: "POST",
@@ -80,7 +82,7 @@
 			if (window.event.keyCode == 13) {
 		    	// 엔터키가 눌렸을 때
 			var fromID = '<%= userid %>';
-			var toID = '<%= toID %> ';
+			var toID = '<%= toID %>';
 			var chatContent = $('#chatContent').val();
 			$.ajax({
 				type: "POST",
@@ -160,7 +162,6 @@
 						'</div>' +
 						'</div>' +
 						'<hr>');
-				$('#chatList').scrollTop($('#chatList')[0].scrollHeight);
 				}else if(chatName == toID){
 				$('#chatList').append('<div class="row">' +
 						'<div class="col-lg-12">' +
@@ -183,8 +184,8 @@
 						'</div>' +
 						'</div>' +
 						'<hr>');
-				$('#chatList').scrollTop($('#chatList')[0].scrollHeight);
 				}
+				$('#chatList').scrollTop($('#chatList')[0].scrollHeight);
 			}
 		
 	 	function getInfiniteChat(){

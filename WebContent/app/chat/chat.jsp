@@ -51,8 +51,8 @@
 			window.setTimeout(function() {alert.hide()},delay);
 		}
 		function submitFunction(){
-			var fromID = '<%= userid %>';
-			var toID = '${toid}<%-- <%= toID %> --%>';
+			var fromID = '<%=userid%>';
+			var toID = '${toid}';<%-- <%= toID %> --%>
 			console.log(toID);
 			var chatContent = $('#chatContent').val();
 			$.ajax({
@@ -79,8 +79,8 @@
 		function enterkey(){
 			if (window.event.keyCode == 13) {
 		    	// 엔터키가 눌렸을 때
-			var fromID = '<%= userid %>';
-			var toID = '${toid}<%-- <%= toID %> --%>';
+			var fromID = '<%=userid%>';
+			var toID = '${toid}';<%-- <%= toID %> --%>
 			var chatContent = $('#chatContent').val();
 			$.ajax({
 				type: "POST",
@@ -109,7 +109,7 @@
 		
 		function chatListFunction(type){
 			var fromID = '<%=userid%>';
-			var toID = '<%-- <%=toID%> --%>${toid}';
+			var toID = '${toid}';<%-- <%=toID%> --%>
 			$.ajax({
 				type: "POST",
 				url: "${cp}/chat/chatlist.ct",
@@ -137,7 +137,7 @@
 		}
 		
 			function addChat(chatName, chatContent, chatTime){
-				let toID = '<%-- <%=toID%> --%>${toid}';
+				let toID = '${toid}';<%-- <%=toID%> --%>
 				console.log(toID);
 				console.log(chatContent);
 				console.log(chatName == toID);
@@ -160,7 +160,6 @@
 						'</div>' +
 						'</div>' +
 						'<hr>');
-				$('#chatList').scrollTop($('#chatList')[0].scrollHeight);
 				}else if(chatName == toID){
 				$('#chatList').append('<div class="row">' +
 						'<div class="col-lg-12">' +
@@ -183,8 +182,8 @@
 						'</div>' +
 						'</div>' +
 						'<hr>');
-				$('#chatList').scrollTop($('#chatList')[0].scrollHeight);
 				}
+				$('#chatList').scrollTop($('#chatList')[0].scrollHeight);
 			}
 		
 		function getInfiniteChat(){
